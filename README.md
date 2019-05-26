@@ -8,5 +8,5 @@
 3- abrir file project structure <br>
 6- modules / dependencies hacer click en + Jars or directore y seleccionar la carpeta libs y darele ok a todo <br>
 7- abrir modules/dep de nuevo  seleccionar carpeta test y marcarlo como test y . aplicarlo a todo. <br>
-
+....
 `
