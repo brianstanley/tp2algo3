@@ -9,3 +9,4 @@ bin/
 build.xml.old
 *.jar
 out./
+.idea/
