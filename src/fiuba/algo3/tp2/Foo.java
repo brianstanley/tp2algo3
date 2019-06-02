@@ -1,7 +1,4 @@
-package fiuba.algo3.ejemplo1;
-
-import java.util.ArrayList;
-import java.util.HashMap;
+package fiuba.algo3.tp2;
 
 public class Foo {
 
