@@ -2,6 +2,8 @@ package fiuba.algo3.tp2;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Before;
+import org.mockito.Mockito;
 
 public class MaderaTest {
 
@@ -17,16 +19,5 @@ public class MaderaTest {
         Assert.assertEquals(instanciaMadera.durabilidad(), 10);
     }
 
-    public void setUp() {
-        HachaMadera teast = mock(HachaMadera.class);
-    }
 
-    @Test
-    public void SeUsaHachaDeMaderaEnInstanciaDeMaderaYSuDurabilidadDecreceEnDosPuntos(){
-        Madera instanciaMadera = new Madera();
-        HachaMadera hachaMadera = new HachaMadera();
-        int durabilidad = instanciaMadera.durabilidad();
-        instanciaMadera.desgastar(hachaMadera);
-        Assert.assertEquals(durabilidad, durabilidad - 2);
-    }
 }
