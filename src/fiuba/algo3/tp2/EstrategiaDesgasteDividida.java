@@ -12,6 +12,7 @@ public class EstrategiaDesgasteDividida extends EstrategiaDesgaste {
     }
 
 
+    @Override
     public void desgastar(){
 
         durabilidad -= (factorDeReduccion / divisor);
