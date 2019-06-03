@@ -9,7 +9,6 @@ abstract public class Hacha {
         return this.fuerza;
     }
 
-
     public int getDurabilidad() {
         return this.estrategia.getDurabilidad();
     }
