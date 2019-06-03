@@ -1,0 +1,6 @@
+En este archivo se van a anotar todos los supuestos que hagamos mientras codeamos. De esta forma no se nos va a olvidar ninguno.
+
+Supuesto 1:
+En la consigna del tp dice que el metal solo puede obtenerse usando un pico de piedra. Yo tomo por supuesto que un pico de metal
+y un pico fino tambien sirven para extraer metal, dado que son "mas fuertes" que uno de piedra. Este es un supuesto bastante 
+cosmetico, pero me parece razonable.
