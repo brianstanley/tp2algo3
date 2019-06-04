@@ -13,32 +13,32 @@ public class Madera extends Material {
     }
 
     @Override
-    public  void desgastar(HachaMadera hachaMadera){
+    public  void desgastar(HachaDeMadera hachaMadera){
         durabilidad -= 2;
     }
 
     @Override
-    public  void desgastar(HachaPiedra hachaPiedra){
+    public  void desgastar(HachaDePiedra hachaPiedra){
         durabilidad -= 5;
     }
 
     @Override
-    public  void desgastar(HachaMetal hachaMetal){
+    public  void desgastar(HachaDeMetal hachaMetal){
         durabilidad-= 10;
     }
 
     @Override
-    public  void desgastar(PicoMadera picoMadera){
+    public  void desgastar(PicoDeMadera picoMadera){
         //nada pasa
     }
 
     @Override
-    public  void desgastar(PicoPiedra picoPiedra){
+    public  void desgastar(PicoDePiedra picoPiedra){
         //nada pasa
     }
 
     @Override
-    public  void desgastar(PicoMetal picoMetal){
+    public  void desgastar(PicoDeMetal picoMetal){
         //nada pasa
     }
 

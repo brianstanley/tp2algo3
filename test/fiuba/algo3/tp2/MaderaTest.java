@@ -5,19 +5,10 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.mock;
 import org.mockito.Mock;
-
+import org.mockito.Mockito;
 
 
 public class MaderaTest {
-
-    @Mock
-    private HachaMadera hachaMadera;
-
-    @Before
-    public void setup(){
-        hachaMadera = mock(HachaMadera.class);
-    }
-
 
     @Test
     public void SeCreaInstanciaDeMaterialMadera(){
@@ -34,7 +25,7 @@ public class MaderaTest {
     @Test
     public void seUsaHachaMaderaContraMaterialMaderaYDurabilidadMaterialDecreceDosUnidades(){
         Madera instanciaMadera = new Madera();
-        hachaMadera = mock(HachaMadera.class);
+        HachaDeMadera hachaMadera = mock(HachaDeMadera.class);
         int durabilidadInstancia = instanciaMadera.durabilidad();
         instanciaMadera.desgastar(hachaMadera);
         Assert.assertEquals(instanciaMadera.durabilidad(), durabilidadInstancia - 2);
@@ -43,16 +34,16 @@ public class MaderaTest {
     @Test
     public void seUsaHachaPiedraContraMaterialMaderaYDurabilidadMaterialDecreceCincoUnidades(){
         Madera instanciaMadera = new Madera();
-        HachaPiedra hachaPiedra = Mockito.mock(HachaPiedra.class);
+        HachaDePiedra HachaPiedra = mock(HachaDePiedra.class);
         int durabilidadInstancia = instanciaMadera.durabilidad();
-        instanciaMadera.desgastar(hachaPiedra);
+        instanciaMadera.desgastar(HachaPiedra);
         Assert.assertEquals(instanciaMadera.durabilidad(), durabilidadInstancia - 5);
     }
 
     @Test
     public void seUsaHachaMetalContraMaterialMaderaYDurabilidadMaterialDecreceDiezUnidades(){
         Madera instanciaMadera = new Madera();
-        HachaMetal hachaMetal = Mockito.mock(HachaMetal.class);
+        HachaDeMetal hachaMetal = mock(hachaMetal.class);
         int durabilidadInstancia = instanciaMadera.durabilidad();
         instanciaMadera.desgastar(hachaMetal);
         Assert.assertEquals(instanciaMadera.durabilidad(), durabilidadInstancia - 10);
@@ -61,15 +52,15 @@ public class MaderaTest {
     @Test
     public void seUsaPicoMaderaContraMaterialMaderaYDurabilidadMaterialNoDecrece(){
         Madera instanciaMadera = new Madera();
-        PicoMadera PicoMadera = Mockito.mock(PicoMadera.class);
+        PicoDeMadera picoMadera = Mockito.mock(PicoDeMadera.class);
         int durabilidadInstancia = instanciaMadera.durabilidad();
-        instanciaMadera.desgastar(PicoMadera);
+        instanciaMadera.desgastar(picoMadera);
         Assert.assertEquals(instanciaMadera.durabilidad(), durabilidadInstancia);}
 
     @Test
     public void seUsaPicoMetalContraMaterialMaderaYDurabilidadMaterialNoDecrece(){
         Madera instanciaMadera = new Madera();
-        PicoMetal picoMetal = Mockito.mock(PicoMetal.class);
+        PicoDeMetal picoMetal = Mockito.mock(PicoDeMetal.class);
         int durabilidadInstancia = instanciaMadera.durabilidad();
         instanciaMadera.desgastar(picoMetal);
         Assert.assertEquals(instanciaMadera.durabilidad(), durabilidadInstancia);}
@@ -77,7 +68,7 @@ public class MaderaTest {
     @Test
     public void seUsaPicoPiedraContraMaterialMaderaYDurabilidadMaterialNoDecrece(){
         Madera instanciaMadera = new Madera();
-        PicoPiedra picoPiedra = Mockito.mock(PicoPiedra.class);
+        PicoDePiedra picoPiedra = Mockito.mock(PicoDePiedra.class);
         int durabilidadInstancia = instanciaMadera.durabilidad();
         instanciaMadera.desgastar(picoPiedra);
         Assert.assertEquals(instanciaMadera.durabilidad(), durabilidadInstancia); }

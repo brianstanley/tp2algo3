@@ -7,17 +7,17 @@ public abstract class Material {
     protected int durabilidad()
         {return this.durabilidad;}
 
-    public abstract void desgastar(HachaMadera hachaMadera);
+    public abstract void desgastar(HachaDeMadera hachaMadera);
 
-    public abstract void desgastar(HachaPiedra hachaPiedra);
+    public abstract void desgastar(HachaDePiedra hachaPiedra);
 
-    public abstract void desgastar(HachaMetal hachaMetal);
+    public abstract void desgastar(HachaDeMetal hachaMetal);
 
-    public abstract void desgastar(PicoMadera picoMadera);
+    public abstract void desgastar(PicoDeMadera picoMadera);
 
-    public abstract void desgastar(PicoPiedra picoPiedra);
+    public abstract void desgastar(PicoDePiedra picoPiedra);
 
-    public abstract void desgastar(PicoMetal picoMetal);
+    public abstract void desgastar(PicoDeMetal picoMetal);
 
     public abstract void desgastar(PicoFino picoFino);
 

@@ -6,31 +6,31 @@ public class Piedra extends Material {
         durabilidad = 30;
     }
 
-    public void desgastar(HachaMadera hachaMadera){
+    public void desgastar(HachaDeMadera hachaMadera){
         //nada pasa
 
     }
 
-    public void desgastar(HachaPiedra hachaPiedra){
+    public void desgastar(HachaDePiedra hachaPiedra){
         //nada pasa
 
     }
 
-    public void desgastar(HachaMetal hachaMetal){
+    public void desgastar(HachaDeMetal hachaMetal){
         //nada pasa
 
     }
 
-    public void desgastar(PicoMadera picoMadera){
+    public void desgastar(PicoDeMadera picoMadera){
         durabilidad -= 2;
 
     }
 
-    public void desgastar(PicoPiedra picoPiedra){
+    public void desgastar(PicoDePiedra picoPiedra){
         durabilidad -= 4;
     }
 
-    public void desgastar(PicoMetal picoMetal){
+    public void desgastar(PicoDeMetal picoMetal){
         durabilidad -= 12;
 
     }
