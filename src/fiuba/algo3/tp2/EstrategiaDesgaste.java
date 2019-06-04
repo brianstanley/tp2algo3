@@ -3,10 +3,7 @@ package fiuba.algo3.tp2;
 public abstract class EstrategiaDesgaste {
 
     protected int durabilidad;
-    protected int factorDeReduccion;
-
-    /* factorDeReduccion representa la fuerza de la herramienta que afecta siempre igual */
-
+    protected int fuerza;
 
     public int durabilidad(){
 

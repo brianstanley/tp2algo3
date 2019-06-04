@@ -5,13 +5,13 @@ public class EstrategiaDesgasteLineal extends EstrategiaDesgaste {
     public EstrategiaDesgasteLineal(int durabilidad, int factorDeReduccion){
 
         this.durabilidad = durabilidad;
-        this.factorDeReduccion = factorDeReduccion;
+        this.fuerza = factorDeReduccion;
     }
 
     @Override
     public void desgastar(){
 
-        this.durabilidad -= factorDeReduccion;
+        this.durabilidad -= fuerza;
     }
 
 

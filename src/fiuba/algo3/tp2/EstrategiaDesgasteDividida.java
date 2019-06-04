@@ -7,7 +7,7 @@ public class EstrategiaDesgasteDividida extends EstrategiaDesgaste {
     public EstrategiaDesgasteDividida(int durabilidad, int factorReduccion, double divisor){
 
         this.durabilidad = durabilidad;
-        this.factorDeReduccion = factorReduccion;
+        this.fuerza = factorReduccion;
         this.divisor = divisor;
     }
 
@@ -15,6 +15,6 @@ public class EstrategiaDesgasteDividida extends EstrategiaDesgaste {
     @Override
     public void desgastar(){
 
-        durabilidad -= (factorDeReduccion / divisor);
+        durabilidad -= (fuerza / divisor);
     }
 }
