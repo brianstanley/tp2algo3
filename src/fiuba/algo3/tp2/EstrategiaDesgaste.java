@@ -11,7 +11,7 @@ public abstract class EstrategiaDesgaste {
     }
 
 
-    public abstract void desgastar();
+    protected abstract void desgastar();
 
 
 }
