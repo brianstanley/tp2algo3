@@ -28,14 +28,14 @@ public class EstrategiaDesgasteDivididaTest {
         /* el divisor es numero con decimal */
 
         int durabilidadInical = 10;
-        int factorReduccion = 3;
+        int fuerza = 3;
         double divisor = 1.5;
         int durabilidadActual = durabilidadInical;
 
-        EstrategiaDesgasteDividida desgaste = new EstrategiaDesgasteDividida(durabilidadInical, factorReduccion, divisor);
+        EstrategiaDesgasteDividida desgaste = new EstrategiaDesgasteDividida(durabilidadInical, fuerza, divisor);
 
         desgaste.desgastar();
-        durabilidadActual -= factorReduccion / divisor;
+        durabilidadActual -= fuerza / divisor;
 
         Assert.assertEquals(durabilidadActual, desgaste.durabilidad());
     }

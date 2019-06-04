@@ -9,9 +9,9 @@ public class EstrategiaDesgasteLinealTest {
     public void desgasteLinealinciaConDurabilidadAsignadaTest(){
 
         int durabilidadInical = 10;
-        int factorReduccion = 3;
+        int fuerza = 3;
 
-        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInical, factorReduccion);
+        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInical, fuerza);
 
         Assert.assertEquals(durabilidadInical, desgaste.durabilidad());
     }

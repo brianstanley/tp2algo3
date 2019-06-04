@@ -10,3 +10,5 @@ build.xml.old
 *.jar
 out/
 .idea/
+tp2algo3.iml
+out./
