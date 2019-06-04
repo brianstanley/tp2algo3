@@ -8,5 +8,7 @@ tmp/
 bin/
 build.xml.old
 *.jar
-out./
+out/
 .idea/
+tp2algo3.iml
+out./

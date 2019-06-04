@@ -10,11 +10,11 @@ abstract public class Hacha {
     }
 
     public int getDurabilidad() {
-        return this.estrategia.getDurabilidad();
+        return this.estrategia.durabilidad();
     }
 
     public void romper(Madera unaMadera) {
         unaMadera.desgastar(this);
-        this.estrategia.reducir(this.fuerza);
+        this.estrategia.desgastar();
     }
 }
