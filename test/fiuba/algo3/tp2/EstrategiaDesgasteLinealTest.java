@@ -20,13 +20,13 @@ public class EstrategiaDesgasteLinealTest {
     public void desgasteLinealReduceSegunFactorDeReduccionAsigando(){
 
         int durabilidadInical = 10;
-        int factorReduccion = 3;
+        int fuerza = 3;
         int durabilidadActual = durabilidadInical;
 
-        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInical, factorReduccion);
+        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInical, fuerza);
 
         desgaste.desgastar();
-        durabilidadActual -= factorReduccion;
+        durabilidadActual -= fuerza;
 
         Assert.assertEquals(durabilidadActual, desgaste.durabilidad());
     }
