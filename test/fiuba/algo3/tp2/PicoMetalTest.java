@@ -21,7 +21,16 @@ public class PicoMetalTest {
     }
 
     @Test
-    public void SeUsaPicoMetalEnUnMaterialCualquieraYSuDurabilidadDecreceAlDecimoGolpe(){
+    public void SeUsaPicoMetalEnUnMaterialCualquieraUnaVezYSuDurabilidadNoDecrece(){
+        PicoDeMetal picoMetal = new PicoDeMetal();
+        int durabilidad = picoMetal.getDurabilidad();
+        Madera unaMadera = new Madera();
+        picoMetal.romper(unaMadera);
+        Assert.assertEquals(picoMetal.getDurabilidad(), durabilidad);
+    }
+
+    @Test
+    public void SeUsaPicoMetalEnUnMaterialCualquieraDiezVecesYSuDurabilidadEsNula(){
         PicoDeMetal picoMetal = new PicoDeMetal();
         Madera unaMadera = new Madera();
         picoMetal.romper(unaMadera);
