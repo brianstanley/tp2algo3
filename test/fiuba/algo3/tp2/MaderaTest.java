@@ -1,13 +1,23 @@
 package fiuba.algo3.tp2;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
-import org.mortbay.jetty.security.HTAccessHandler;
+import static org.mockito.Mockito.mock;
+import org.mockito.Mock;
 
-import java.nio.charset.MalformedInputException;
+
 
 public class MaderaTest {
+
+    @Mock
+    private HachaMadera hachaMadera;
+
+    @Before
+    public void setup(){
+        hachaMadera = mock(HachaMadera.class);
+    }
+
 
     @Test
     public void SeCreaInstanciaDeMaterialMadera(){
@@ -24,7 +34,7 @@ public class MaderaTest {
     @Test
     public void seUsaHachaMaderaContraMaterialMaderaYDurabilidadMaterialDecreceDosUnidades(){
         Madera instanciaMadera = new Madera();
-        HachaMadera hachaMadera = Mockito.mock(HachaMadera.class);
+        hachaMadera = mock(HachaMadera.class);
         int durabilidadInstancia = instanciaMadera.durabilidad();
         instanciaMadera.desgastar(hachaMadera);
         Assert.assertEquals(instanciaMadera.durabilidad(), durabilidadInstancia - 2);
