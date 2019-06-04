@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2;
 
-public class HachaDeMetal extends Hacha {
+public class HachaDeMetal extends Herramienta {
 
     public HachaDeMetal() {
         this.durabilidad = 400;
