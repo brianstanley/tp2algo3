@@ -7,4 +7,10 @@ public class HachaDeMetal extends Hacha {
         this.fuerza = 10;
         this.estrategia = new EstrategiaDesgasteDividida(this.durabilidad, fuerza, 2);
     }
+
+    public void romper(Madera unaMadera) {
+        unaMadera.desgastar(this);
+        this.estrategia.desgastar();
+    }
+
 }

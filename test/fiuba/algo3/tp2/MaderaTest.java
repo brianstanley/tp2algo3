@@ -43,7 +43,7 @@ public class MaderaTest {
     @Test
     public void seUsaHachaMetalContraMaterialMaderaYDurabilidadMaterialDecreceDiezUnidades(){
         Madera instanciaMadera = new Madera();
-        HachaDeMetal hachaMetal = mock(hachaMetal.class);
+        HachaDeMetal hachaMetal = mock(HachaDeMetal.class);
         int durabilidadInstancia = instanciaMadera.durabilidad();
         instanciaMadera.desgastar(hachaMetal);
         Assert.assertEquals(instanciaMadera.durabilidad(), durabilidadInstancia - 10);

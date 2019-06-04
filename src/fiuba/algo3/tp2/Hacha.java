@@ -13,8 +13,8 @@ abstract public class Hacha {
         return this.estrategia.durabilidad();
     }
 
-    public void romper(Madera unaMadera) {
-        unaMadera.desgastar(this);
-        this.estrategia.desgastar();
-    }
+//    public void romper(Material unMaterial) {
+//        unMaterial.desgastar(this);
+//        this.estrategia.desgastar();
+//    }
 }
