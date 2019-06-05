@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2;
 
-import fiuba.algo3.tp2.Herramienta;
+import fiuba.algo3.tp2.herramientas.Herramienta;
 
 public class Material {
     protected int durabilidad;

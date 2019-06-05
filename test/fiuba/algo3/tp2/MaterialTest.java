@@ -1,5 +1,8 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.herramientas.HachaDeMadera;
+import fiuba.algo3.tp2.herramientas.HachaDeMetal;
+import fiuba.algo3.tp2.herramientas.HachaDePiedra;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

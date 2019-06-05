@@ -1,5 +1,7 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.herramientas.Hacha;
+
 public class MaderaMaterial extends Material {
 
     public MaderaMaterial() {
