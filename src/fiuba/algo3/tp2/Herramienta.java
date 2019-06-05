@@ -1,7 +1,6 @@
-package fiuba.algo3.tp2.herramientas;
+package fiuba.algo3.tp2;
 
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgaste;
-import fiuba.algo3.tp2.materiales.Material;
 
 public class Herramienta {
     protected int fuerza;

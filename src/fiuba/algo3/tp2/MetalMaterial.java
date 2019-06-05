@@ -1,6 +1,4 @@
-package fiuba.algo3.tp2.materiales;
-
-import fiuba.algo3.tp2.herramientas.pico.PicoPiedra;
+package fiuba.algo3.tp2;
 
 public class MetalMaterial extends Material {
     public MetalMaterial() {

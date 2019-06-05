@@ -1,7 +1,4 @@
-package fiuba.algo3.tp2.herramientas.hacha;
-
-import fiuba.algo3.tp2.herramientas.Herramienta;
-import fiuba.algo3.tp2.materiales.MaderaMaterial;
+package fiuba.algo3.tp2;
 
 public class Hacha extends Herramienta {
     protected int durabilidad;

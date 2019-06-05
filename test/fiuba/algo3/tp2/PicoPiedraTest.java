@@ -1,7 +1,5 @@
 package fiuba.algo3.tp2;
 
-import fiuba.algo3.tp2.materiales.MaderaMaterial;
-import fiuba.algo3.tp2.herramientas.pico.PicoPiedra;
 import org.junit.Assert;
 import org.junit.Test;
 

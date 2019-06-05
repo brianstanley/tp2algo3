@@ -1,10 +1,6 @@
 package fiuba.algo3.tp2;
 import static org.junit.Assert.*;
 
-import fiuba.algo3.tp2.herramientas.hacha.HachaDeMadera;
-import fiuba.algo3.tp2.herramientas.hacha.HachaDeMetal;
-import fiuba.algo3.tp2.herramientas.hacha.HachaDePiedra;
-import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import org.junit.Test;
 
 public class HachaTest {

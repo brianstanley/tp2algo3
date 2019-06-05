@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.herramientas.hacha;
+package fiuba.algo3.tp2;
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLineal;
 
 
