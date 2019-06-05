@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import fiuba.algo3.tp2.herramientas.HachaDeMadera;
 import fiuba.algo3.tp2.herramientas.HachaDeMetal;
 import fiuba.algo3.tp2.herramientas.HachaDePiedra;
+import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import org.junit.Test;
 
 public class HachaTest {
