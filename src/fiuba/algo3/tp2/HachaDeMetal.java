@@ -1,5 +1,7 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteDividida;
+
 public class HachaDeMetal extends Hacha {
 
     public HachaDeMetal() {
