@@ -1,7 +1,5 @@
 package fiuba.algo3.tp2;
 
-import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLineal;
-
 public class HachaDePiedra extends Hacha {
 
     public HachaDePiedra() {

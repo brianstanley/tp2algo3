@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.estrategiasDesgaste;
+package fiuba.algo3.tp2;
 
 public class EstrategiaDesgasteLineal extends EstrategiaDesgaste {
 

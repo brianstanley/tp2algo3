@@ -1,7 +1,5 @@
 package fiuba.algo3.tp2;
 
-import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteDividida;
-
 public class PicoPiedra extends Pico {
     public PicoPiedra() {
         this.fuerza = 4;
