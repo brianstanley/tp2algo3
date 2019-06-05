@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.estrategiasDesgaste;
 
 public abstract class EstrategiaDesgaste {
 
@@ -11,7 +11,5 @@ public abstract class EstrategiaDesgaste {
     }
 
 
-    protected abstract void desgastar();
-
-
+    public abstract void desgastar();
 }

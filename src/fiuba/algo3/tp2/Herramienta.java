@@ -1,8 +1,11 @@
 package fiuba.algo3.tp2;
 
-public class Hacha extends Herramienta {
-    protected int durabilidad;
+import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgaste;
+
+public class Herramienta {
     protected int fuerza;
+    protected int durabilidad;
+    protected EstrategiaDesgaste desgastador;
 
     public int getFuerza() {
         return this.fuerza;
@@ -12,8 +15,7 @@ public class Hacha extends Herramienta {
         return this.desgastador.durabilidad();
     }
 
-    public void romper(MaderaMaterial unaMadera) {
-        unaMadera.desgastar(this);
+    public void romper(Material unMaterial) {
         this.desgastador.desgastar();
     }
 }
