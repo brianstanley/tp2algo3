@@ -1,5 +1,10 @@
 package fiuba.algo3.tp2;
 import static org.junit.Assert.*;
+
+import fiuba.algo3.tp2.herramientas.hacha.HachaDeMadera;
+import fiuba.algo3.tp2.herramientas.hacha.HachaDeMetal;
+import fiuba.algo3.tp2.herramientas.hacha.HachaDePiedra;
+import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import org.junit.Test;
 
 public class HachaTest {
@@ -19,7 +24,7 @@ public class HachaTest {
     @Test
     public void hachaMaderaSeUsaContraMaderaYReduceSuDurabilidadLinealmente() {
         HachaDeMadera hacha = new HachaDeMadera();
-        Madera unaMadera = new Madera();
+        MaderaMaterial unaMadera = new MaderaMaterial();
         hacha.romper(unaMadera);
         assertEquals(98, hacha.getDurabilidad());
     }
@@ -27,7 +32,7 @@ public class HachaTest {
     @Test
     public void hachaDePiedraSeUsaContraMaderaYReduceSuDurabilidadLinealmente() {
         HachaDePiedra hacha = new HachaDePiedra();
-        Madera unaMadera = new Madera();
+        MaderaMaterial unaMadera = new MaderaMaterial();
         hacha.romper(unaMadera);
         assertEquals(195, hacha.getDurabilidad());
     }
@@ -35,7 +40,7 @@ public class HachaTest {
     @Test
     public void hachaDeMetalSeUsaContraMaderaYReduceSuDurabilidadEnLaMitadDeLaFuerza() {
         HachaDeMetal hacha = new HachaDeMetal();
-        Madera unaMadera = new Madera();
+        MaderaMaterial unaMadera = new MaderaMaterial();
         hacha.romper(unaMadera);
         assertEquals(395, hacha.getDurabilidad());
     }
