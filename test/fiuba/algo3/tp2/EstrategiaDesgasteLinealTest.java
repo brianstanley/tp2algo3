@@ -18,7 +18,7 @@ public class EstrategiaDesgasteLinealTest {
     }
 
     @Test
-    public void desgasteLinealReduceSegunFactorDeReduccionAsigando(){
+    public void desgasteLinealReduceSegunFuerzaAsiganda(){
 
         int durabilidadInical = 10;
         int fuerza = 3;

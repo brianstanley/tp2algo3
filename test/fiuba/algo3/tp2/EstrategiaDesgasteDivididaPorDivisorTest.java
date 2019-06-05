@@ -1,20 +1,20 @@
 package fiuba.algo3.tp2;
 
-import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteDividida;
+import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteDivididaPorDivisor;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class EstrategiaDesgasteDivididaTest {
+public class EstrategiaDesgasteDivididaPorDivisorTest {
 
     @Test
-    public void desgasteDivididaReduceSegunFactorDeReduccionYDivisorAsigando() {
+    public void desgasteDivididaPorDivisorReduceSegunFuerzaYDivisorAsigando() {
 
         int durabilidadInical = 10;
         int fuerza = 3;
         double divisor = 2;
         int durabilidadActual = durabilidadInical;
 
-        EstrategiaDesgasteDividida desgaste = new EstrategiaDesgasteDividida(durabilidadInical, fuerza, divisor);
+        EstrategiaDesgasteDivididaPorDivisor desgaste = new EstrategiaDesgasteDivididaPorDivisor(durabilidadInical, fuerza, divisor);
 
         desgaste.desgastar();
         durabilidadActual -= fuerza / divisor;
@@ -24,7 +24,7 @@ public class EstrategiaDesgasteDivididaTest {
 
 
     @Test
-    public void desgasteDivididaReduceSegunFactorDeReduccionYDivisorAsigando2() {
+    public void desgasteDivididaPorDivisorReduceSegunFuerzaYDivisorAsigando2() {
 
         /* el divisor es numero con decimal */
 
@@ -33,7 +33,7 @@ public class EstrategiaDesgasteDivididaTest {
         double divisor = 1.5;
         int durabilidadActual = durabilidadInical;
 
-        EstrategiaDesgasteDividida desgaste = new EstrategiaDesgasteDividida(durabilidadInical, fuerza, divisor);
+        EstrategiaDesgasteDivididaPorDivisor desgaste = new EstrategiaDesgasteDivididaPorDivisor(durabilidadInical, fuerza, divisor);
 
         desgaste.desgastar();
         durabilidadActual -= fuerza / divisor;
