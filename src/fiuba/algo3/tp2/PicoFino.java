@@ -14,9 +14,12 @@ public class PicoFino extends Pico {
     @Override
     public void romper(Material unMaterial) {
 
-        unMaterial.desgastar(this);
+        /* Aseguramos que pico fino solo actua ante un diamante */
+    }
 
-        if (unMaterial instanceof DiamanteMaterial)
-            this.desgastador.desgastar();
+    public void romper(DiamanteMaterial unDiamante){
+
+        unDiamante.desgastar(this);
+        this.desgastador.desgastar();
     }
 }
