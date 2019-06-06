@@ -7,7 +7,7 @@ import org.junit.Test;
 public class EstrategiaDesgasteLinealTest {
 
     @Test
-    public void desgasteLinealinciaConDurabilidadAsignadaTest(){
+    public void desgasteLinealInciaConDurabilidadAsignadaTest(){
 
         int durabilidadInical = 10;
         int fuerza = 3;
@@ -18,53 +18,53 @@ public class EstrategiaDesgasteLinealTest {
     }
 
     @Test
-    public void desgasteLinealNoRecibeDivisorEntoncesReduceSegunFuerzaAsiganda(){
+    public void desgasteLinealNoRecibeDivisorEntoncesReduceSegunFuerzaAsignada(){
 
         int durabilidadInical = 10;
         int fuerza = 3;
-        int durabilidadActual = durabilidadInical;
+        int durabilidadEsperada = durabilidadInical;
 
         EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInical, fuerza);
 
         desgaste.desgastar();
-        durabilidadActual -= fuerza;
+        durabilidadEsperada -= fuerza;
 
-        Assert.assertEquals(durabilidadActual, desgaste.durabilidad());
+        Assert.assertEquals(durabilidadEsperada, desgaste.durabilidad());
     }
 
     @Test
-    public void desgasteDivididaPorDivisorReduceSegunFuerzaYDivisorAsigando() {
+    public void desgasteLinealReduceSegunFuerzaYDivisorAsignado() {
 
-        int durabilidadInical = 10;
+        int durabilidadInicial = 10;
         int fuerza = 3;
         double divisor = 2;
-        int durabilidadActual = durabilidadInical;
+        int durabilidadEsperada = durabilidadInicial;
 
-        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInical, fuerza, divisor);
+        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInicial, fuerza, divisor);
 
         desgaste.desgastar();
-        durabilidadActual -= fuerza / divisor;
+        durabilidadEsperada -= fuerza / divisor;
 
-        Assert.assertEquals(durabilidadActual, desgaste.durabilidad());
+        Assert.assertEquals(durabilidadEsperada, desgaste.durabilidad());
     }
 
 
     @Test
-    public void desgasteDivididaPorDivisorReduceSegunFuerzaYDivisorAsigando2() {
+    public void desgasteLinealReduceSegunFuerzaYDivisorAsignado2() {
 
         /* el divisor es numero con decimal */
 
         int durabilidadInical = 10;
         int fuerza = 3;
         double divisor = 1.5;
-        int durabilidadActual = durabilidadInical;
+        int durabilidadEsperada = durabilidadInical;
 
         EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInical, fuerza, divisor);
 
         desgaste.desgastar();
-        durabilidadActual -= fuerza / divisor;
+        durabilidadEsperada -= fuerza / divisor;
 
-        Assert.assertEquals(durabilidadActual, desgaste.durabilidad());
+        Assert.assertEquals(durabilidadEsperada, desgaste.durabilidad());
     }
 
 

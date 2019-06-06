@@ -40,7 +40,7 @@ public class PicoFinoTest {
         picoFino.romper(diamante);
         durabilidad -= durabilidad / divisor;
 
-        Assert.assertEquals(picoFino.getDurabilidad(), durabilidad);
+        Assert.assertEquals(durabilidad, picoFino.getDurabilidad());
     }
 
     @Test
@@ -55,7 +55,7 @@ public class PicoFinoTest {
         picoFino.romper(madera);
         picoFino.romper(madera);
 
-        Assert.assertEquals(picoFino.getDurabilidad(), durabilidadInicial);
+        Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad());
 
     }
     @Test
@@ -70,7 +70,7 @@ public class PicoFinoTest {
         picoFino.romper(piedra);
         picoFino.romper(piedra);
 
-        Assert.assertEquals(picoFino.getDurabilidad(), durabilidadInicial);
+        Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad());
 
     }
     @Test
@@ -85,7 +85,7 @@ public class PicoFinoTest {
         picoFino.romper(metal);
         picoFino.romper(metal);
 
-        Assert.assertEquals(picoFino.getDurabilidad(), durabilidadInicial);
+        Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad());
 
     }
 }

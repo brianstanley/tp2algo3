@@ -7,18 +7,18 @@ import org.junit.Test;
 public class EstrategiaDesgasteLogaritmicoTest {
 
     @Test
-    public void desgasteDivididaDeDurabilidadReduceSegunDurabilidadYDivisorAsiganad() {
+    public void desgasteLogaritmicoReduceSegunDurabilidadYDivisorAsignado() {
 
         int durabilidadInical = 200;
         double divisor = 10;
-        int durabilidadActual = durabilidadInical;
+        int durabilidadEsperada = durabilidadInical;
 
         EstrategiaDesgasteLogaritmico desgaste = new EstrategiaDesgasteLogaritmico(durabilidadInical, divisor) ;
 
         desgaste.desgastar();
-        durabilidadActual -= (durabilidadActual / divisor);
+        durabilidadEsperada -= (durabilidadInical / divisor);
 
-        Assert.assertEquals(durabilidadActual, desgaste.durabilidad());
+        Assert.assertEquals(durabilidadEsperada, desgaste.durabilidad());
     }
 
 }
