@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2;
 
-import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLogaritmica;
+import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLogaritmico;
 
 public class PicoFino extends Pico {
 
@@ -8,7 +8,7 @@ public class PicoFino extends Pico {
 
         this.durabilidad = 1000;
         this.fuerza = 20;
-        this.desgastador = new EstrategiaDesgasteLogaritmica(this.durabilidad,10);
+        this.desgastador = new EstrategiaDesgasteLogaritmico(this.durabilidad,10);
     }
 
     @Override
