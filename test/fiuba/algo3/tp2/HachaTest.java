@@ -21,26 +21,52 @@ public class HachaTest {
     }
 
     @Test
-    public void hachaMaderaSeUsaContraMaderaYReduceSuDurabilidadLinealmente() {
+    public void hachaMaderaSeUsaContraCadaUnoDeLosMaterialesYSeReduceSuDurabilidadLinealmenteDependiendoDeLaFuerza() {
         HachaDeMadera hacha = new HachaDeMadera();
         MaderaMaterial unaMadera = new MaderaMaterial();
+        PiedraMaterial unaPiedra = new PiedraMaterial();
+        MetalMaterial unMetal = new MetalMaterial();
         hacha.romper(unaMadera);
         assertEquals(98, hacha.getDurabilidad());
+        hacha.romper(unaPiedra);
+        assertEquals(96, hacha.getDurabilidad());
+        hacha.romper(unMetal);
+        assertEquals(94, hacha.getDurabilidad());
     }
 
     @Test
-    public void hachaDePiedraSeUsaContraMaderaYReduceSuDurabilidadLinealmente() {
+    public void hachaDePiedraSeUsaContraCadaUnoDeLosMaterialesYReduceSuDurabilidadLinealmenteDependiendoDeLaFuerza() {
         HachaDePiedra hacha = new HachaDePiedra();
         MaderaMaterial unaMadera = new MaderaMaterial();
+        PiedraMaterial unaPiedra = new PiedraMaterial();
+        MetalMaterial unMetal = new MetalMaterial();
+
         hacha.romper(unaMadera);
         assertEquals(195, hacha.getDurabilidad());
+
+        hacha.romper(unaPiedra);
+        assertEquals(190, hacha.getDurabilidad());
+
+        hacha.romper(unMetal);
+        assertEquals(185, hacha.getDurabilidad());
     }
 
     @Test
-    public void hachaDeMetalSeUsaContraMaderaYReduceSuDurabilidadEnLaMitadDeLaFuerza() {
+    public void hachaDeMetalSeUsaContraCadaUnoDeLosMaterialesYReduceSuDurabilidadEnLaMitadDeLaFuerza() {
         HachaDeMetal hacha = new HachaDeMetal();
         MaderaMaterial unaMadera = new MaderaMaterial();
+        PiedraMaterial unaPiedra = new PiedraMaterial();
+        MetalMaterial unMetal = new MetalMaterial();
+
         hacha.romper(unaMadera);
         assertEquals(395, hacha.getDurabilidad());
+
+        hacha.romper(unaPiedra);
+
+        assertEquals(390, hacha.getDurabilidad());
+
+        hacha.romper(unMetal);
+        assertEquals(385, hacha.getDurabilidad());
+
     }
 }
