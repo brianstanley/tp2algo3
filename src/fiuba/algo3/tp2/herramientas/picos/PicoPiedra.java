@@ -4,8 +4,8 @@ import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLineal;
 
 public class PicoPiedra extends Pico {
     public PicoPiedra() {
-        this.durabilidad = 200;
+        this.durabilidadInicial = 200;
         this.fuerza = 4;
-        this.desgastador = new EstrategiaDesgasteLineal(this.durabilidad, this.fuerza, 1.5);
+        this.desgastador = new EstrategiaDesgasteLineal(this.durabilidadInicial, this.fuerza, 1.5);
     }
 }
