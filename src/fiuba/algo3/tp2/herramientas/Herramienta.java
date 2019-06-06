@@ -5,7 +5,7 @@ import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgaste;
 
 public class Herramienta {
     protected int fuerza;
-    protected int durabilidad;
+    protected int durabilidadInicial;
     protected EstrategiaDesgaste desgastador;
 
     public int getFuerza() {
