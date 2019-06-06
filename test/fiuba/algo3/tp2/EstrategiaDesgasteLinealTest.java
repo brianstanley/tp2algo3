@@ -9,22 +9,22 @@ public class EstrategiaDesgasteLinealTest {
     @Test
     public void desgasteLinealInciaConDurabilidadAsignadaTest(){
 
-        int durabilidadInical = 10;
+        int durabilidadInicial = 10;
         int fuerza = 3;
 
-        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInical, fuerza,1);
+        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInicial, fuerza,1);
 
-        Assert.assertEquals(durabilidadInical, desgaste.durabilidad());
+        Assert.assertEquals(durabilidadInicial, desgaste.durabilidad());
     }
 
     @Test
     public void desgasteLinealNoRecibeDivisorEntoncesReduceSegunFuerzaAsignada(){
 
-        int durabilidadInical = 10;
+        int durabilidadInicial = 10;
         int fuerza = 3;
-        int durabilidadEsperada = durabilidadInical;
+        int durabilidadEsperada = durabilidadInicial;
 
-        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInical, fuerza);
+        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInicial, fuerza);
 
         desgaste.desgastar();
         durabilidadEsperada -= fuerza;
@@ -54,12 +54,12 @@ public class EstrategiaDesgasteLinealTest {
 
         /* el divisor es numero con decimal */
 
-        int durabilidadInical = 10;
+        int durabilidadInicial = 10;
         int fuerza = 3;
         double divisor = 1.5;
-        int durabilidadEsperada = durabilidadInical;
+        int durabilidadEsperada = durabilidadInicial;
 
-        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInical, fuerza, divisor);
+        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInicial, fuerza, divisor);
 
         desgaste.desgastar();
         durabilidadEsperada -= fuerza / divisor;

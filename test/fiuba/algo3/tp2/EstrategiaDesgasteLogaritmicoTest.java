@@ -9,14 +9,14 @@ public class EstrategiaDesgasteLogaritmicoTest {
     @Test
     public void desgasteLogaritmicoReduceSegunDurabilidadYDivisorAsignado() {
 
-        int durabilidadInical = 200;
+        int durabilidadInicial = 200;
         double divisor = 10;
-        int durabilidadEsperada = durabilidadInical;
+        int durabilidadEsperada = durabilidadInicial;
 
-        EstrategiaDesgasteLogaritmico desgaste = new EstrategiaDesgasteLogaritmico(durabilidadInical, divisor) ;
+        EstrategiaDesgasteLogaritmico desgaste = new EstrategiaDesgasteLogaritmico(durabilidadInicial, divisor) ;
 
         desgaste.desgastar();
-        durabilidadEsperada -= (durabilidadInical / divisor);
+        durabilidadEsperada -= (durabilidadInicial / divisor);
 
         Assert.assertEquals(durabilidadEsperada, desgaste.durabilidad());
     }
