@@ -2,13 +2,11 @@ package fiuba.algo3.tp2.herramientas;
 
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLineal;
 
+public class HachaPiedra extends Hacha {
 
-public class HachaDeMadera extends Hacha {
-
-    public HachaDeMadera() {
-        this.durabilidad = 100;
-        this.fuerza = 2;
+    public HachaPiedra() {
+        this.durabilidad = 200;
+        this.fuerza = 5;
         this.desgastador = new EstrategiaDesgasteLineal(this.durabilidad, this.fuerza);
     }
-
 }
