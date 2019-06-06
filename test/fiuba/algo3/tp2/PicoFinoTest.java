@@ -22,7 +22,7 @@ public class PicoFinoTest {
     }
 
     @Test
-    public void picoFinoIniciaConVeinteDeDurabilidad(){
+    public void picoFinoIniciaConVeinteDeFuerza(){
 
         PicoFino picoFino = new PicoFino();
         Assert.assertEquals(20,picoFino.getFuerza());
