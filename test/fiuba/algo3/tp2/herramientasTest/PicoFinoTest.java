@@ -1,6 +1,11 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.herramientasTest;
 
 
+import fiuba.algo3.tp2.herramientas.picos.PicoFino;
+import fiuba.algo3.tp2.materiales.DiamanteMaterial;
+import fiuba.algo3.tp2.materiales.MaderaMaterial;
+import fiuba.algo3.tp2.materiales.MetalMaterial;
+import fiuba.algo3.tp2.materiales.PiedraMaterial;
 import org.junit.Assert;
 import org.junit.Test;
 

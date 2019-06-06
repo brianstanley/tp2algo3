@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.estrategiasDesgasteTest;
 
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteAbrupta;
 import org.junit.Assert;

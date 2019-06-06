@@ -1,28 +1,29 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.herramientasTest;
 import static org.junit.Assert.*;
 
-import fiuba.algo3.tp2.herramientas.HachaDeMadera;
-import fiuba.algo3.tp2.herramientas.HachaDeMetal;
-import fiuba.algo3.tp2.herramientas.HachaDePiedra;
+import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
+import fiuba.algo3.tp2.herramientas.hachas.HachaMetal;
+import fiuba.algo3.tp2.herramientas.hachas.HachaPiedra;
+import fiuba.algo3.tp2.materiales.*;
 import org.junit.Test;
 
 public class HachaTest {
     @Test
     public void SeCreaHachaDeMaderaYNoEsNulo() {
-        HachaDeMadera hacha = new HachaDeMadera();
+        HachaMadera hacha = new HachaMadera();
         assertNotNull(hacha);
     }
 
     @Test
     public void hachaDeMaderaTieneDurabilidad100yFuerza2() {
-        HachaDeMadera hacha = new HachaDeMadera();
+        HachaMadera hacha = new HachaMadera();
         assertEquals(100, hacha.getDurabilidad());
         assertEquals(2, hacha.getFuerza());
     }
 
     @Test
     public void hachaMaderaSeUsaContraCadaUnoDeLosMaterialesYSeReduceSuDurabilidadLinealmenteDependiendoDeLaFuerza() {
-        HachaDeMadera hacha = new HachaDeMadera();
+        HachaMadera hacha = new HachaMadera();
         MaderaMaterial unaMadera = new MaderaMaterial();
         PiedraMaterial unaPiedra = new PiedraMaterial();
         MetalMaterial unMetal = new MetalMaterial();
@@ -36,7 +37,7 @@ public class HachaTest {
 
     @Test
     public void hachaDePiedraSeUsaContraCadaUnoDeLosMaterialesYReduceSuDurabilidadLinealmenteDependiendoDeLaFuerza() {
-        HachaDePiedra hacha = new HachaDePiedra();
+        HachaPiedra hacha = new HachaPiedra();
         MaderaMaterial unaMadera = new MaderaMaterial();
         PiedraMaterial unaPiedra = new PiedraMaterial();
         MetalMaterial unMetal = new MetalMaterial();
@@ -53,7 +54,7 @@ public class HachaTest {
 
     @Test
     public void hachaDeMetalSeUsaContraCadaUnoDeLosMaterialesYReduceSuDurabilidadEnLaMitadDeLaFuerza() {
-        HachaDeMetal hacha = new HachaDeMetal();
+        HachaMetal hacha = new HachaMetal();
         MaderaMaterial unaMadera = new MaderaMaterial();
         PiedraMaterial unaPiedra = new PiedraMaterial();
         MetalMaterial unMetal = new MetalMaterial();

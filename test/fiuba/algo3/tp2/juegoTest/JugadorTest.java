@@ -1,10 +1,11 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.juegoTest;
 
+import fiuba.algo3.tp2.juego.Inventario;
+import fiuba.algo3.tp2.juego.Jugador;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import java.util.List;
 
 public class JugadorTest {
     @Test
