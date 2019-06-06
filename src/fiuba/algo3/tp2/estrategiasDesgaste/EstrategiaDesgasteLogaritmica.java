@@ -1,10 +1,10 @@
 package fiuba.algo3.tp2.estrategiasDesgaste;
 
-public class EstrategiaDesgasteDivididaDeDurabilidad extends EstrategiaDesgaste {
+public class EstrategiaDesgasteLogaritmica extends EstrategiaDesgaste {
 
     private double divisor;
 
-    public EstrategiaDesgasteDivididaDeDurabilidad(int durabilidad, double divisor){
+    public EstrategiaDesgasteLogaritmica(int durabilidad, double divisor){
 
         this.durabilidad = durabilidad;
         this.divisor = divisor;

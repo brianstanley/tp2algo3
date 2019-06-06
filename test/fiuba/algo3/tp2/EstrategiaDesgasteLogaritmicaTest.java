@@ -1,10 +1,10 @@
 package fiuba.algo3.tp2;
 
-import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteDivididaDeDurabilidad;
+import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLogaritmica;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class EstrategiaDesgasteDivididaDeDurabilidadTest {
+public class EstrategiaDesgasteLogaritmicaTest {
 
     @Test
     public void desgasteDivididaDeDurabilidadReduceSegunDurabilidadYDivisorAsiganad() {
@@ -13,7 +13,7 @@ public class EstrategiaDesgasteDivididaDeDurabilidadTest {
         double divisor = 10;
         int durabilidadActual = durabilidadInical;
 
-        EstrategiaDesgasteDivididaDeDurabilidad desgaste = new EstrategiaDesgasteDivididaDeDurabilidad(durabilidadInical, divisor) ;
+        EstrategiaDesgasteLogaritmica desgaste = new EstrategiaDesgasteLogaritmica(durabilidadInical, divisor) ;
 
         desgaste.desgastar();
         durabilidadActual -= (durabilidadActual / divisor);
