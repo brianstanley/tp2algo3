@@ -8,9 +8,9 @@ public class PicoFino extends Pico {
 
     public PicoFino(){
 
-        this.durabilidad = 1000;
+        this.durabilidadInicial = 1000;
         this.fuerza = 20;
-        this.desgastador = new EstrategiaDesgasteLogaritmico(this.durabilidad,10);
+        this.desgastador = new EstrategiaDesgasteLogaritmico(this.durabilidadInicial,10);
     }
 
     @Override

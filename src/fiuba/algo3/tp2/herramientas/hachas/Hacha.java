@@ -4,8 +4,8 @@ import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 
 public abstract class Hacha extends Herramienta {
-    protected int durabilidad;
-    protected int fuerza;
+    //protected int durabilidad;
+    //protected int fuerza;
 
     public int getFuerza() {
         return this.fuerza;
