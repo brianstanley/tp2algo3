@@ -16,7 +16,7 @@ public abstract class Hacha extends Herramienta {
     }*/
 
     public void romper(MaderaMaterial unaMadera) {
-        unaMadera.desgastar(this);
+        unaMadera.desgastarCon(this);
         this.desgastador.desgastar();
     }
 }

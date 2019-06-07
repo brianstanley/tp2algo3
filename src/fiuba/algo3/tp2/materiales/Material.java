@@ -4,7 +4,7 @@ import fiuba.algo3.tp2.herramientas.Herramienta;
 
 public abstract class Material {
     protected int durabilidad;
-    public void desgastar(Herramienta unaHerramienta) {
+    public void desgastarCon(Herramienta unaHerramienta) {
     }
     public int getDurabilidad() {
         return this.durabilidad;

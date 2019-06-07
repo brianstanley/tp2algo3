@@ -6,7 +6,7 @@ public class DiamanteMaterial extends Material {
     public DiamanteMaterial() {
         this.durabilidad = 100;
     }
-    public void desgastar(PicoFino unPicoFino) {
+    public void desgastarCon(PicoFino unPicoFino) {
         this.durabilidad -= unPicoFino.getFuerza();
     }
 }
