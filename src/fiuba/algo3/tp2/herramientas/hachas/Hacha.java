@@ -3,7 +3,7 @@ package fiuba.algo3.tp2.herramientas.hachas;
 import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 
-public class Hacha extends Herramienta {
+public abstract class Hacha extends Herramienta {
     protected int durabilidad;
     protected int fuerza;
 
