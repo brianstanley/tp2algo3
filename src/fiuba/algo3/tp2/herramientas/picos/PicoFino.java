@@ -4,6 +4,7 @@ import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLogaritmico;
 import fiuba.algo3.tp2.materiales.DiamanteMaterial;
 import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
+import fiuba.algo3.tp2.materiales.PiedraMaterial;
 
 public class PicoFino extends Pico {
 
@@ -27,6 +28,9 @@ public class PicoFino extends Pico {
 
     public void romper(MetalMaterial unMetal){
         unMetal.desgastarCon(this);
-        this.desgastador.desgastar();
+    }
+
+    public void romper(PiedraMaterial unaPiedra){
+        unaPiedra.desgastarCon(this);
     }
 }

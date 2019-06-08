@@ -63,7 +63,7 @@ public class PicoFinoTest {
         Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad());
 
     }
-    /*@Test
+    @Test
     public void picoFinoSeUsaContraPiedraYNoReduceDurabilidad(){
 
         PicoFino picoFino = new PicoFino();
@@ -92,5 +92,5 @@ public class PicoFinoTest {
 
         Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad());
 
-    }*/
+    }
 }
