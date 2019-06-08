@@ -17,6 +17,7 @@ public abstract class Herramienta {
     }
 
     public void romper(Material unMaterial) {
+
         this.desgastador.desgastar();
     }
 }

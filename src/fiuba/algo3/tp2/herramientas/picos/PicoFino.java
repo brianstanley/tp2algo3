@@ -17,7 +17,7 @@ public class PicoFino extends Pico {
     @Override
     public void romper(Material unMaterial) {
 
-        /* Aseguramos que pico fino solo actua ante un diamante */
+        // Aseguramos que pico fino solo actua ante un diamante
     }
 
     public void romper(DiamanteMaterial unDiamante){
