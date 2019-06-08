@@ -3,10 +3,14 @@ package fiuba.algo3.tp2.materialesTest;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMetal;
 import fiuba.algo3.tp2.herramientas.hachas.HachaPiedra;
+import fiuba.algo3.tp2.herramientas.picos.PicoFino;
 import fiuba.algo3.tp2.herramientas.picos.PicoMadera;
+import fiuba.algo3.tp2.herramientas.picos.PicoMetal;
+import fiuba.algo3.tp2.herramientas.picos.PicoPiedra;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
 import fiuba.algo3.tp2.materiales.PiedraMaterial;
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -42,6 +46,36 @@ public class MaterialTest {
     }
 
     @Test
+    public void PiedraEsGolpeadaPorUnPicoMaderaYSeReduceSuDurabilidad() {
+        PiedraMaterial unaPiedra = new PiedraMaterial();
+        int durabilidadInicial = unaPiedra.getDurabilidad();
+        PicoMadera unPicoMadera = new PicoMadera();
+
+        unPicoMadera.romper(unaPiedra);
+        Assert.assertEquals(unaPiedra.getDurabilidad(), durabilidadInicial - 2);
+    }
+
+    @Test
+    public void PiedraEsGolpeadaPorUnPicoPiedraYSeReduceSuDurabilidad(){
+        PiedraMaterial unaPiedra = new PiedraMaterial();
+        int durabilidadInicial = unaPiedra.getDurabilidad();
+        PicoPiedra unPicoPiedra = new PicoPiedra();
+
+        unPicoPiedra.romper(unaPiedra);
+        Assert.assertEquals(unaPiedra.getDurabilidad(), durabilidadInicial - 4);
+    }
+
+    @Test
+    public void PiedraEsGolpeadaPorUnPicoMetalYSeReduceSuDurabilidad(){
+        PiedraMaterial unaPiedra = new PiedraMaterial();
+        int durabilidadInicial = unaPiedra.getDurabilidad();
+        PicoMetal unPicoMetal = new PicoMetal();
+
+        unPicoMetal.romper(unaPiedra);
+        Assert.assertEquals(unaPiedra.getDurabilidad(), durabilidadInicial - 12);
+    }
+
+    @Test
     public void MetalEsGolpeadoPorUnPicoDeMaderaYNoSeReduceSuDurabilidad() {
         MetalMaterial unMetal = new MetalMaterial();
         int durabilidadInicial = unMetal.getDurabilidad();
@@ -49,6 +83,39 @@ public class MaterialTest {
 
         unPicoDeMadera.romper(unMetal);
         assertEquals(durabilidadInicial, unMetal.getDurabilidad());
+
+    }
+
+    @Test
+    public void MetalEsGolpeadoPorUnPicoDePiedraYSeReduceSuDurabilidad() {
+        MetalMaterial unMetal = new MetalMaterial();
+        int durabilidadInicial = unMetal.getDurabilidad();
+        PicoPiedra unPicoDePiedra = new PicoPiedra();
+
+        unPicoDePiedra.romper(unMetal);
+        assertEquals(durabilidadInicial - 4, unMetal.getDurabilidad());
+
+    }
+
+    @Test
+    public void MetalEsGolpeadoPorUnPicoFinoYSeReduceSuDurabilidad() {
+        MetalMaterial unMetal = new MetalMaterial();
+        int durabilidadInicial = unMetal.getDurabilidad();
+        PicoFino unPicoFino = new PicoFino();
+
+        unPicoFino.romper(unMetal);
+        assertEquals(durabilidadInicial - 20, unMetal.getDurabilidad());
+
+    }
+
+    @Test
+    public void MetalEsGolpeadoPorUnPicoDeMetalYSeReduceSuDurabilidad() {
+        MetalMaterial unMetal = new MetalMaterial();
+        int durabilidadInicial = unMetal.getDurabilidad();
+        PicoMetal unPicoDeMetal = new PicoMetal();
+
+        unPicoDeMetal.romper(unMetal);
+        assertEquals(durabilidadInicial - 12, unMetal.getDurabilidad());
 
     }
 }
