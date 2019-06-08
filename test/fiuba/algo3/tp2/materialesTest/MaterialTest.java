@@ -52,7 +52,7 @@ public class MaterialTest {
         PicoMadera unPicoMadera = new PicoMadera();
 
         unPicoMadera.romper(unaPiedra);
-        Assert.assertEquals(unaPiedra.getDurabilidad(), durabilidadInicial - 2);
+        Assert.assertEquals(durabilidadInicial - 2, unaPiedra.getDurabilidad() );
     }
 
     @Test
@@ -62,7 +62,7 @@ public class MaterialTest {
         PicoPiedra unPicoPiedra = new PicoPiedra();
 
         unPicoPiedra.romper(unaPiedra);
-        Assert.assertEquals(unaPiedra.getDurabilidad(), durabilidadInicial - 4);
+        Assert.assertEquals(durabilidadInicial - 4, unaPiedra.getDurabilidad());
     }
 
     @Test
@@ -72,7 +72,7 @@ public class MaterialTest {
         PicoMetal unPicoMetal = new PicoMetal();
 
         unPicoMetal.romper(unaPiedra);
-        Assert.assertEquals(unaPiedra.getDurabilidad(), durabilidadInicial - 12);
+        Assert.assertEquals(durabilidadInicial - 12, unaPiedra.getDurabilidad());
     }
 
     @Test
