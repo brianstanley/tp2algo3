@@ -10,15 +10,16 @@ import org.junit.Test;
 public class CasilleroTest {
 
 @Test
-public void SeCreaUnCasilleroConElMaterialPasadoPorParametro(){
+public void SeAlmacenaUnMaterialEnUnCasillero(){
     MaderaMaterial unaMadera = new MaderaMaterial();
-    Casillero unCasillero = new Casillero(unaMadera);
+    Casillero unCasillero = new Casillero();
+    unCasillero.AlmacenarMaterial(unaMadera);
     Material materialGuardado = unCasillero.GetMaterialGuardado();
     Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
 }
 
 @Test
-public void SeCreaUnCasilleroSinParametroYElMaterialAlmacenadoEsNulo(){
+public void SeCreaUnCasilleroYElMaterialAlmacenadoEsNulo(){
     Casillero unCasillero = new Casillero();
     Assert.assertEquals(null, unCasillero.GetMaterialGuardado());
 }
@@ -26,7 +27,8 @@ public void SeCreaUnCasilleroSinParametroYElMaterialAlmacenadoEsNulo(){
 @Test
 public void SeAlmacenaUnMaterialEnUnCasilleroReemplazandoAlPreviamenteAlmacenado(){
     MaderaMaterial unaMadera = new MaderaMaterial();
-    Casillero unCasillero = new Casillero(unaMadera);
+    Casillero unCasillero = new Casillero();
+    unCasillero.AlmacenarMaterial(unaMadera);
     Material materialGuardado = unCasillero.GetMaterialGuardado();
     Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
 
@@ -38,7 +40,8 @@ public void SeAlmacenaUnMaterialEnUnCasilleroReemplazandoAlPreviamenteAlmacenado
 @Test
 public void SeEliminaElMaterialAlmacenadoEnUnCasillero(){
     MaderaMaterial unaMadera = new MaderaMaterial();
-    Casillero unCasillero = new Casillero(unaMadera);
+    Casillero unCasillero = new Casillero();
+    unCasillero.AlmacenarMaterial(unaMadera);
     Material materialGuardado = unCasillero.GetMaterialGuardado();
     Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
 

@@ -4,22 +4,18 @@ import fiuba.algo3.tp2.materiales.Material;
 
 public class Casillero {
 
-    private Material materialPresente;
-
-    public Casillero(Material unMaterial){
-        this.materialPresente = unMaterial;
-    }
+    private Material materialAlmacenado;
 
     public Casillero(){
-        this(null);
+        this.materialAlmacenado = null;
     }
 
     public Material GetMaterialGuardado() {
-        return this.materialPresente;
+        return this.materialAlmacenado;
     }
 
     public void AlmacenarMaterial(Material unMaterial){
-        this.materialPresente = unMaterial;
+        this.materialAlmacenado = unMaterial;
     }
 
     public void EliminarMaterialAlmacenado(){
