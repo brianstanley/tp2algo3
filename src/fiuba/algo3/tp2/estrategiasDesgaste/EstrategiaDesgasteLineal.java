@@ -4,14 +4,14 @@ public class EstrategiaDesgasteLineal extends EstrategiaDesgaste {
 
     private double divisor;
 
-    public EstrategiaDesgasteLineal(int durabilidad, int fuerza, double divisor){
+    public EstrategiaDesgasteLineal(double durabilidad, int fuerza, double divisor){
 
         this.durabilidad = durabilidad;
         this.fuerza = fuerza;
         this.divisor = divisor;
     }
 
-    public EstrategiaDesgasteLineal(int durabilidad, int fuerza){
+    public EstrategiaDesgasteLineal(double durabilidad, int fuerza){
 
         this.durabilidad = durabilidad;
         this.fuerza = fuerza;

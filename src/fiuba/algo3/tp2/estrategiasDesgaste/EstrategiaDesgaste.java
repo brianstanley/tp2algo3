@@ -2,10 +2,10 @@ package fiuba.algo3.tp2.estrategiasDesgaste;
 
 public abstract class EstrategiaDesgaste {
 
-    protected int durabilidad;
+    protected double durabilidad;
     protected int fuerza;
 
-    public int durabilidad(){
+    public double durabilidad(){
 
         return this.durabilidad;
     }
