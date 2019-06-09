@@ -2,9 +2,10 @@ package fiuba.algo3.tp2.materiales;
 
 import fiuba.algo3.tp2.herramientas.Herramienta;
 
-public class Material {
+public abstract class Material {
     protected int durabilidad;
-    public void desgastar(Herramienta unaHerramienta) {
+
+    public void desgastarCon(Herramienta unaHerramienta) {
     }
     public int getDurabilidad() {
         return this.durabilidad;

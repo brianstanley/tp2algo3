@@ -3,6 +3,8 @@ package fiuba.algo3.tp2.herramientas.picos;
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLogaritmico;
 import fiuba.algo3.tp2.materiales.DiamanteMaterial;
 import fiuba.algo3.tp2.materiales.Material;
+import fiuba.algo3.tp2.materiales.MetalMaterial;
+import fiuba.algo3.tp2.materiales.PiedraMaterial;
 
 public class PicoFino extends Pico {
 
@@ -16,12 +18,19 @@ public class PicoFino extends Pico {
     @Override
     public void romper(Material unMaterial) {
 
-        /* Aseguramos que pico fino solo actua ante un diamante */
+        // Aseguramos que pico fino solo actua ante un diamante
     }
 
     public void romper(DiamanteMaterial unDiamante){
-
-        unDiamante.desgastar(this);
+        unDiamante.desgastarCon(this);
         this.desgastador.desgastar();
+    }
+
+    public void romper(MetalMaterial unMetal){
+        unMetal.desgastarCon(this);
+    }
+
+    public void romper(PiedraMaterial unaPiedra){
+        unaPiedra.desgastarCon(this);
     }
 }

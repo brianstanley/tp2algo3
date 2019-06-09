@@ -6,7 +6,7 @@ public class PiedraMaterial extends Material {
     public PiedraMaterial() {
         this.durabilidad = 30;
     }
-    public void desgastar(Pico unPico) {
+    public void desgastarCon(Pico unPico) {
         this.durabilidad -= unPico.getFuerza();
     }
 }
