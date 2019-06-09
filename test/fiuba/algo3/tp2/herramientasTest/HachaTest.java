@@ -17,8 +17,8 @@ public class HachaTest {
     @Test
     public void hachaDeMaderaTieneDurabilidad100yFuerza2() {
         HachaMadera hacha = new HachaMadera();
-        assertEquals(100, hacha.getDurabilidad());
-        assertEquals(2, hacha.getFuerza());
+        assertEquals(100, hacha.getDurabilidad(), 0.01);
+        assertEquals(2, hacha.getFuerza(), 0.01);
     }
 
     @Test
@@ -28,11 +28,11 @@ public class HachaTest {
         PiedraMaterial unaPiedra = new PiedraMaterial();
         MetalMaterial unMetal = new MetalMaterial();
         hacha.romper(unaMadera);
-        assertEquals(98, hacha.getDurabilidad());
+        assertEquals(98, hacha.getDurabilidad(), 0.01);
         hacha.romper(unaPiedra);
-        assertEquals(96, hacha.getDurabilidad());
+        assertEquals(96, hacha.getDurabilidad(), 0.01);
         hacha.romper(unMetal);
-        assertEquals(94, hacha.getDurabilidad());
+        assertEquals(94, hacha.getDurabilidad(), 0.01);
     }
 
     @Test
@@ -43,13 +43,13 @@ public class HachaTest {
         MetalMaterial unMetal = new MetalMaterial();
 
         hacha.romper(unaMadera);
-        assertEquals(195, hacha.getDurabilidad());
+        assertEquals(195, hacha.getDurabilidad(), 0.01);
 
         hacha.romper(unaPiedra);
-        assertEquals(190, hacha.getDurabilidad());
+        assertEquals(190, hacha.getDurabilidad(), 0.01);
 
         hacha.romper(unMetal);
-        assertEquals(185, hacha.getDurabilidad());
+        assertEquals(185, hacha.getDurabilidad(), 0.01);
     }
 
     @Test
@@ -60,14 +60,14 @@ public class HachaTest {
         MetalMaterial unMetal = new MetalMaterial();
 
         hacha.romper(unaMadera);
-        assertEquals(395, hacha.getDurabilidad());
+        assertEquals(395, hacha.getDurabilidad(), 0.01);
 
         hacha.romper(unaPiedra);
 
-        assertEquals(390, hacha.getDurabilidad());
+        assertEquals(390, hacha.getDurabilidad(), 0.01);
 
         hacha.romper(unMetal);
-        assertEquals(385, hacha.getDurabilidad());
+        assertEquals(385, hacha.getDurabilidad(), 0.01);
 
     }
 }

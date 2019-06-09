@@ -23,7 +23,7 @@ public class PicoFinoTest {
     public void picoFinoIniciaConMilDeDurabilidad(){
 
         PicoFino picoFino = new PicoFino();
-        Assert.assertEquals(1000, picoFino.getDurabilidad());
+        Assert.assertEquals(1000, picoFino.getDurabilidad(), 0.01);
     }
 
     @Test
@@ -39,13 +39,13 @@ public class PicoFinoTest {
         PicoFino picoFino = new PicoFino();
         DiamanteMaterial diamante = new DiamanteMaterial();
 
-        int durabilidad = picoFino.getDurabilidad();
+        double durabilidad = picoFino.getDurabilidad();
         double divisor = 10;
 
         picoFino.romper(diamante);
         durabilidad -= durabilidad / divisor;
 
-        Assert.assertEquals(durabilidad, picoFino.getDurabilidad());
+        Assert.assertEquals(durabilidad, picoFino.getDurabilidad(), 0.01);
     }
 
     @Test
@@ -54,13 +54,13 @@ public class PicoFinoTest {
         PicoFino picoFino = new PicoFino();
         MaderaMaterial madera = new MaderaMaterial();
 
-        int durabilidadInicial = picoFino.getDurabilidad();
+        double durabilidadInicial = picoFino.getDurabilidad();
 
         picoFino.romper(madera);
         picoFino.romper(madera);
         picoFino.romper(madera);
 
-        Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad());
+        Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad(), 0.01);
 
     }
     @Test
@@ -69,13 +69,13 @@ public class PicoFinoTest {
         PicoFino picoFino = new PicoFino();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        int durabilidadInicial = picoFino.getDurabilidad();
+        double durabilidadInicial = picoFino.getDurabilidad();
 
         picoFino.romper(piedra);
         picoFino.romper(piedra);
         picoFino.romper(piedra);
 
-        Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad());
+        Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad(), 0.01);
 
     }
     @Test
@@ -84,13 +84,13 @@ public class PicoFinoTest {
         PicoFino picoFino = new PicoFino();
         MetalMaterial metal = new MetalMaterial();
 
-        int durabilidadInicial = picoFino.getDurabilidad();
+        double durabilidadInicial = picoFino.getDurabilidad();
 
         picoFino.romper(metal);
         picoFino.romper(metal);
         picoFino.romper(metal);
 
-        Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad());
+        Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad(), 0.01);
 
     }
 }
