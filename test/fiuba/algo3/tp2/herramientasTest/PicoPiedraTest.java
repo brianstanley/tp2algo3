@@ -18,15 +18,15 @@ public class PicoPiedraTest {
         PicoPiedra picoPiedra = new PicoPiedra();
         int durabilidadInicialPicoPiedra = 200;
         int fuerzaPicoPiedra = 4;
-        Assert.assertEquals(picoPiedra.getDurabilidad(), durabilidadInicialPicoPiedra);
-        Assert.assertEquals(picoPiedra.getFuerza(), fuerzaPicoPiedra);
+        Assert.assertEquals(picoPiedra.getDurabilidad(), durabilidadInicialPicoPiedra, 0.01);
+        Assert.assertEquals(picoPiedra.getFuerza(), fuerzaPicoPiedra, 0.01);
     }
 
     @Test
     public void SeUsaPicoPiedraEnUnMaterialCualquieraYSuDurabilidadDecreceConFactorDivisor(){
         PicoPiedra picoPiedra = new PicoPiedra();
         MaderaMaterial unaMadera = new MaderaMaterial();
-        float durabilidadInicial = picoPiedra.getDurabilidad();
+        double durabilidadInicial = picoPiedra.getDurabilidad();
         double durabilidadReducidaPorUso = 4/1.5;
         picoPiedra.romper(unaMadera);
         Assert.assertEquals(picoPiedra.getDurabilidad(), durabilidadInicial - durabilidadReducidaPorUso, 000.4);

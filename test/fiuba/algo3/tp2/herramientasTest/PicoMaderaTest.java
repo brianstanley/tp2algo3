@@ -17,7 +17,7 @@ public class PicoMaderaTest {
         PicoMadera picoMadera = new PicoMadera();
         int durabilidadInicialPicoMadera = 100;
         int fuerzaPicoMadera = 2;
-        Assert.assertEquals(picoMadera.getDurabilidad(), durabilidadInicialPicoMadera);
+        Assert.assertEquals(picoMadera.getDurabilidad(), durabilidadInicialPicoMadera, 0.01);
         Assert.assertEquals(picoMadera.getFuerza(), fuerzaPicoMadera);
     }
 
@@ -25,8 +25,8 @@ public class PicoMaderaTest {
     public void SeUsaPicoMaderaEnUnMaterialCualquieraYSuDurabilidadDecreceLinealmente(){
         PicoMadera picoMadera = new PicoMadera();
         MaderaMaterial unaMadera = new MaderaMaterial();
-        int durabilidadInicial = picoMadera.getDurabilidad();
+        double durabilidadInicial = picoMadera.getDurabilidad();
         picoMadera.romper(unaMadera);
-        Assert.assertEquals(durabilidadInicial - 2, picoMadera.getDurabilidad());
+        Assert.assertEquals(durabilidadInicial - 2, picoMadera.getDurabilidad(), 0.01);
     }
 }

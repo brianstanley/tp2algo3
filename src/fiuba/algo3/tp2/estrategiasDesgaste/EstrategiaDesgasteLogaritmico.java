@@ -4,7 +4,7 @@ public class EstrategiaDesgasteLogaritmico extends EstrategiaDesgaste {
 
     private double divisor;
 
-    public EstrategiaDesgasteLogaritmico(int durabilidad, double divisor){
+    public EstrategiaDesgasteLogaritmico(double durabilidad, double divisor){
 
         this.durabilidad = durabilidad;
         this.divisor = divisor;

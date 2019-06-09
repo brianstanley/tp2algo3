@@ -18,7 +18,7 @@ public class EstrategiaDesgasteLogaritmicoTest {
         desgaste.desgastar();
         durabilidadEsperada -= (durabilidadInicial / divisor);
 
-        Assert.assertEquals(durabilidadEsperada, desgaste.durabilidad());
+        Assert.assertEquals(durabilidadEsperada, desgaste.durabilidad(), 0.01);
     }
 
 }

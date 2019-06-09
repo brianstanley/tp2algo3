@@ -5,14 +5,14 @@ import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgaste;
 
 public abstract class Herramienta {
     protected int fuerza;
-    protected int durabilidadInicial;
+    protected double durabilidadInicial;
     protected EstrategiaDesgaste desgastador;
 
     public int getFuerza() {
         return this.fuerza;
     }
 
-    public int getDurabilidad() {
+    public double getDurabilidad() {
         return this.desgastador.durabilidad();
     }
 

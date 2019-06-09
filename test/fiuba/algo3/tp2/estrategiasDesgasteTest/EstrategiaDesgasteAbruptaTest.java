@@ -9,7 +9,7 @@ public class EstrategiaDesgasteAbruptaTest {
     @Test
     public void desgasteAbruptoNoReduceSiNoSeRealizanTodosLosUsosDisponibles(){
 
-        int durabilidadInical = 10;
+        double durabilidadInical = 10;
         int usosDisponibles = 5;
 
         EstrategiaDesgasteAbrupta desgaste = new EstrategiaDesgasteAbrupta(durabilidadInical, usosDisponibles);
@@ -17,13 +17,13 @@ public class EstrategiaDesgasteAbruptaTest {
         desgaste.desgastar();
         desgaste.desgastar();
 
-        Assert.assertEquals(durabilidadInical, desgaste.durabilidad());
+        Assert.assertEquals(durabilidadInical, desgaste.durabilidad(), 0.01);
     }
 
     @Test
     public void desgasteAbruptoReduceACeroSiSeRealizanTodosLosUsosDisponibles(){
 
-        int durabilidadInical = 10;
+        double durabilidadInical = 10;
         int usosDisponibles = 3;
 
         EstrategiaDesgasteAbrupta desgaste = new EstrategiaDesgasteAbrupta(durabilidadInical, usosDisponibles);
@@ -32,6 +32,6 @@ public class EstrategiaDesgasteAbruptaTest {
         desgaste.desgastar();
         desgaste.desgastar();
 
-        Assert.assertEquals(0, desgaste.durabilidad());
+        Assert.assertEquals(0, desgaste.durabilidad(), 0.01);
     }
 }

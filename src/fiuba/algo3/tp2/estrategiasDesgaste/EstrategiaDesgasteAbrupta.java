@@ -4,7 +4,7 @@ public class EstrategiaDesgasteAbrupta extends EstrategiaDesgaste{
 
     private int usos;
 
-    public EstrategiaDesgasteAbrupta(int durabilidad, int usos){
+    public EstrategiaDesgasteAbrupta(double durabilidad, int usos){
 
         this.durabilidad = durabilidad;
         this.usos = usos;

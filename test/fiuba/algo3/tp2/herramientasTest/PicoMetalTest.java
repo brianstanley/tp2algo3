@@ -16,19 +16,19 @@ public class PicoMetalTest {
     @Test
     public void SeCreaPicoMetalConDurabilidadYFuerzaCorrectas(){
         PicoMetal picoMetal = new PicoMetal();
-        int durabilidadInicialPicoMetal = 400;
+        double durabilidadInicialPicoMetal = 400;
         int fuerzaPicoMetal = 12;
-        Assert.assertEquals(picoMetal.getDurabilidad(), durabilidadInicialPicoMetal);
+        Assert.assertEquals(picoMetal.getDurabilidad(), durabilidadInicialPicoMetal, 0.01);
         Assert.assertEquals(picoMetal.getFuerza(), fuerzaPicoMetal);
     }
 
     @Test
     public void SeUsaPicoMetalEnUnMaterialCualquieraUnaVezYSuDurabilidadNoDecrece(){
         PicoMetal picoMetal = new PicoMetal();
-        int durabilidad = picoMetal.getDurabilidad();
+        double durabilidad = picoMetal.getDurabilidad();
         MaderaMaterial unaMadera = new MaderaMaterial();
         picoMetal.romper(unaMadera);
-        Assert.assertEquals(picoMetal.getDurabilidad(), durabilidad);
+        Assert.assertEquals(picoMetal.getDurabilidad(), durabilidad, 0.01);
     }
 
     @Test
@@ -45,6 +45,6 @@ public class PicoMetalTest {
         picoMetal.romper(unaMadera);
         picoMetal.romper(unaMadera);
         picoMetal.romper(unaMadera);
-        Assert.assertEquals(picoMetal.getDurabilidad(), 0);
+        Assert.assertEquals(picoMetal.getDurabilidad(), 0, 0.01);
     }
 }
