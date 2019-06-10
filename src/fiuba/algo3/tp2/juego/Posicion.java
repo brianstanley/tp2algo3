@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.juego.utils;
+package fiuba.algo3.tp2.juego;
 
 public class Posicion {
 
