@@ -7,34 +7,38 @@ import org.junit.Test;
 public class DireccionTest {
 
     @Test
-    public void direccionNorteLLamaAMoverYDevuelveLaMismaDireccioin(){
+    public void direccionNorteLLamaAMoverYLaDireccionSeVeAfectada(){
         DireccionNorte direccion = new DireccionNorte();
         Posicion unaPosicon = new Posicion();
-        Posicion posicionDevuelta = direccion.mover(unaPosicon);
-        Assert.assertEquals(posicionDevuelta, unaPosicon);
+        int coordenadaY = unaPosicon.getY();
+        direccion.mover(unaPosicon);
+        Assert.assertEquals(coordenadaY + 1, unaPosicon.getY());
     }
 
     @Test
-    public void direccionSurLLamaAMoverYDevuelveLaMismaDireccioin(){
+    public void direccionSurLLamaAMoverYLaDireccionSeVeAfectada(){
         DireccionSur direccion = new DireccionSur();
         Posicion unaPosicon = new Posicion();
-        Posicion posicionDevuelta = direccion.mover(unaPosicon);
-        Assert.assertEquals(posicionDevuelta, unaPosicon);
+        int coordenadaY = unaPosicon.getY();
+        direccion.mover(unaPosicon);
+        Assert.assertEquals(coordenadaY - 1,unaPosicon.getY());
     }
 
     @Test
-    public void direccionEsteLLamaAMoverYDevuelveLaMismaDireccioin(){
+    public void direccionEsteLLamaAMoverYLaDireccionSeVeAfectada(){
         DireccionEste direccion = new DireccionEste();
         Posicion unaPosicon = new Posicion();
-        Posicion posicionDevuelta = direccion.mover(unaPosicon);
-        Assert.assertEquals(posicionDevuelta, unaPosicon);
+        int coordenadaX = unaPosicon.getX();
+        direccion.mover(unaPosicon);
+        Assert.assertEquals(coordenadaX + 1, unaPosicon.getX());
     }
 
     @Test
-    public void direccionOesteLLamaAMoverYDevuelveLaMismaDireccioin(){
+    public void direccionOesteLLamaAMoverYLaDireccionSeVeAfectada(){
         DireccionOeste direccion = new DireccionOeste();
         Posicion unaPosicon = new Posicion();
-        Posicion posicionDevuelta = direccion.mover(unaPosicon);
-        Assert.assertEquals(posicionDevuelta, unaPosicon);
+        int coordenadaX = unaPosicon.getX();
+        direccion.mover(unaPosicon);
+        Assert.assertEquals(coordenadaX - 1, unaPosicon.getX());
     }
 }

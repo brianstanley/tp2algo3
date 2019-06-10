@@ -10,8 +10,8 @@ public class Navegador implements movible {
         this.direccionApuntada = new DireccionNorte();
     }
 
-    private Posicion mover(){
-        return direccionApuntada.mover(posicionActual);
+    private void mover(){
+        direccionApuntada.mover(posicionActual);
     }
 
     private void cambiarDireccion(Direccion nuevaDireccionAPuntar){
@@ -21,24 +21,24 @@ public class Navegador implements movible {
     public void moverNorte(){
         DireccionNorte nuevaDireccion = new DireccionNorte();
         this.cambiarDireccion(nuevaDireccion);
-        this.posicionActual =  this.mover();
+        this.mover();
     }
 
     public void moverSur(){
         DireccionSur nuevaDireccion = new DireccionSur();
         this.cambiarDireccion(nuevaDireccion);
-        this.posicionActual =  this.mover();
+        this.mover();
     }
 
     public void moverEste(){
         DireccionEste nuevaDireccion = new DireccionEste();
         this.cambiarDireccion(nuevaDireccion);
-        this.posicionActual = this.mover();
+        this.mover();
     }
 
     public void moverOeste(){
         DireccionOeste nuevaDireccion = new DireccionOeste();
         this.cambiarDireccion(nuevaDireccion);
-        this.posicionActual = this.mover();
+        this.mover();
     }
 }
