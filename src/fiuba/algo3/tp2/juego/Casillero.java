@@ -10,7 +10,7 @@ public class Casillero {
         this.materialAlmacenado = null;
     }
 
-    public Material GetMaterialGuardado() {
+    public Material  GetMaterialGuardado() {
         return this.materialAlmacenado;
     }
 
