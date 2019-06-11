@@ -1,11 +1,14 @@
 package fiuba.algo3.tp2.juegoTest;
 
+import fiuba.algo3.tp2.herramientas.Herramienta;
+import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 import fiuba.algo3.tp2.juego.Inventario;
 import fiuba.algo3.tp2.juego.Jugador;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 public class JugadorTest {
     @Test
@@ -15,9 +18,10 @@ public class JugadorTest {
     }
 
     @Test
-    public void jugadorTieneInventarioVacio() {
+    public void jugadorEmpiezaConHachaEnInventario() {
         Jugador jugador = new Jugador();
         Inventario inventario = jugador.getInventario();
-        assertEquals(0, inventario.cantidadItems());
+        HachaMadera hacha = new HachaMadera();
+        assertTrue(inventario.tiene(hacha));
     }
 }
