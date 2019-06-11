@@ -8,13 +8,13 @@ public class PosicionTest {
 
     @Test
     public void seCreaInstanciaNoNulaDePosicion(){
-        Posicion unaPosicion = new Posicion();
+        Posicion unaPosicion = new Posicion(2, 2);
         Assert.assertNotNull(unaPosicion);
     }
 
     @Test
     public void cuandoSeLLamaMoverEsteLaCoordenadaXAumentaEnUnaUnidad(){
-        Posicion unaPosicion = new Posicion();
+        Posicion unaPosicion = new Posicion(2,2);
         int posicionX = unaPosicion.getX();
         unaPosicion.moverEste();
         Assert.assertEquals(posicionX + 1, unaPosicion.getX());
@@ -22,7 +22,7 @@ public class PosicionTest {
 
     @Test
     public void cuandoSeLLamaMoverNorteLaCoordenadaYAumentaEnUnaUnidad(){
-        Posicion unaPosicion = new Posicion();
+        Posicion unaPosicion = new Posicion(2,2);
         int posicionY = unaPosicion.getY();
         unaPosicion.moverNorte();
         Assert.assertEquals(posicionY + 1, unaPosicion.getY());
@@ -30,7 +30,7 @@ public class PosicionTest {
 
     @Test
     public void cuandoSeLLamaMoverOesteLaCoordenadaXDisminuyeEnUnaUnidad(){
-        Posicion unaPosicion = new Posicion();
+        Posicion unaPosicion = new Posicion(2,2);
         int posicionX = unaPosicion.getX();
         unaPosicion.moverOeste();
         Assert.assertEquals(posicionX - 1, unaPosicion.getX());
@@ -38,7 +38,7 @@ public class PosicionTest {
 
     @Test
     public void cuandoSeLLamaMoverSurLaCoordenadaYDisminuyeEnUnaUnidad(){
-        Posicion unaPosicion = new Posicion();
+        Posicion unaPosicion = new Posicion(2,2);
         int posicionY = unaPosicion.getY();
         unaPosicion.moverSur();
         Assert.assertEquals(posicionY - 1, unaPosicion.getY());

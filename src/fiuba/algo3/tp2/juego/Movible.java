@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.juego;
 
-public interface movible {
+public interface Movible {
 
     void moverNorte();
 

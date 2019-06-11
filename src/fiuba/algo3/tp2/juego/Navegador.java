@@ -1,17 +1,24 @@
 package fiuba.algo3.tp2.juego;
 
-public class Navegador implements movible {
+public class Navegador implements Movible {
 
     private Posicion posicionActual;
     private Direccion direccionApuntada;
 
-    public Navegador(){
-        this.posicionActual = new Posicion();
+    public Navegador(int posicionX, int posicionY  /** mapa **/){
+        this.posicionActual = new Posicion(posicionX, posicionY);
         this.direccionApuntada = new DireccionNorte();
     }
 
     private void mover(){
-        direccionApuntada.mover(posicionActual);
+        if (this.puedeMoverseEn(this.direccionApuntada)) {
+            direccionApuntada.mover(posicionActual);
+        }
+    }
+
+    private boolean puedeMoverseEn(Direccion direccionApuntada) {
+        return true;
+//        return this.mapa.existeElementoEnPosicion(direccionApuntada.calcularNuevaPosicionAPartirDe(this.posicionActual));
     }
 
     private void cambiarDireccion(Direccion nuevaDireccionAPuntar){

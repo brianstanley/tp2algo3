@@ -5,9 +5,9 @@ public class Posicion {
     private int coordenadaX;
     private int coordenadaY;
 
-    public Posicion(){
-        this.coordenadaX = 2;
-        this.coordenadaY = 2;
+    public Posicion(int coordenadaX, int coordenadaY){
+        this.coordenadaX = coordenadaX;
+        this.coordenadaY = coordenadaY;
     }
 
     public int getX(){
