@@ -30,13 +30,9 @@ public class Mapa {
     }
 
     public boolean estaAfueraDelMapaLaPosicion(Posicion unaPosicion) {
-        boolean estaAfuera = false;
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
-        if (fila < 0 || columna < 0 ||  fila > (filas - 1) || columna > (columnas - 1)) {
-            estaAfuera = true;
-        }
-        return estaAfuera;
+        return (fila < 0 || columna < 0 || fila > (this.filas - 1) || columna > (this.columnas - 1));
     }
 
     public int getCantidadFilas() {
