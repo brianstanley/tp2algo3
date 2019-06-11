@@ -7,11 +7,11 @@ public class Jugador implements Movible {
     private Inventario inventario;
     private Navegador navegador;
 
-    public Jugador() {
+    public Jugador(Mapa mapaDelJuego) {
 
         this.inventario = new Inventario();
         HachaMadera hacha = new HachaMadera();
-        this.navegador = new Navegador(2, 2);
+        this.navegador = new Navegador(2, 2, mapaDelJuego);
         this.inventario.agregar(hacha);
     }
 

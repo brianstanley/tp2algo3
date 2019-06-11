@@ -22,25 +22,44 @@ public class Mapa {
         }
     }
 
-    public Casillero getCasillero(int fila, int columna) {
+    public Casillero getCasillero(Posicion unaPosicion) {
+        int fila = unaPosicion.getY();
+        int columna = unaPosicion.getX();
         return this.casilleros.get(fila).get(columna);
     }
 
+    public int getCantidadFilas() {
+        return filas;
+    }
+
+    public int getCantidadColumnas() {
+        return columnas;
+    }
+
     public Material getContenidoCasillero(Posicion unaPosicion) {
-        int fila =unaPosicion.getColumna();
-        int columna = unaPosicion.getFila();
+        int fila = unaPosicion.getY();
+        int columna = unaPosicion.getX();
         return (this.casilleros.get(fila).get(columna)).getMaterialGuardado();
     }
 
     public boolean existeElementoEnPosicion(Posicion unaPosicion) {
-
+        int fila = unaPosicion.getY();
+        int columna = unaPosicion.getX();
+        if (fila < 0 || columna < 0 ||  fila > (filas - 1) || columna > (columnas - 1)) {
+            return (true);
+        }
+        return (this.casilleros.get(fila).get(columna).getMaterialGuardado() != null);
     }
 
-    public void setContenidoCasillero(Material material, int fila, int columna) {
+    public void setContenidoCasillero(Material material, Posicion unaPosicion) {
+        int fila = unaPosicion.getY();
+        int columna = unaPosicion.getX();
         this.casilleros.get(fila).get(columna).almacenarMaterial(material);
     }
 
-    public Material vaciarContenidoCasillero(int fila, int columna) {
+    public Material vaciarContenidoCasillero(Posicion unaPosicion) {
+        int fila = unaPosicion.getY();
+        int columna = unaPosicion.getX();
         return (this.casilleros.get(fila).get(columna)).eliminarMaterialAlmacenado();
     }
 }

@@ -4,8 +4,10 @@ public class Navegador implements Movible {
 
     private Posicion posicionActual;
     private Direccion direccionApuntada;
+    private Mapa mapaAsociado;
 
-    public Navegador(int posicionX, int posicionY  /** mapa **/){
+    public Navegador(int posicionX, int posicionY,  Mapa mapaDelJuego){
+        this.mapaAsociado = mapaDelJuego;
         this.posicionActual = new Posicion(posicionX, posicionY);
         this.direccionApuntada = new DireccionNorte();
     }
