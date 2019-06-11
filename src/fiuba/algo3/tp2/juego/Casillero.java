@@ -10,16 +10,18 @@ public class Casillero {
         this.materialAlmacenado = null;
     }
 
-    public Material GetMaterialGuardado() {
+    public Material getMaterialGuardado() {
         return this.materialAlmacenado;
     }
 
-    public void AlmacenarMaterial(Material unMaterial){
+    public void almacenarMaterial(Material unMaterial){
         this.materialAlmacenado = unMaterial;
     }
 
-    public void EliminarMaterialAlmacenado(){
-        this.AlmacenarMaterial(null);
+    public Material eliminarMaterialAlmacenado(){
+        Material materialRecogido = this.getMaterialGuardado();
+        this.almacenarMaterial(null);
+        return materialRecogido;
     }
 
 }
