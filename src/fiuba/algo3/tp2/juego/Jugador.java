@@ -7,11 +7,11 @@ public class Jugador implements Movible {
     private Inventario inventario;
     private Navegador navegador;
 
-    public Jugador(Mapa mapaDelJuego) {
+    public Jugador(Navegador navegadorJugador) {
 
         this.inventario = new Inventario();
         HachaMadera hacha = new HachaMadera();
-        this.navegador = new Navegador(2, 2, mapaDelJuego);
+        this.navegador = navegadorJugador;
         this.inventario.agregar(hacha);
     }
 
@@ -19,6 +19,9 @@ public class Jugador implements Movible {
         return this.inventario;
     }
 
+    public Navegador getNavegador() {
+        return this.navegador;
+    }
 
     @Override
     public void moverNorte() {

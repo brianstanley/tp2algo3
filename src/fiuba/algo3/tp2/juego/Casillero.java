@@ -19,6 +19,7 @@ public class Casillero {
     }
 
     public Material eliminarMaterialAlmacenado(){
+    // posibilidad de recoger el material eliminado
         Material materialRecogido = this.getMaterialGuardado();
         this.almacenarMaterial(null);
         return materialRecogido;

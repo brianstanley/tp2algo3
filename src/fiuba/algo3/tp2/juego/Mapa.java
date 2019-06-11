@@ -8,11 +8,12 @@ public class Mapa {
 
     private ArrayList<ArrayList<Casillero>> casilleros = new ArrayList<ArrayList<Casillero>>();
 
-    private int filas = 20;
+    private int filas;
+    private int columnas;
 
-    private int columnas = 20;
-
-    public Mapa() {
+    public Mapa(int cantidadFilas, int cantidadColumnas) {
+        this.filas = cantidadFilas;
+        this.columnas = cantidadColumnas;
         for (int i = 0; i < filas; i++) {
             ArrayList<Casillero> casilleroColumna = new ArrayList<Casillero>();
             for (int j = 0; j < columnas; j++) {
@@ -26,6 +27,16 @@ public class Mapa {
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
         return this.casilleros.get(fila).get(columna);
+    }
+
+    public boolean estaAfueraDelMapaLaPosicion(Posicion unaPosicion) {
+        boolean estaAfuera = false;
+        int fila = unaPosicion.getY();
+        int columna = unaPosicion.getX();
+        if (fila < 0 || columna < 0 ||  fila > (filas - 1) || columna > (columnas - 1)) {
+            estaAfuera = true;
+        }
+        return estaAfuera;
     }
 
     public int getCantidadFilas() {
@@ -43,11 +54,11 @@ public class Mapa {
     }
 
     public boolean existeElementoEnPosicion(Posicion unaPosicion) {
-        int fila = unaPosicion.getY();
-        int columna = unaPosicion.getX();
-        if (fila < 0 || columna < 0 ||  fila > (filas - 1) || columna > (columnas - 1)) {
+        if (estaAfueraDelMapaLaPosicion(unaPosicion)) {
             return (true);
         }
+        int fila = unaPosicion.getY();
+        int columna = unaPosicion.getX();
         return (this.casilleros.get(fila).get(columna).getMaterialGuardado() != null);
     }
 

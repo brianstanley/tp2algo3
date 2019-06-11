@@ -19,12 +19,15 @@ public class Navegador implements Movible {
     }
 
     private boolean puedeMoverseEn(Direccion direccionApuntada) {
-        return true;
-//        return this.mapa.existeElementoEnPosicion(direccionApuntada.calcularNuevaPosicionAPartirDe(this.posicionActual));
+        return !this.mapaAsociado.existeElementoEnPosicion(direccionApuntada.calcularNuevaPosicionAPartirDe(this.posicionActual));
     }
 
     private void cambiarDireccion(Direccion nuevaDireccionAPuntar){
         this.direccionApuntada = nuevaDireccionAPuntar;
+    }
+
+    public Posicion getPosicionActual() {
+        return this.posicionActual;
     }
 
     public void moverNorte(){
