@@ -14,7 +14,11 @@ public class Navegador implements Movible {
 
     private void mover(){
         if (this.puedeMoverseEn(this.direccionApuntada)) {
-            direccionApuntada.mover(posicionActual);
+            System.out.println(this.posicionActual.getY());
+            ElementoDeCampo jugador = this.mapaAsociado.vaciarContenidoCasillero(this.posicionActual);
+            direccionApuntada.mover(this.posicionActual);
+            System.out.println(this.posicionActual.getY());
+            this.mapaAsociado.setContenidoCasillero(jugador, this.posicionActual);
         }
     }
 

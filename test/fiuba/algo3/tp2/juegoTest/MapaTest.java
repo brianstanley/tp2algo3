@@ -1,10 +1,7 @@
 package fiuba.algo3.tp2.juegoTest;
 
 
-import fiuba.algo3.tp2.juego.Jugador;
-import fiuba.algo3.tp2.juego.Mapa;
-import fiuba.algo3.tp2.juego.Navegador;
-import fiuba.algo3.tp2.juego.Posicion;
+import fiuba.algo3.tp2.juego.*;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import fiuba.algo3.tp2.materiales.Material;
 import org.junit.Assert;
@@ -24,7 +21,7 @@ public class MapaTest {
     public void alVaciarCasilleroNoExisteMasElemento() {
         Mapa mapa = new Mapa(20, 20);
         Posicion unaPosicion = new Posicion(1, 1);
-        Material materialAnterior = mapa.vaciarContenidoCasillero(unaPosicion);
+        ElementoDeCampo elementoAnterior = mapa.vaciarContenidoCasillero(unaPosicion);
 
         Assert.assertEquals(false, mapa.existeElementoEnPosicion(unaPosicion));
     }
@@ -72,7 +69,18 @@ public class MapaTest {
         MaderaMaterial unaMadera = new MaderaMaterial();
         Posicion unaPosicion = new Posicion(5,5);
         mapa.setContenidoCasillero(unaMadera, unaPosicion);
-        Material materialGuardado = mapa.getCasillero(unaPosicion).getMaterialGuardado();
+        ElementoDeCampo materialGuardado = mapa.getCasillero(unaPosicion).getContenido();
         Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
+    }
+
+    @Test
+    public void seMueveElJugadorEnUnCasillero() {
+        Mapa mapa = new Mapa(20,20);
+        Navegador navegador = new Navegador(5,5, mapa);
+        Jugador unJugador = new Jugador(navegador);
+        Posicion unaPosicion = new Posicion(5,5);
+        mapa.setContenidoCasillero(unJugador, unaPosicion);
+        ElementoDeCampo elementoCasillero = mapa.getCasillero(unaPosicion).getContenido();
+        Assert.assertEquals(unJugador.getClass() , elementoCasillero.getClass());
     }
 }
