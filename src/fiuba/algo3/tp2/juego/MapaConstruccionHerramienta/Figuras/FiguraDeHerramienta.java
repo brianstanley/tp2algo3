@@ -1,22 +1,21 @@
 package fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras;
 
-import fiuba.algo3.tp2.juego.utils.*;
-
 
 public abstract class FiguraDeHerramienta{
 
-    protected MaterialesContainer materialesDeFigura;
+   protected int madera;
+   protected int piedra;
+   protected int metal;
 
 
-    public FiguraDeHerramienta(){
-
-        this.materialesDeFigura = new MaterialesContainer();
-
-
+    public int getCantidadMadera(){
+        return this.madera;
     }
-    public MaterialesContainer obtenerMateriales(){
-
-        return this.materialesDeFigura;
+    public int getCantidadPiedra(){
+        return this.piedra;
+    }
+    public int getCantidadMetal(){
+        return this.metal;
     }
 }
 

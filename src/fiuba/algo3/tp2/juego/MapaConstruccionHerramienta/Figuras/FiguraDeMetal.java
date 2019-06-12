@@ -7,13 +7,8 @@ public abstract class FiguraDeMetal extends FiguraDeHerramienta{
 
     public FiguraDeMetal(){
 
-        super();
-
-        this.materialesDeFigura.agregar(new MaderaMaterial());
-        this.materialesDeFigura.agregar(new MaderaMaterial());
-
-        this.materialesDeFigura.agregar(new MetalMaterial());
-        this.materialesDeFigura.agregar(new MetalMaterial());
-        this.materialesDeFigura.agregar(new MetalMaterial());
+        this.madera = 2;
+        this.piedra = 0;
+        this.metal = 3;
     }
 }

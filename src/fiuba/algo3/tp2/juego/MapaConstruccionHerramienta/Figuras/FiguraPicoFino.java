@@ -8,15 +8,8 @@ public class FiguraPicoFino extends FiguraDeHerramienta{
 
     public FiguraPicoFino(){
 
-        super();
-
-        this.materialesDeFigura.agregar(new MaderaMaterial());
-        this.materialesDeFigura.agregar(new MaderaMaterial());
-
-        this.materialesDeFigura.agregar(new PiedraMaterial());
-
-        this.materialesDeFigura.agregar(new MetalMaterial());
-        this.materialesDeFigura.agregar(new MetalMaterial());
-        this.materialesDeFigura.agregar(new MetalMaterial());
+        this.madera = 2;
+        this.piedra = 1;
+        this.metal = 3;
     }
 }

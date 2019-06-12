@@ -34,7 +34,7 @@ public class LectorDeMapaTest {
         Assert.assertTrue(lector.evaluarMapa(mapa) instanceof FiguraDesconocida);
     }
 
-    
+
 
     @Test
     public void lectorReconoceFiguraDeHachaDeMaderaEnMapaDeConstruccionDeHerramienta(){

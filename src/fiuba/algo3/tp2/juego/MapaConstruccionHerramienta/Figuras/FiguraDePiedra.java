@@ -7,14 +7,9 @@ public class FiguraDePiedra extends FiguraDeHerramienta{
 
     public FiguraDePiedra(){
 
-        super();
-
-        this.materialesDeFigura.agregar(new MaderaMaterial());
-        this.materialesDeFigura.agregar(new MaderaMaterial());
-
-        this.materialesDeFigura.agregar(new PiedraMaterial());
-        this.materialesDeFigura.agregar(new PiedraMaterial());
-        this.materialesDeFigura.agregar(new PiedraMaterial());
+        this.madera = 2;
+        this.piedra = 3;
+        this.metal = 0;
     }
 }
 
