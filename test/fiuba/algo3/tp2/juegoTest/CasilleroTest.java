@@ -10,43 +10,43 @@ import org.junit.Test;
 public class CasilleroTest {
 
 @Test
-public void SeAlmacenaUnMaterialEnUnCasillero(){
+public void seAlmacenaUnMaterialEnUnCasillero(){
     MaderaMaterial unaMadera = new MaderaMaterial();
     Casillero unCasillero = new Casillero();
-    unCasillero.AlmacenarMaterial(unaMadera);
-    Material materialGuardado = unCasillero.GetMaterialGuardado();
+    unCasillero.almacenarMaterial(unaMadera);
+    Material materialGuardado = unCasillero.getMaterialGuardado();
     Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
 }
 
 @Test
-public void SeCreaUnCasilleroYElMaterialAlmacenadoEsNulo(){
+public void seCreaUnCasilleroYElMaterialAlmacenadoEsNulo(){
     Casillero unCasillero = new Casillero();
-    Assert.assertEquals(null, unCasillero.GetMaterialGuardado());
+    Assert.assertEquals(null, unCasillero.getMaterialGuardado());
 }
 
 @Test
-public void SeAlmacenaUnMaterialEnUnCasilleroReemplazandoAlPreviamenteAlmacenado(){
+public void seAlmacenaUnMaterialEnUnCasilleroReemplazandoAlPreviamenteAlmacenado(){
     MaderaMaterial unaMadera = new MaderaMaterial();
     Casillero unCasillero = new Casillero();
-    unCasillero.AlmacenarMaterial(unaMadera);
-    Material materialGuardado = unCasillero.GetMaterialGuardado();
+    unCasillero.almacenarMaterial(unaMadera);
+    Material materialGuardado = unCasillero.getMaterialGuardado();
     Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
 
     MetalMaterial unMetal = new MetalMaterial();
-    unCasillero.AlmacenarMaterial(unMetal);
-    Assert.assertEquals(unMetal.getClass(), unCasillero.GetMaterialGuardado().getClass());
+    unCasillero.almacenarMaterial(unMetal);
+    Assert.assertEquals(unMetal.getClass(), unCasillero.getMaterialGuardado().getClass());
 }
 
 @Test
-public void SeEliminaElMaterialAlmacenadoEnUnCasillero(){
+public void seEliminaElMaterialAlmacenadoEnUnCasillero(){
     MaderaMaterial unaMadera = new MaderaMaterial();
     Casillero unCasillero = new Casillero();
-    unCasillero.AlmacenarMaterial(unaMadera);
-    Material materialGuardado = unCasillero.GetMaterialGuardado();
+    unCasillero.almacenarMaterial(unaMadera);
+    Material materialGuardado = unCasillero.getMaterialGuardado();
     Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
 
-    unCasillero.EliminarMaterialAlmacenado();
-    Assert.assertEquals(null, unCasillero.GetMaterialGuardado());
+    unCasillero.eliminarMaterialAlmacenado();
+    Assert.assertEquals(null, unCasillero.getMaterialGuardado());
 }
 
 }
