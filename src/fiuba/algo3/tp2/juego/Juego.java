@@ -9,9 +9,10 @@ public class Juego {
     static Mapa mapa;
     static Navegador navegador;
     static Jugador jugador;
+
     public static void main(String [] args) {
         mapa = new Mapa(20, 20);
-        navegador = new Navegador(2, 2, mapa);
+        navegador = new Navegador(8, 8, mapa);
         jugador = new Jugador(navegador);
         inicializacionMateriales();
     }
@@ -35,11 +36,27 @@ public class Juego {
 
         for (int i = 4; i < 8; i++) {
             for (int j = 1; j < 5; j++) {
-                MaderaMaterial diamante = new MaderaMaterial();
+                MaderaMaterial madera = new MaderaMaterial();
                 Posicion unaPosicion = new Posicion(i, j);
-                mapa.setContenidoCasillero(diamante, unaPosicion);
+                mapa.setContenidoCasillero(madera, unaPosicion);
             }
         }
 
+        for (int i = 4; i < 8; i++) {
+            for (int j = 1; j < 5; j++) {
+                MaderaMaterial madera = new MaderaMaterial();
+                Posicion unaPosicion = new Posicion(i, j);
+                mapa.setContenidoCasillero(madera, unaPosicion);
+            }
+        }
+
+    }
+
+    public Mapa getMapa(){
+        return mapa;
+    }
+
+    public Navegador getNavegador(){
+        return navegador;
     }
 }
