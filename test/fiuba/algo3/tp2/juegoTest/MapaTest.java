@@ -53,7 +53,7 @@ public class MapaTest {
         Assert.assertEquals(unaPosicionAlNorte.getY(), navegador.getPosicionActual().getY());
     }
 
-    @Test
+   @Test
     public void noSePuedeOcuparUnCasilleroOcupadoDelTerreno() {
         Mapa mapa = new Mapa(20,20);
         Navegador navegador = new Navegador(5,5, mapa);
@@ -62,8 +62,10 @@ public class MapaTest {
         MaderaMaterial unaMadera = new MaderaMaterial();
         mapa.setContenidoCasillero(unaMadera, unaPosicionAlNorte);
         jugador.moverNorte();
+        Posicion posicionJugador = navegador.getPosicionActual();
 
-        Assert.assertNotEquals(unaPosicionAlNorte.getY(), navegador.getPosicionActual().getY());
+        Assert.assertEquals(5, posicionJugador.getX());
+        Assert.assertEquals(5, posicionJugador.getY());
     }
 
     @Test
