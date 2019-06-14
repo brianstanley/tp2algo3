@@ -14,4 +14,15 @@ public abstract class Material implements ElementoDeCampo {
         return this.durabilidad;
     }
 
+    public void ponerEnMapa(Posicion posicion){
+
+    }
+
+    public void quitarDelMapa(Posicion posicion){
+
+    }
+
+    public void retractarMovimiento(){
+        
+    }
 }

@@ -19,14 +19,17 @@ public class Navegador implements ElementoDeCampo {
         this.ponerEnMapa(this.posicionActual);
     }
 
+    @Override
     public void ponerEnMapa(Posicion posicion){
         this.mapaAsociado.setContenidoCasillero(this, posicion);
     }
 
+    @Override
     public void quitarDelMapa(Posicion posicion){
         this.mapaAsociado.vaciarContenidoCasillero(this.posicionActual);
     }
 
+    @Override
     public void retractarMovimiento(){
         Direccion direccionOpuesta = this.direccionApuntada.getDireccionOpuesta();
         this.moverEnDireccion(direccionOpuesta);
