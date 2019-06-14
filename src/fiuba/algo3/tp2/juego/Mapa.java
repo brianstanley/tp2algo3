@@ -43,10 +43,10 @@ public class Mapa {
         return columnas;
     }
 
-    public Material getContenidoCasillero(Posicion unaPosicion) {
+    public ElementoDeCampo getContenidoCasillero(Posicion unaPosicion) {
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
-        return (this.casilleros.get(fila).get(columna)).getMaterialGuardado();
+        return (this.casilleros.get(fila).get(columna)).getContenido();
     }
 
     public boolean existeElementoEnPosicion(Posicion unaPosicion) {
@@ -55,18 +55,18 @@ public class Mapa {
         }
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
-        return (this.casilleros.get(fila).get(columna).getMaterialGuardado() != null);
+        return (this.casilleros.get(fila).get(columna).getContenido() != null);
     }
 
-    public void setContenidoCasillero(Material material, Posicion unaPosicion) {
+    public void setContenidoCasillero(ElementoDeCampo elementoDeCampo, Posicion unaPosicion) {
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
-        this.casilleros.get(fila).get(columna).almacenarMaterial(material);
+        this.casilleros.get(fila).get(columna).setContenido(elementoDeCampo);
     }
 
-    public Material vaciarContenidoCasillero(Posicion unaPosicion) {
+    public ElementoDeCampo vaciarContenidoCasillero(Posicion unaPosicion) {
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
-        return (this.casilleros.get(fila).get(columna)).eliminarMaterialAlmacenado();
+        return (this.casilleros.get(fila).get(columna)).eliminarContenido();
     }
 }

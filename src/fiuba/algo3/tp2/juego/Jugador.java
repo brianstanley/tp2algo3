@@ -2,7 +2,7 @@ package fiuba.algo3.tp2.juego;
 
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 
-public class Jugador implements Movible {
+public class Jugador implements Movible, ElementoDeCampo {
 
     private Inventario inventario;
     private Navegador navegador;

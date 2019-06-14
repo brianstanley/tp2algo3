@@ -1,8 +1,9 @@
 package fiuba.algo3.tp2.materiales;
 
 import fiuba.algo3.tp2.herramientas.Herramienta;
+import fiuba.algo3.tp2.juego.ElementoDeCampo;
 
-public abstract class Material {
+public abstract class Material implements ElementoDeCampo {
     protected int durabilidad;
 
     public void desgastarCon(Herramienta unaHerramienta) {
