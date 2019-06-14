@@ -1,11 +1,10 @@
 package fiuba.algo3.tp2.herramientasTest;
 
 import fiuba.algo3.tp2.herramientas.Herramienta;
-import fiuba.algo3.tp2.herramientas.excepciones.HerramientaRotaExcepcion;
+import fiuba.algo3.tp2.herramientas.ExcepcionesHerramientas.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.herramientas.picos.PicoPiedra;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import fiuba.algo3.tp2.materiales.Material;
-import org.apache.ivy.core.report.MetadataArtifactDownloadReport;
 import org.junit.Assert;
 import org.junit.Test;
 

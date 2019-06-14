@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.herramientas;
 
-import fiuba.algo3.tp2.herramientas.excepciones.HerramientaRotaExcepcion;
+import fiuba.algo3.tp2.herramientas.ExcepcionesHerramientas.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgaste;
 

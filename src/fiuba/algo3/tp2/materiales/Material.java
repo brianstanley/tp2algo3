@@ -7,6 +7,7 @@ public abstract class Material {
 
     public void desgastarCon(Herramienta unaHerramienta) {
     }
+
     public int getDurabilidad() {
         return this.durabilidad;
     }

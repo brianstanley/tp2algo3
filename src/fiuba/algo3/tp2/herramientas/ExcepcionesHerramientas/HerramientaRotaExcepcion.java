@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.herramientas.excepciones;
+package fiuba.algo3.tp2.herramientas.ExcepcionesHerramientas;
 
 public class HerramientaRotaExcepcion extends RuntimeException {
 

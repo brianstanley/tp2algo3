@@ -1,7 +1,6 @@
 package fiuba.algo3.tp2.herramientasTest;
 
 
-import fiuba.algo3.tp2.herramientas.excepciones.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.herramientas.picos.PicoFino;
 import fiuba.algo3.tp2.materiales.DiamanteMaterial;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
