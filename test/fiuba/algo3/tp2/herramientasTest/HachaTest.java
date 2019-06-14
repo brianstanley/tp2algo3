@@ -60,15 +60,12 @@ public class HachaTest {
     @Test
     public void hachaDeMetalSeUsaContraCadaUnoDeLosMaterialesYReduceSuDurabilidadEnLaMitadDeLaFuerza() {
         HachaMetal hacha = new HachaMetal();
-        MaderaMaterial unaMadera = new MaderaMaterial();
         PiedraMaterial unaPiedra = new PiedraMaterial();
         MetalMaterial unMetal = new MetalMaterial();
-            hacha.romper(unaMadera);
-            assertEquals(395, hacha.getDurabilidad(), 0.01);
             hacha.romper(unaPiedra);
-            assertEquals(390, hacha.getDurabilidad(), 0.01);
+            assertEquals(395, hacha.getDurabilidad(), 0.01);
             hacha.romper(unMetal);
-            assertEquals(385, hacha.getDurabilidad(), 0.01);
+            assertEquals(390, hacha.getDurabilidad(), 0.01);
     }
 
     @Test(expected = HerramientaRotaExcepcion.class)

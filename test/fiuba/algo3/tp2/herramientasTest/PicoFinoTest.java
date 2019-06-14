@@ -70,8 +70,6 @@ public class PicoFinoTest {
         double durabilidadInicial = picoFino.getDurabilidad();
 
         picoFino.romper(piedra);
-        picoFino.romper(piedra);
-        picoFino.romper(piedra);
 
         Assert.assertEquals(durabilidadInicial, picoFino.getDurabilidad(), 0.01);
 
@@ -84,7 +82,6 @@ public class PicoFinoTest {
 
         double durabilidadInicial = picoFino.getDurabilidad();
 
-        picoFino.romper(metal);
         picoFino.romper(metal);
         picoFino.romper(metal);
 
