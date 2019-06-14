@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.herramientas.picos;
 
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLogaritmico;
+import fiuba.algo3.tp2.herramientas.excepciones.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.materiales.DiamanteMaterial;
 import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
@@ -21,9 +22,12 @@ public class PicoFino extends Pico {
         // Aseguramos que pico fino solo actua ante un diamante
     }
 
-    public void romper(DiamanteMaterial unDiamante){
-        unDiamante.desgastarCon(this);
+    public void romper(DiamanteMaterial unDiamante) throws HerramientaRotaExcepcion {
         this.desgastador.desgastar();
+        if (this.getDurabilidad() <= 0){
+            throw new HerramientaRotaExcepcion("la herramienta que quiere utilizar esta rota");
+        }
+        unDiamante.desgastarCon(this);
     }
 
     public void romper(MetalMaterial unMetal){

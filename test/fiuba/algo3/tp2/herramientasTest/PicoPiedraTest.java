@@ -1,5 +1,7 @@
 package fiuba.algo3.tp2.herramientasTest;
 
+import fiuba.algo3.tp2.herramientas.Herramienta;
+import fiuba.algo3.tp2.herramientas.excepciones.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.herramientas.picos.PicoPiedra;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import org.junit.Assert;

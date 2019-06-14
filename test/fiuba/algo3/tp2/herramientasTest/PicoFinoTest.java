@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.herramientasTest;
 
 
+import fiuba.algo3.tp2.herramientas.excepciones.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.herramientas.picos.PicoFino;
 import fiuba.algo3.tp2.materiales.DiamanteMaterial;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
@@ -41,10 +42,8 @@ public class PicoFinoTest {
 
         double durabilidad = picoFino.getDurabilidad();
         double divisor = 10;
-
-        picoFino.romper(diamante);
-        durabilidad -= durabilidad / divisor;
-
+            picoFino.romper(diamante);
+            durabilidad -= durabilidad / divisor;
         Assert.assertEquals(durabilidad, picoFino.getDurabilidad(), 0.01);
     }
 
