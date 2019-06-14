@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.juego;
 
-public class Navegador implements Movible {
+public class Navegador implements ElementoDeCampo {
 
     private Posicion posicionActual;
     private Direccion direccionApuntada;
@@ -12,18 +12,24 @@ public class Navegador implements Movible {
         this.direccionApuntada = new DireccionNorte();
     }
 
-    private void mover(){
-        if (this.puedeMoverseEn(this.direccionApuntada)) {
-            System.out.println(this.posicionActual.getY());
-            ElementoDeCampo jugador = this.mapaAsociado.vaciarContenidoCasillero(this.posicionActual);
-            direccionApuntada.mover(this.posicionActual);
-            System.out.println(this.posicionActual.getY());
-            this.mapaAsociado.setContenidoCasillero(jugador, this.posicionActual);
-        }
+    public void moverEnDireccion(Direccion direccionAMoverse){
+        this.quitarDelMapa(this.posicionActual);
+        this.direccionApuntada = direccionAMoverse;
+        direccionApuntada.mover(this.posicionActual);
+        this.ponerEnMapa(this.posicionActual);
     }
 
-    private boolean puedeMoverseEn(Direccion direccionApuntada) {
-        return !this.mapaAsociado.existeElementoEnPosicion(direccionApuntada.calcularNuevaPosicionAPartirDe(this.posicionActual));
+    public void ponerEnMapa(Posicion posicion){
+        this.mapaAsociado.setContenidoCasillero(this, posicion);
+    }
+
+    public void quitarDelMapa(Posicion posicion){
+        this.mapaAsociado.vaciarContenidoCasillero(this.posicionActual);
+    }
+
+    public void retractarMovimiento(){
+        Direccion direccionOpuesta = this.direccionApuntada.getDireccionOpuesta();
+        this.moverEnDireccion(direccionOpuesta);
     }
 
     private void cambiarDireccion(Direccion nuevaDireccionAPuntar){
@@ -34,27 +40,4 @@ public class Navegador implements Movible {
         return this.posicionActual;
     }
 
-    public void moverNorte(){
-        DireccionNorte nuevaDireccion = new DireccionNorte();
-        this.cambiarDireccion(nuevaDireccion);
-        this.mover();
-    }
-
-    public void moverSur(){
-        DireccionSur nuevaDireccion = new DireccionSur();
-        this.cambiarDireccion(nuevaDireccion);
-        this.mover();
-    }
-
-    public void moverEste(){
-        DireccionEste nuevaDireccion = new DireccionEste();
-        this.cambiarDireccion(nuevaDireccion);
-        this.mover();
-    }
-
-    public void moverOeste(){
-        DireccionOeste nuevaDireccion = new DireccionOeste();
-        this.cambiarDireccion(nuevaDireccion);
-        this.mover();
-    }
 }

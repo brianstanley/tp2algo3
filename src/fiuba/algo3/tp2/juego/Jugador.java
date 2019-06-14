@@ -2,7 +2,7 @@ package fiuba.algo3.tp2.juego;
 
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 
-public class Jugador implements Movible, ElementoDeCampo {
+public class Jugador implements Movible {
 
     private Inventario inventario;
     private Navegador navegador;
@@ -25,21 +25,25 @@ public class Jugador implements Movible, ElementoDeCampo {
 
     @Override
     public void moverNorte() {
-        this.navegador.moverNorte();
+        DireccionNorte nuevaDireccion = new DireccionNorte();
+        this.navegador.moverEnDireccion(nuevaDireccion);
     }
 
     @Override
     public void moverSur() {
-        this.navegador.moverSur();
+        DireccionSur nuevaDireccion = new DireccionSur();
+        this.navegador.moverEnDireccion(nuevaDireccion);
     }
 
     @Override
     public void moverEste() {
-        this.navegador.moverEste();
+        DireccionEste nuevaDireccion = new DireccionEste();
+        this.navegador.moverEnDireccion(nuevaDireccion);
     }
 
     @Override
     public void moverOeste() {
-        this.navegador.moverOeste();
+        DireccionOeste nuevaDireccion = new DireccionOeste();
+        this.navegador.moverEnDireccion(nuevaDireccion);
     }
 }

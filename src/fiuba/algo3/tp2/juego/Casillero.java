@@ -1,25 +1,26 @@
 package fiuba.algo3.tp2.juego;
 
-import fiuba.algo3.tp2.materiales.Material;
+import fiuba.algo3.tp2.juego.ExcepcionesMapa.CasilleroOcupadoExcepcion;
 
 public class Casillero {
 
-    private Material materialAlmacenado;
-    private Jugador jugadorEnCasillero;
-    private ElementoDeCampo contenido;
+    private ElementoDeCampo elementoGuardado;
 
     public Casillero(){
-        this.materialAlmacenado = null;
-        this.jugadorEnCasillero = null;
-        this.contenido = null;
+        this.elementoGuardado = null;
     }
 
     public ElementoDeCampo getContenido() {
-        return this.contenido;
+        return this.elementoGuardado;
     }
 
-    public void setContenido(ElementoDeCampo unElementoDeCampo) {
-        this.contenido = unElementoDeCampo;
+    public void setContenido(ElementoDeCampo unElementoDeCampo) throws CasilleroOcupadoExcepcion {
+        if (this.elementoGuardado == null){
+            this.elementoGuardado = unElementoDeCampo;
+        }
+        else{
+            throw new CasilleroOcupadoExcepcion("el casillero que se intenta ocupar ya esta ocupado");
+        }
     }
 
     public ElementoDeCampo eliminarContenido() {

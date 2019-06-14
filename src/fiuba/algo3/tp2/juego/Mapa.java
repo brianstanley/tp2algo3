@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.juego;
 
+import fiuba.algo3.tp2.juego.ExcepcionesMapa.CasilleroOcupadoExcepcion;
 import fiuba.algo3.tp2.materiales.Material;
 
 import java.util.ArrayList;
@@ -61,7 +62,14 @@ public class Mapa {
     public void setContenidoCasillero(ElementoDeCampo elementoDeCampo, Posicion unaPosicion) {
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
-        this.casilleros.get(fila).get(columna).setContenido(elementoDeCampo);
+        try {
+            this.casilleros.get(fila).get(columna).setContenido(elementoDeCampo);
+        }
+        catch (CasilleroOcupadoExcepcion ex){
+            if(elementoDeCampo.getClass() == Navegador.class){
+                elementoDeCampo.retractarMovimiento();
+            }
+        }
     }
 
     public ElementoDeCampo vaciarContenidoCasillero(Posicion unaPosicion) {

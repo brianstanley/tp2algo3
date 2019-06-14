@@ -5,4 +5,8 @@ public class DireccionSur extends Direccion {
     public void mover(Posicion posicionActual){
         posicionActual.moverSur();
     }
+
+    public Direccion getDireccionOpuesta(){
+        return new DireccionNorte();
+    }
 }
