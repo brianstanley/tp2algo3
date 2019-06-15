@@ -1,7 +1,8 @@
-package fiuba.algo3.tp2.juego;
+package fiuba.algo3.tp2.juego.Mapa;
 
+import fiuba.algo3.tp2.juego.ElementoDeCampo;
 import fiuba.algo3.tp2.juego.ExcepcionesMapa.CasilleroOcupadoExcepcion;
-import fiuba.algo3.tp2.materiales.Material;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 
 import java.util.ArrayList;
 

@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class MapaConstruccionHerramientaTest {
 
-    @Test
+    /*@Test
     public void seCreaMapaDeConstruccionDeHerramientaIniciaYNoEsNulo(){
 
         MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
@@ -214,6 +214,6 @@ public class MapaConstruccionHerramientaTest {
         mapa.insertarMaterialEnPosicion(madera,2,1);
 
         Assert.assertTrue(mapa.obtenerFiguraMapeada() instanceof FiguraPicoFino);
-    }
+    }*/
 
 }

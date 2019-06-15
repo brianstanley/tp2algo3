@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.juego;
 
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
+import fiuba.algo3.tp2.juego.Navegador.*;
 
 public class Jugador implements Movible {
 

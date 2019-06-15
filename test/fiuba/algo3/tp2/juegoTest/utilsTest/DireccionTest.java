@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.juegoTest.utilsTest;
 
-import fiuba.algo3.tp2.juego.*;
+import fiuba.algo3.tp2.juego.Navegador.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class DireccionTest {
         Posicion unaPosicion = new Posicion(2, 2);
         int coordenadaY = unaPosicion.getY();
         direccion.mover(unaPosicion);
-        Assert.assertEquals(coordenadaY + 1, unaPosicion.getY());
+        Assert.assertEquals(coordenadaY - 1, unaPosicion.getY());
     }
 
     @Test
@@ -21,7 +21,7 @@ public class DireccionTest {
         Posicion unaPosicion = new Posicion(2, 2);
         int coordenadaY = unaPosicion.getY();
         direccion.mover(unaPosicion);
-        Assert.assertEquals(coordenadaY - 1,unaPosicion.getY());
+        Assert.assertEquals(coordenadaY + 1,unaPosicion.getY());
     }
 
     @Test

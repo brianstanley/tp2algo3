@@ -1,9 +1,6 @@
 package fiuba.algo3.tp2.juego.MapaConstruccionHerramienta;
 
-import fiuba.algo3.tp2.juego.Casillero;
-import fiuba.algo3.tp2.materiales.*;
-import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.*;
-import org.junit.Test;
+import fiuba.algo3.tp2.juego.Mapa.Casillero;
 
 public class MapaConstruccionHerramienta {
 
@@ -21,7 +18,7 @@ public class MapaConstruccionHerramienta {
     }
 
 
-    public void insertarMaterialEnPosicion(Material unMaterial, int x, int y) {
+    /*public void insertarMaterialEnPosicion(Material unMaterial, int x, int y) {
 
         this.mapa[x][y].almacenarMaterial(unMaterial);
     }
@@ -52,6 +49,6 @@ public class MapaConstruccionHerramienta {
     public FiguraDeHerramienta obtenerFiguraMapeada() {
 
         return this.lector.evaluarMapa(this);
-    }
+    }*/
 }
 

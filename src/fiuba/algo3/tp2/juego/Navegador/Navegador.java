@@ -1,4 +1,7 @@
-package fiuba.algo3.tp2.juego;
+package fiuba.algo3.tp2.juego.Navegador;
+
+import fiuba.algo3.tp2.juego.ElementoDeCampo;
+import fiuba.algo3.tp2.juego.Mapa.Mapa;
 
 public class Navegador implements ElementoDeCampo {
 

@@ -2,8 +2,8 @@ package fiuba.algo3.tp2.materiales;
 
 import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.juego.ElementoDeCampo;
-import fiuba.algo3.tp2.juego.Mapa;
-import fiuba.algo3.tp2.juego.Posicion;
+import fiuba.algo3.tp2.juego.Mapa.Mapa;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 
 public abstract class Material implements ElementoDeCampo {
     protected int durabilidad;

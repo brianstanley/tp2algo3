@@ -1,9 +1,11 @@
 package fiuba.algo3.tp2.juegoTest;
 
 import fiuba.algo3.tp2.juego.*;
+import fiuba.algo3.tp2.juego.Mapa.Mapa;
+import fiuba.algo3.tp2.juego.Navegador.Navegador;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.materiales.DiamanteMaterial;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
-import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
 import org.junit.Assert;
 import org.junit.Test;
@@ -60,15 +62,6 @@ public class JuegoTest {
             }
         }
     }
-
-    @Test
-    public void elNavegadorSeInicializaEnUnCasilleroDondeNoHayMateriales(){
-        Juego instanciaDeJuego = new Juego();
-        instanciaDeJuego.main(null);
-        Navegador navegadorDelJuegador = instanciaDeJuego.getNavegador();
-        Posicion posicionNavegadorJugador = navegadorDelJuegador.getPosicionActual();
-        Mapa mapaDeJuego = instanciaDeJuego.getMapa();
-        Assert.assertNull(mapaDeJuego.getContenidoCasillero(posicionNavegadorJugador));
-    }
+    
 
 }

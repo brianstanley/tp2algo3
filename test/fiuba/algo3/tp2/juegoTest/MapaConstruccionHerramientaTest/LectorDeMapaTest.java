@@ -11,7 +11,7 @@ import org.junit.Test;
 
 public class LectorDeMapaTest {
 
-    @Test
+    /*@Test
     public void lectorSeIniciaYNoEsNulo(){
 
         LectorDeMapa lector = new LectorDeMapa();
@@ -151,6 +151,6 @@ public class LectorDeMapaTest {
         mapa.insertarMaterialEnPosicion(madera,2,1);
 
         Assert.assertTrue(lector.evaluarMapa(mapa) instanceof FiguraPicoFino);
-    }
+    }*/
 
 }

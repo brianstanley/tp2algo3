@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.juego;
+package fiuba.algo3.tp2.juego.Navegador;
 
 public class DireccionEste extends Direccion{
 

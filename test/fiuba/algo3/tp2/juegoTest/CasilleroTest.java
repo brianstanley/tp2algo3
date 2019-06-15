@@ -1,10 +1,9 @@
 package fiuba.algo3.tp2.juegoTest;
 
-import fiuba.algo3.tp2.juego.Casillero;
+import fiuba.algo3.tp2.juego.Mapa.Casillero;
 import fiuba.algo3.tp2.juego.ElementoDeCampo;
 import fiuba.algo3.tp2.juego.ExcepcionesMapa.CasilleroOcupadoExcepcion;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
-import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
 import org.junit.Assert;
 import org.junit.Test;
