@@ -36,14 +36,6 @@ public class Mapa {
         return (fila < 0 || columna < 0 || fila > (this.filas - 1) || columna > (this.columnas - 1));
     }
 
-    public int getCantidadFilas() {
-        return filas;
-    }
-
-    public int getCantidadColumnas() {
-        return columnas;
-    }
-
     public ElementoDeCampo getContenidoCasillero(Posicion unaPosicion) {
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
@@ -66,9 +58,10 @@ public class Mapa {
             this.casilleros.get(fila).get(columna).setContenido(elementoDeCampo);
         }
         catch (CasilleroOcupadoExcepcion ex){
-            if(elementoDeCampo.getClass() == Navegador.class){
-                elementoDeCampo.retractarMovimiento();
-            }
+            elementoDeCampo.retractarMovimiento();
+        }
+        catch (IndexOutOfBoundsException ex){
+            elementoDeCampo.retractarMovimiento();
         }
     }
 

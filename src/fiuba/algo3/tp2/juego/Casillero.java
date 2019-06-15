@@ -26,7 +26,7 @@ public class Casillero {
     public ElementoDeCampo eliminarContenido() {
         // posibilidad de recoger el elemento eliminado
         ElementoDeCampo elementoRecogido = this.getContenido();
-        this.setContenido(null);
+        this.elementoGuardado = null;
         return elementoRecogido;
     }
 

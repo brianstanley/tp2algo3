@@ -2,6 +2,7 @@ package fiuba.algo3.tp2.juegoTest;
 
 import fiuba.algo3.tp2.juego.Casillero;
 import fiuba.algo3.tp2.juego.ElementoDeCampo;
+import fiuba.algo3.tp2.juego.ExcepcionesMapa.CasilleroOcupadoExcepcion;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
@@ -25,17 +26,13 @@ public void seCreaUnCasilleroYElMaterialAlmacenadoEsNulo(){
     Assert.assertEquals(null, unCasillero.getContenido());
 }
 
-@Test
-public void seAlmacenaUnMaterialEnUnCasilleroReemplazandoAlPreviamenteAlmacenado(){
+@Test (expected = CasilleroOcupadoExcepcion.class)
+public void almacenarUnElementoEnUnCasilleroOcupadoLanzaExcepcion(){
     MaderaMaterial unaMadera = new MaderaMaterial();
     Casillero unCasillero = new Casillero();
     unCasillero.setContenido(unaMadera);
-    ElementoDeCampo materialGuardado = unCasillero.getContenido();
-    Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
-
     MetalMaterial unMetal = new MetalMaterial();
     unCasillero.setContenido(unMetal);
-    Assert.assertEquals(unMetal.getClass(), unCasillero.getContenido().getClass());
 }
 
 @Test

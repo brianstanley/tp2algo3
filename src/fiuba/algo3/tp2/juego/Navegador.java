@@ -10,29 +10,31 @@ public class Navegador implements ElementoDeCampo {
         this.mapaAsociado = mapaDelJuego;
         this.posicionActual = new Posicion(posicionX, posicionY);
         this.direccionApuntada = new DireccionNorte();
+        this.ponerEnMapa(this.mapaAsociado, this.posicionActual);
     }
 
     public void moverEnDireccion(Direccion direccionAMoverse){
-        this.quitarDelMapa(this.posicionActual);
+        this.quitarDelMapa(this.mapaAsociado, this.posicionActual);
         this.direccionApuntada = direccionAMoverse;
         direccionApuntada.mover(this.posicionActual);
-        this.ponerEnMapa(this.posicionActual);
+        this.ponerEnMapa(this.mapaAsociado, this.posicionActual);
     }
 
     @Override
-    public void ponerEnMapa(Posicion posicion){
-        this.mapaAsociado.setContenidoCasillero(this, posicion);
+    public void ponerEnMapa(Mapa mapa, Posicion posicion){
+        mapa.setContenidoCasillero(this, posicion);
     }
 
     @Override
-    public void quitarDelMapa(Posicion posicion){
-        this.mapaAsociado.vaciarContenidoCasillero(this.posicionActual);
+    public void quitarDelMapa(Mapa mapa, Posicion posicion){
+        mapa.vaciarContenidoCasillero(this.posicionActual);
     }
 
     @Override
     public void retractarMovimiento(){
         Direccion direccionOpuesta = this.direccionApuntada.getDireccionOpuesta();
-        this.moverEnDireccion(direccionOpuesta);
+        this.direccionApuntada = direccionOpuesta;
+        direccionApuntada.mover(this.posicionActual);
     }
 
     private void cambiarDireccion(Direccion nuevaDireccionAPuntar){
