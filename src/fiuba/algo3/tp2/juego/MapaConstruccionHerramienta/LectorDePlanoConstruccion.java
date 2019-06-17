@@ -2,11 +2,11 @@ package fiuba.algo3.tp2.juego.MapaConstruccionHerramienta;
 
 import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.*;
 
-public class LectorDeMapa{
+public class LectorDePlanoConstruccion {
 
-    private MapaConstruccionHerramienta mapa;
+    private PlanoConstruccionHerramienta mapa;
 
-    public FiguraDeHerramienta evaluarMapa(MapaConstruccionHerramienta mapa){
+    public FiguraConstruible evaluarMapa(PlanoConstruccionHerramienta mapa){
 
         this.mapa = mapa;
 

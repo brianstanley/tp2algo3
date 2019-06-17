@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.juego;
+package fiuba.algo3.tp2.juego.Navegador;
 
 public class Posicion {
 
@@ -10,9 +10,7 @@ public class Posicion {
         this.coordenadaY = coordenadaY;
     }
 
-    public int getX(){
-        return coordenadaX;
-    }
+    public int getX(){ return coordenadaX; }
 
     public int getY(){
         return coordenadaY;
@@ -26,12 +24,10 @@ public class Posicion {
         this.coordenadaX -= 1;
     }
 
-    public void moverNorte(){
-        this.coordenadaY += 1;
-    }
+    public void moverNorte(){ this.coordenadaY -= 1; }
 
     public void moverSur(){
-        this.coordenadaY -= 1;
+        this.coordenadaY += 1;
     }
 
 

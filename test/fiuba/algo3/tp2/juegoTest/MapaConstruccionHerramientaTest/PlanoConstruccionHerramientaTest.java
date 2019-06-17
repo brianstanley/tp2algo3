@@ -1,24 +1,24 @@
 package fiuba.algo3.tp2.juegoTest.MapaConstruccionHerramientaTest;
 
 import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.*;
-import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.MapaConstruccionHerramienta;
+import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MapaConstruccionHerramientaTest {
+public class PlanoConstruccionHerramientaTest {
 
     @Test
-    public void seCreaMapaDeConstruccionDeHerramientaIniciaYNoEsNulo(){
+    public void seCreaPlanoDeConstruccionDeHerramientaIniciaYNoEsNulo(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         Assert.assertNotNull(mapa);
     }
 
     @Test
-    public void seInsertaMaderaEnMapaConstruccionHerramienta(){
+    public void seInsertaMaderaEnPlanoConstruccionHerramienta(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
         mapa.insertarMaterialEnPosicion(madera,1,1);
@@ -28,7 +28,7 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void seInsertaMaderaEnPosicionYNoHayOtroMaterial(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
         mapa.insertarMaterialEnPosicion(madera,0,1);
@@ -38,9 +38,9 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void seInsertaPiedraEnMapaConstruccionHerramienta(){
+    public void seInsertaPiedraEnPlanoConstruccionHerramienta(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         PiedraMaterial piedra = new PiedraMaterial();
 
         mapa.insertarMaterialEnPosicion(piedra,2,1);
@@ -50,7 +50,7 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void seInsertaPiedraEnPosicionYNoHayOtroMaterial(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         PiedraMaterial piedra = new PiedraMaterial();
 
         mapa.insertarMaterialEnPosicion(piedra,2,0);
@@ -61,9 +61,9 @@ public class MapaConstruccionHerramientaTest {
 
 
     @Test
-    public void seInsertaMetalEnMapaConstruccionHerramienta(){
+    public void seInsertaMetalEnPlanoConstruccionHerramienta(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MetalMaterial metal = new MetalMaterial();
 
         mapa.insertarMaterialEnPosicion(metal,0,2);
@@ -73,7 +73,7 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void seInsertaMetalEnPosicionYNoHayOtroMaterial(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MetalMaterial metal = new MetalMaterial();
 
         mapa.insertarMaterialEnPosicion(metal,1,2);
@@ -83,9 +83,9 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void noSeInsertaMaterialYMapaConstruccionNoTieneMaterial(){
+    public void noSeInsertaMaterialYPlanoConstruccionNoTieneMaterial(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
 
         for(int i=0;i<3;i++)
             for(int j=0;j<3;j++)
@@ -93,23 +93,23 @@ public class MapaConstruccionHerramientaTest {
     }
 
     @Test
-    public void seObtieneFiguraDeHerramientaPuestaEnElMapa(){
+    public void seObtieneFiguraDeHerramientaPuestaEnElPlano(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
         mapa.insertarMaterialEnPosicion(metal, 0,1);
         mapa.insertarMaterialEnPosicion(madera,2,1);
 
-        Assert.assertTrue(mapa.obtenerFiguraMapeada() instanceof FiguraDeHerramienta);
+        Assert.assertTrue(mapa.obtenerFiguraMapeada() instanceof FiguraConstruible);
     }
 
 
     @Test
     public void seObtieneUnaFiguraDeHachaDeMadera(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
         mapa.insertarMaterialEnPosicion(madera,0,0);
@@ -123,7 +123,7 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void seObtieneUnaFiguraDeHachaDePiedra(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
@@ -138,7 +138,7 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void seObtieneUnaFiguraDeHachaDeMetal(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
@@ -155,7 +155,7 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void seObtieneUnaFiguraDePicoDeMadera(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
         mapa.insertarMaterialEnPosicion(madera,0,0);
@@ -169,7 +169,7 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void seObtieneUnaFiguraDePicoDePiedra(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
@@ -184,7 +184,7 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void seObtieneUnaFiguraDePicoDeMetal(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
@@ -201,7 +201,7 @@ public class MapaConstruccionHerramientaTest {
     @Test
     public void seObtieneUnaFiguraDePicoFinol(){
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
         PiedraMaterial piedra = new PiedraMaterial();

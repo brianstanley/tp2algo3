@@ -1,6 +1,8 @@
-package fiuba.algo3.tp2.juego;
+package fiuba.algo3.tp2.juego.Mapa;
 
-import fiuba.algo3.tp2.materiales.Material;
+import fiuba.algo3.tp2.juego.ElementoDeCampo;
+import fiuba.algo3.tp2.juego.ExcepcionesMapa.CasilleroOcupadoExcepcion;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 
 import java.util.ArrayList;
 
@@ -35,38 +37,27 @@ public class Mapa {
         return (fila < 0 || columna < 0 || fila > (this.filas - 1) || columna > (this.columnas - 1));
     }
 
-    public int getCantidadFilas() {
-        return filas;
-    }
-
-    public int getCantidadColumnas() {
-        return columnas;
-    }
-
-    public Material getContenidoCasillero(Posicion unaPosicion) {
+    public ElementoDeCampo getContenidoCasillero(Posicion unaPosicion) {
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
-        return (this.casilleros.get(fila).get(columna)).getMaterialGuardado();
+        return (this.casilleros.get(fila).get(columna)).getContenido();
     }
 
     public boolean existeElementoEnPosicion(Posicion unaPosicion) {
-        if (estaAfueraDelMapaLaPosicion(unaPosicion)) {
-            return (true);
-        }
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
-        return (this.casilleros.get(fila).get(columna).getMaterialGuardado() != null);
+        return (this.casilleros.get(fila).get(columna).getContenido() != null);
     }
 
-    public void setContenidoCasillero(Material material, Posicion unaPosicion) {
+    public void setContenidoCasillero(ElementoDeCampo elementoDeCampo, Posicion unaPosicion) {
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
-        this.casilleros.get(fila).get(columna).almacenarMaterial(material);
+        this.casilleros.get(fila).get(columna).setContenido(elementoDeCampo);
     }
 
-    public Material vaciarContenidoCasillero(Posicion unaPosicion) {
+    public ElementoDeCampo vaciarContenidoCasillero(Posicion unaPosicion) {
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
-        return (this.casilleros.get(fila).get(columna)).eliminarMaterialAlmacenado();
+        return (this.casilleros.get(fila).get(columna)).eliminarContenido();
     }
 }

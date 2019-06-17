@@ -1,15 +1,13 @@
 package fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras;
 
-import fiuba.algo3.tp2.materiales.MaderaMaterial;
-import fiuba.algo3.tp2.materiales.MetalMaterial;
-import fiuba.algo3.tp2.materiales.PiedraMaterial;
+import fiuba.algo3.tp2.herramientas.Herramienta;
+import fiuba.algo3.tp2.herramientas.picos.PicoFino;
 
-public class FiguraPicoFino extends FiguraDeHerramienta{
+public class FiguraPicoFino implements FiguraConstruible {
 
-    public FiguraPicoFino(){
+    @Override
+    public Herramienta construir(){
 
-        this.madera = 2;
-        this.piedra = 1;
-        this.metal = 3;
+        return new PicoFino();
     }
 }
