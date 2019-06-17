@@ -1,8 +1,9 @@
 package fiuba.algo3.tp2.juegoTest;
 
-import fiuba.algo3.tp2.juego.Casillero;
+import fiuba.algo3.tp2.juego.Mapa.Casillero;
+import fiuba.algo3.tp2.juego.ElementoDeCampo;
+import fiuba.algo3.tp2.juego.ExcepcionesMapa.CasilleroOcupadoExcepcion;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
-import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,40 +14,36 @@ public class CasilleroTest {
 public void seAlmacenaUnMaterialEnUnCasillero(){
     MaderaMaterial unaMadera = new MaderaMaterial();
     Casillero unCasillero = new Casillero();
-    unCasillero.almacenarMaterial(unaMadera);
-    Material materialGuardado = unCasillero.getMaterialGuardado();
+    unCasillero.setContenido(unaMadera);
+    ElementoDeCampo materialGuardado = unCasillero.getContenido();
     Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
 }
 
 @Test
 public void seCreaUnCasilleroYElMaterialAlmacenadoEsNulo(){
     Casillero unCasillero = new Casillero();
-    Assert.assertEquals(null, unCasillero.getMaterialGuardado());
+    Assert.assertEquals(null, unCasillero.getContenido());
 }
 
-@Test
-public void seAlmacenaUnMaterialEnUnCasilleroReemplazandoAlPreviamenteAlmacenado(){
+@Test (expected = CasilleroOcupadoExcepcion.class)
+public void almacenarUnElementoEnUnCasilleroOcupadoLanzaExcepcion(){
     MaderaMaterial unaMadera = new MaderaMaterial();
     Casillero unCasillero = new Casillero();
-    unCasillero.almacenarMaterial(unaMadera);
-    Material materialGuardado = unCasillero.getMaterialGuardado();
-    Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
-
+    unCasillero.setContenido(unaMadera);
     MetalMaterial unMetal = new MetalMaterial();
-    unCasillero.almacenarMaterial(unMetal);
-    Assert.assertEquals(unMetal.getClass(), unCasillero.getMaterialGuardado().getClass());
+    unCasillero.setContenido(unMetal);
 }
 
 @Test
 public void seEliminaElMaterialAlmacenadoEnUnCasillero(){
     MaderaMaterial unaMadera = new MaderaMaterial();
     Casillero unCasillero = new Casillero();
-    unCasillero.almacenarMaterial(unaMadera);
-    Material materialGuardado = unCasillero.getMaterialGuardado();
+    unCasillero.setContenido(unaMadera);
+    ElementoDeCampo materialGuardado = unCasillero.getContenido();
     Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
 
-    unCasillero.eliminarMaterialAlmacenado();
-    Assert.assertEquals(null, unCasillero.getMaterialGuardado());
+    unCasillero.eliminarContenido();
+    Assert.assertEquals(null, unCasillero.getContenido());
 }
 
 }

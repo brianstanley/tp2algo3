@@ -2,6 +2,9 @@ package fiuba.algo3.tp2.juegoTest;
 
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 import fiuba.algo3.tp2.juego.*;
+import fiuba.algo3.tp2.juego.Mapa.Mapa;
+import fiuba.algo3.tp2.juego.Navegador.Navegador;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import org.junit.Assert;
 import org.junit.Test;
 
