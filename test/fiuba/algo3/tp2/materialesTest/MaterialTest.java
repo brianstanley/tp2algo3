@@ -1,6 +1,5 @@
 package fiuba.algo3.tp2.materialesTest;
 
-import fiuba.algo3.tp2.herramientas.ExcepcionesHerramientas.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMetal;
 import fiuba.algo3.tp2.herramientas.hachas.HachaPiedra;

@@ -1,6 +1,5 @@
 package fiuba.algo3.tp2.materiales;
 
-import fiuba.algo3.tp2.herramientas.ExcepcionesHerramientas.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.herramientas.picos.Pico;
 import fiuba.algo3.tp2.materiales.ExcepcionesMateriales.MaterialRotoExcepcion;
 

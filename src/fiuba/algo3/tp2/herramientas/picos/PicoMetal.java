@@ -1,7 +1,6 @@
 package fiuba.algo3.tp2.herramientas.picos;
 
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteAbrupta;
-import fiuba.algo3.tp2.herramientas.ExcepcionesHerramientas.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
 
 public class PicoMetal extends Pico {
