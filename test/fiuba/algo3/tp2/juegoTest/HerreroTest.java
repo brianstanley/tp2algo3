@@ -4,7 +4,7 @@ import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.herramientas.hachas.*;
 import fiuba.algo3.tp2.herramientas.picos.*;
 import fiuba.algo3.tp2.juego.Herrero;
-import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.MapaConstruccionHerramienta;
+import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.*;
 import org.junit.Assert;
 import org.junit.Test;
@@ -24,7 +24,7 @@ public class HerreroTest {
 
         Herrero herrero = new Herrero();
 
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
         mapa.insertarMaterialEnPosicion(madera,0,0);
@@ -41,7 +41,7 @@ public class HerreroTest {
     public void herreroRecibeUnMapaDeHachaDePiedraYConstruyelaHerramienta(){
 
         Herrero herrero = new Herrero();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
@@ -59,7 +59,7 @@ public class HerreroTest {
     public void herreroRecibeUnaMapaDeHachaDeMetalYConstruyelaHerramienta() {
 
         Herrero herrero = new Herrero();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
@@ -78,7 +78,7 @@ public class HerreroTest {
     public void herreroRecibeUnMapaDePicoDeMaderaYConstruyelaHerramienta(){
 
         Herrero herrero = new Herrero();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
         mapa.insertarMaterialEnPosicion(madera,0,0);
@@ -95,7 +95,7 @@ public class HerreroTest {
     public void herreroRecibeUnMapaDePicoDePiedraYConstruyelaHerramienta(){
 
         Herrero herrero = new Herrero();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
@@ -113,7 +113,7 @@ public class HerreroTest {
     public void herreroRecibeUnMapaDePicoDeMetalYConstruyelaHerramienta(){
 
         Herrero herrero = new Herrero();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
@@ -132,7 +132,7 @@ public class HerreroTest {
     public void herreroRecibeUnMapaaDePicoFinoYConstruyelaHerramienta(){
 
         Herrero herrero = new Herrero();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
@@ -153,7 +153,7 @@ public class HerreroTest {
     public void herreroRecibeUnMapaDesconocidaYNoConstruyeHerramienta(){
 
         Herrero herrero = new Herrero();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
