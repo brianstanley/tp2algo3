@@ -44,26 +44,23 @@ public class Mapa {
     }
 
     public boolean existeElementoEnPosicion(Posicion unaPosicion) {
-        if (estaAfueraDelMapaLaPosicion(unaPosicion)) {
-            return (true);
-        }
         int fila = unaPosicion.getY();
         int columna = unaPosicion.getX();
         return (this.casilleros.get(fila).get(columna).getContenido() != null);
     }
 
     public void setContenidoCasillero(ElementoDeCampo elementoDeCampo, Posicion unaPosicion) {
-        int fila = unaPosicion.getY();
-        int columna = unaPosicion.getX();
-        try {
-            this.casilleros.get(fila).get(columna).setContenido(elementoDeCampo);
+        if (! this.estaAfueraDelMapaLaPosicion(unaPosicion)){
+            int fila = unaPosicion.getY();
+            int columna = unaPosicion.getX();
+            try {
+                this.casilleros.get(fila).get(columna).setContenido(elementoDeCampo);
+            }
+            catch (CasilleroOcupadoExcepcion ex){
+                elementoDeCampo.retractarMovimiento();
+            }
         }
-        catch (CasilleroOcupadoExcepcion ex){
-            elementoDeCampo.retractarMovimiento();
-        }
-        catch (IndexOutOfBoundsException ex){
-            elementoDeCampo.retractarMovimiento();
-        }
+        elementoDeCampo.retractarMovimiento();
     }
 
     public ElementoDeCampo vaciarContenidoCasillero(Posicion unaPosicion) {

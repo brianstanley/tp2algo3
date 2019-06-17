@@ -16,11 +16,19 @@ public class Navegador implements ElementoDeCampo {
         this.ponerEnMapa(this.mapaAsociado, this.posicionActual);
     }
 
+    private boolean puedeMoverseEnDireccionApuntada() {
+        Posicion posicionTentativa = direccionApuntada.calcularNuevaPosicionAPartirDe(this.posicionActual);
+        return !this.mapaAsociado.estaAfueraDelMapaLaPosicion(posicionTentativa) &&
+                !this.mapaAsociado.existeElementoEnPosicion(posicionTentativa);
+    }
+
     public void moverEnDireccion(Direccion direccionAMoverse){
-        this.quitarDelMapa(this.mapaAsociado, this.posicionActual);
         this.direccionApuntada = direccionAMoverse;
-        direccionApuntada.mover(this.posicionActual);
-        this.ponerEnMapa(this.mapaAsociado, this.posicionActual);
+        if (this.puedeMoverseEnDireccionApuntada()) {
+            this.quitarDelMapa(this.mapaAsociado, this.posicionActual);
+            direccionApuntada.mover(this.posicionActual);
+            this.ponerEnMapa(this.mapaAsociado, this.posicionActual);
+        }
     }
 
     @Override
@@ -38,10 +46,6 @@ public class Navegador implements ElementoDeCampo {
         Direccion direccionOpuesta = this.direccionApuntada.getDireccionOpuesta();
         this.direccionApuntada = direccionOpuesta;
         direccionApuntada.mover(this.posicionActual);
-    }
-
-    private void cambiarDireccion(Direccion nuevaDireccionAPuntar){
-        this.direccionApuntada = nuevaDireccionAPuntar;
     }
 
     public Posicion getPosicionActual() {
