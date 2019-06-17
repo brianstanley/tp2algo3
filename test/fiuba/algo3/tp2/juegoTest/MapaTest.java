@@ -1,22 +1,19 @@
 package fiuba.algo3.tp2.juegoTest;
 
 
-import fiuba.algo3.tp2.juego.Jugador;
-import fiuba.algo3.tp2.juego.Mapa;
-import fiuba.algo3.tp2.juego.Navegador;
-import fiuba.algo3.tp2.juego.Posicion;
+import fiuba.algo3.tp2.juego.*;
+import fiuba.algo3.tp2.juego.Mapa.Mapa;
+import fiuba.algo3.tp2.juego.Navegador.Navegador;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
-import fiuba.algo3.tp2.materiales.Material;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class MapaTest {
     @Test
-    public void seCreaElMapaConFilasYColumnasIndicadas() {
+    public void seCreaElMapaYNoEsNulo() {
         Mapa mapa = new Mapa(20, 20);
-
-        Assert.assertEquals(20, mapa.getCantidadFilas());
-        Assert.assertEquals(20, mapa.getCantidadColumnas());
+        Assert.assertNotNull(mapa);
     }
 
 
@@ -24,7 +21,7 @@ public class MapaTest {
     public void alVaciarCasilleroNoExisteMasElemento() {
         Mapa mapa = new Mapa(20, 20);
         Posicion unaPosicion = new Posicion(1, 1);
-        Material materialAnterior = mapa.vaciarContenidoCasillero(unaPosicion);
+        ElementoDeCampo elementoAnterior = mapa.vaciarContenidoCasillero(unaPosicion);
 
         Assert.assertEquals(false, mapa.existeElementoEnPosicion(unaPosicion));
     }
@@ -35,7 +32,7 @@ public class MapaTest {
         Posicion unaPosicion = new Posicion(1, 1);
         MaderaMaterial unaMadera = new MaderaMaterial();
 
-        mapa.setContenidoCasillero(unaMadera, unaPosicion);
+        unaMadera.ponerEnMapa(mapa, unaPosicion);
 
         Assert.assertEquals(true, mapa.existeElementoEnPosicion(unaPosicion));
     }
@@ -45,8 +42,7 @@ public class MapaTest {
         Mapa mapa = new Mapa(20,20);
         Navegador navegador = new Navegador(5,5, mapa);
         Jugador jugador = new Jugador(navegador);
-        Posicion unaPosicionAlNorte = new Posicion(5,6);
-        mapa.vaciarContenidoCasillero(unaPosicionAlNorte);
+        Posicion unaPosicionAlNorte = new Posicion(5,4);
         jugador.moverNorte();
 
         Assert.assertEquals(unaPosicionAlNorte.getX(), navegador.getPosicionActual().getX());
@@ -57,15 +53,25 @@ public class MapaTest {
     public void noSePuedeOcuparUnCasilleroOcupadoDelTerreno() {
         Mapa mapa = new Mapa(20,20);
         Navegador navegador = new Navegador(5,5, mapa);
+        Posicion posInicialNav = navegador.getPosicionActual();
         Jugador jugador = new Jugador(navegador);
-        Posicion unaPosicionAlNorte = new Posicion(5,6);
+        Posicion unaPosicionAlNorte = new Posicion(5,4);
         MaderaMaterial unaMadera = new MaderaMaterial();
         mapa.setContenidoCasillero(unaMadera, unaPosicionAlNorte);
         jugador.moverNorte();
-        Posicion posicionJugador = navegador.getPosicionActual();
+        Assert.assertEquals(posInicialNav.getX(), navegador.getPosicionActual().getX());
+        Assert.assertEquals(posInicialNav.getY(), navegador.getPosicionActual().getY());
+    }
 
-        Assert.assertEquals(5, posicionJugador.getX());
-        Assert.assertEquals(5, posicionJugador.getY());
+    @Test
+    public void ElNavegadorNoPuedeSalirDelMapa(){
+        Mapa mapa = new Mapa(2,2);
+        Navegador navegador = new Navegador(0,0, mapa);
+        Posicion posNavIn = navegador.getPosicionActual();
+        Jugador jugador = new Jugador(navegador);
+        jugador.moverNorte();
+        Assert.assertEquals(posNavIn.getX(), navegador.getPosicionActual().getX());
+        Assert.assertEquals(posNavIn.getY(), navegador.getPosicionActual().getY());
     }
 
     @Test
@@ -74,7 +80,8 @@ public class MapaTest {
         MaderaMaterial unaMadera = new MaderaMaterial();
         Posicion unaPosicion = new Posicion(5,5);
         mapa.setContenidoCasillero(unaMadera, unaPosicion);
-        Material materialGuardado = mapa.getCasillero(unaPosicion).getMaterialGuardado();
+        ElementoDeCampo materialGuardado = mapa.getCasillero(unaPosicion).getContenido();
         Assert.assertEquals(unaMadera.getClass() , materialGuardado.getClass());
     }
+
 }

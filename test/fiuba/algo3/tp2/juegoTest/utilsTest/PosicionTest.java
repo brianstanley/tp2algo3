@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.juegoTest.utilsTest;
 
-import fiuba.algo3.tp2.juego.Posicion;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -25,7 +25,7 @@ public class PosicionTest {
         Posicion unaPosicion = new Posicion(2,2);
         int posicionY = unaPosicion.getY();
         unaPosicion.moverNorte();
-        Assert.assertEquals(posicionY + 1, unaPosicion.getY());
+        Assert.assertEquals(posicionY - 1, unaPosicion.getY());
     }
 
     @Test
@@ -41,6 +41,6 @@ public class PosicionTest {
         Posicion unaPosicion = new Posicion(2,2);
         int posicionY = unaPosicion.getY();
         unaPosicion.moverSur();
-        Assert.assertEquals(posicionY - 1, unaPosicion.getY());
+        Assert.assertEquals(posicionY + 1, unaPosicion.getY());
     }
 }

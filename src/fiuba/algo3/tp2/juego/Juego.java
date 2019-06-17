@@ -1,5 +1,8 @@
 package fiuba.algo3.tp2.juego;
 
+import fiuba.algo3.tp2.juego.Mapa.Mapa;
+import fiuba.algo3.tp2.juego.Navegador.Navegador;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.materiales.DiamanteMaterial;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
@@ -22,7 +25,7 @@ public class Juego {
             for (int j = 1; j < 3; j++) {
                 MetalMaterial metal = new MetalMaterial();
                 Posicion unaPosicion = new Posicion(i, j);
-                mapa.setContenidoCasillero(metal, unaPosicion);
+                metal.ponerEnMapa(mapa,unaPosicion);
             }
         }
 
@@ -30,7 +33,7 @@ public class Juego {
             for (int j = 5; j < 7; j++) {
                 DiamanteMaterial diamante = new DiamanteMaterial();
                 Posicion unaPosicion = new Posicion(i, j);
-                mapa.setContenidoCasillero(diamante, unaPosicion);
+                diamante.ponerEnMapa(mapa, unaPosicion);
             }
         }
 
@@ -38,15 +41,7 @@ public class Juego {
             for (int j = 1; j < 5; j++) {
                 MaderaMaterial madera = new MaderaMaterial();
                 Posicion unaPosicion = new Posicion(i, j);
-                mapa.setContenidoCasillero(madera, unaPosicion);
-            }
-        }
-
-        for (int i = 4; i < 8; i++) {
-            for (int j = 1; j < 5; j++) {
-                MaderaMaterial madera = new MaderaMaterial();
-                Posicion unaPosicion = new Posicion(i, j);
-                mapa.setContenidoCasillero(madera, unaPosicion);
+                madera.ponerEnMapa(mapa, unaPosicion);
             }
         }
 
