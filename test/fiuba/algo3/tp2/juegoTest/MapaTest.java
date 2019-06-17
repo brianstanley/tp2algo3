@@ -32,7 +32,7 @@ public class MapaTest {
         Posicion unaPosicion = new Posicion(1, 1);
         MaderaMaterial unaMadera = new MaderaMaterial();
 
-        mapa.setContenidoCasillero(unaMadera, unaPosicion);
+        unaMadera.ponerEnMapa(mapa, unaPosicion);
 
         Assert.assertEquals(true, mapa.existeElementoEnPosicion(unaPosicion));
     }
