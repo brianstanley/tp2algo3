@@ -2,11 +2,11 @@ package fiuba.algo3.tp2.juego.MapaConstruccionHerramienta;
 
 import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.*;
 
-public class LectorDeMapa{
+public class LectorDePlanoConstruccion {
 
-    /*private MapaConstruccionHerramienta mapa;
+    private PlanoConstruccionHerramienta mapa;
 
-    public FiguraDeHerramienta evaluarMapa(MapaConstruccionHerramienta mapa){
+    public FiguraConstruible evaluarMapa(PlanoConstruccionHerramienta mapa){
 
         this.mapa = mapa;
 
@@ -79,5 +79,5 @@ public class LectorDeMapa{
         return (mapa.hayMaderaEnPosicion(1,1) && mapa.hayMaderaEnPosicion(2,1)
                 && mapa.noHayMaterialEnPosicion(2,0) && mapa.noHayMaterialEnPosicion(1,2)
                 && mapa.noHayMaterialEnPosicion(2,2));
-    }*/
+    }
 }

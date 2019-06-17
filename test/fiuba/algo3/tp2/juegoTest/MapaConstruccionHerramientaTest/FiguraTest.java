@@ -1,5 +1,7 @@
 package fiuba.algo3.tp2.juegoTest.MapaConstruccionHerramientaTest;
 
+import fiuba.algo3.tp2.herramientas.hachas.*;
+import fiuba.algo3.tp2.herramientas.picos.*;
 import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.*;
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,40 +9,75 @@ import org.junit.Test;
 public class FiguraTest {
 
     @Test
-    public void figuraDeMaderaEstaFormadaPorCincoMaderas(){
+    public void figuraDesconocidaNoConstruyeNada(){
 
-        FiguraDeMadera hacha = new FiguraHachaMadera();
+        FiguraDesconocida firgura = new FiguraDesconocida();
 
-        Assert.assertEquals(5, hacha.getCantidadMadera());
-        Assert.assertEquals(0, hacha.getCantidadPiedra());
-        Assert.assertEquals(0, hacha.getCantidadMetal());
+        Assert.assertNull(firgura.construir());
     }
+
     @Test
-    public void figuraDePiedraEstaFormadaPorDosMaderasYTresPiedras(){
+    public void figuraHachaMaderaConstruyeUnHachaDeMadera(){
 
-        FiguraDePiedra pico = new FiguraPicoPiedra();
+        FiguraHachaMadera figuraHachaMadera = new FiguraHachaMadera();
 
-        Assert.assertEquals(2, pico.getCantidadMadera());
-        Assert.assertEquals(3, pico.getCantidadPiedra());
-        Assert.assertEquals(0, pico.getCantidadMetal());
+        Assert.assertTrue(figuraHachaMadera.construir() instanceof HachaMadera);
     }
+
     @Test
-    public void figuraDeMetalEstaFormadaPorDosMaderasYTresMetales(){
+    public void figuraHachaPiedraConstruyeUnHachaDePiedra(){
 
-        FiguraDeMetal hacha = new FiguraHachaMetal();
+        FiguraHachaPiedra figuraHachaPiedra = new FiguraHachaPiedra();
 
-        Assert.assertEquals(2, hacha.getCantidadMadera());
-        Assert.assertEquals(0, hacha.getCantidadPiedra());
-        Assert.assertEquals(3, hacha.getCantidadMetal());
+        Assert.assertTrue(figuraHachaPiedra.construir() instanceof HachaPiedra);
     }
+
     @Test
-    public void figuraDePicoFinoEstaFormadaPorDosMaderasUnaPiedraYTresMetales(){
+    public void figuraHachaMetalConstruyeUnHachaDeMetal(){
 
-        FiguraPicoFino picoFino = new FiguraPicoFino();
+        FiguraHachaMetal figuraHachaMetal = new FiguraHachaMetal();
 
-        Assert.assertEquals(2, picoFino.getCantidadMadera());
-        Assert.assertEquals(1, picoFino.getCantidadPiedra());
-        Assert.assertEquals(3, picoFino.getCantidadMetal());
+        Assert.assertTrue(figuraHachaMetal.construir() instanceof HachaMetal);
     }
+
+    @Test
+    public void figuraPicoMaderaConstruyeUnPicoDeMadera(){
+
+        FiguraPicoMadera  figuraPicoMadera = new FiguraPicoMadera();
+
+        Assert.assertTrue(figuraPicoMadera.construir() instanceof PicoMadera);
+    }
+
+    @Test
+    public void figuraPicoPiedraConstruyeUnPicoDePiedra(){
+
+        FiguraPicoPiedra figuraPicoPiedra = new FiguraPicoPiedra();
+
+        Assert.assertTrue(figuraPicoPiedra.construir() instanceof PicoPiedra);
+    }
+
+    @Test
+    public void figuraPicoMetalConstruyeUnPicoDeMetal(){
+
+        FiguraPicoMetal figuraPicoMetal = new FiguraPicoMetal();
+
+        Assert.assertTrue(figuraPicoMetal.construir() instanceof PicoMetal);
+    }
+
+    @Test
+    public void figuraPicoFinoConstruyeUnPicoFino(){
+
+        FiguraPicoFino figuraPicoFino = new FiguraPicoFino();
+
+        Assert.assertTrue(figuraPicoFino.construir() instanceof PicoFino);
+    }
+
+
 
 }
+
+
+
+
+
+

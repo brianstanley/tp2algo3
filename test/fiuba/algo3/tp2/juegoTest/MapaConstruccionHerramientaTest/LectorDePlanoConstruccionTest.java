@@ -1,28 +1,28 @@
 package fiuba.algo3.tp2.juegoTest.MapaConstruccionHerramientaTest;
 
 import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.*;
-import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.LectorDeMapa;
-import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.MapaConstruccionHerramienta;
+import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.LectorDePlanoConstruccion;
+import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.*;
 import org.junit.Assert;
 import org.junit.Test;
 
 
 
-public class LectorDeMapaTest {
+public class LectorDePlanoConstruccionTest {
 
     /*@Test
     public void lectorSeIniciaYNoEsNulo(){
 
-        LectorDeMapa lector = new LectorDeMapa();
+        LectorDePlanoConstruccion lector = new LectorDePlanoConstruccion();
 
         Assert.assertNotNull(lector);
     }
     @Test
-    public void lectorNoReconoceFiguraEnMapaYDevuelveFiguraDesconocida(){
+    public void lectorNoReconoceFiguraEnPlanoYDevuelveFiguraDesconocida(){
 
-        LectorDeMapa lector = new LectorDeMapa();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        LectorDePlanoConstruccion lector = new LectorDePlanoConstruccion();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
@@ -37,10 +37,10 @@ public class LectorDeMapaTest {
 
 
     @Test
-    public void lectorReconoceFiguraDeHachaDeMaderaEnMapaDeConstruccionDeHerramienta(){
+    public void lectorReconoceFiguraDeHachaDeMaderaEnPlanoDeConstruccionDeHerramienta(){
 
-        LectorDeMapa lector = new LectorDeMapa();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        LectorDePlanoConstruccion lector = new LectorDePlanoConstruccion();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
         mapa.insertarMaterialEnPosicion(madera,0,0);
@@ -52,10 +52,10 @@ public class LectorDeMapaTest {
         Assert.assertTrue(lector.evaluarMapa(mapa) instanceof FiguraHachaMadera);
     }
     @Test
-    public void lectorReconoceFiguraDeHachaDePiedraEnMapaDeConstruccionDeHerramienta(){
+    public void lectorReconoceFiguraDeHachaDePiedraEnPlanoDeConstruccionDeHerramienta(){
 
-        LectorDeMapa lector = new LectorDeMapa();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        LectorDePlanoConstruccion lector = new LectorDePlanoConstruccion();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
@@ -68,10 +68,10 @@ public class LectorDeMapaTest {
         Assert.assertTrue(lector.evaluarMapa(mapa) instanceof FiguraHachaPiedra);
     }
     @Test
-    public void lectorReconoceFiguraDeHachaDeMetalEnMapaDeConstruccionDeHerramienta(){
+    public void lectorReconoceFiguraDeHachaDeMetalEnPlanoDeConstruccionDeHerramienta(){
 
-        LectorDeMapa lector = new LectorDeMapa();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        LectorDePlanoConstruccion lector = new LectorDePlanoConstruccion();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
@@ -86,10 +86,10 @@ public class LectorDeMapaTest {
 
 
     @Test
-    public void lectorReconoceFiguraDePicoDeMaderaEnMapaDeConstruccionDeHerramienta(){
+    public void lectorReconoceFiguraDePicoDeMaderaEnPlanoDeConstruccionDeHerramienta(){
 
-        LectorDeMapa lector = new LectorDeMapa();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        LectorDePlanoConstruccion lector = new LectorDePlanoConstruccion();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
         mapa.insertarMaterialEnPosicion(madera,0,0);
@@ -101,10 +101,10 @@ public class LectorDeMapaTest {
         Assert.assertTrue( lector.evaluarMapa(mapa) instanceof FiguraPicoMadera);
     }
     @Test
-    public void lectorReconoceFiguraDePicoDePiedraEnMapaDeConstruccionDeHerramienta(){
+    public void lectorReconoceFiguraDePicoDePiedraEnPlanoDeConstruccionDeHerramienta(){
 
-        LectorDeMapa lector = new LectorDeMapa();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        LectorDePlanoConstruccion lector = new LectorDePlanoConstruccion();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
@@ -117,10 +117,10 @@ public class LectorDeMapaTest {
         Assert.assertTrue(lector.evaluarMapa(mapa) instanceof FiguraPicoPiedra);
     }
     @Test
-    public void lectorReconoceFiguraDePicoDeMetalEnMapaDeConstruccionDeHerramienta(){
+    public void lectorReconoceFiguraDePicoDeMetalEnPlanoDeConstruccionDeHerramienta(){
 
-        LectorDeMapa lector = new LectorDeMapa();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        LectorDePlanoConstruccion lector = new LectorDePlanoConstruccion();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
@@ -135,10 +135,10 @@ public class LectorDeMapaTest {
 
 
     @Test
-    public void lectorReconoceFiguraDePicoFinolEnMapaDeConstruccionDeHerramienta(){
+    public void lectorReconoceFiguraDePicoFinolEnPlanoDeConstruccionDeHerramienta(){
 
-        LectorDeMapa lector = new LectorDeMapa();
-        MapaConstruccionHerramienta mapa = new MapaConstruccionHerramienta();
+        LectorDePlanoConstruccion lector = new LectorDePlanoConstruccion();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
