@@ -1,45 +1,33 @@
 package fiuba.algo3.tp2.juego;
 
-import fiuba.algo3.tp2.herramientas.Herramienta;
-import fiuba.algo3.tp2.juego.utils.HerramientasContainer;
-import fiuba.algo3.tp2.juego.utils.MaterialesContainer;
-import fiuba.algo3.tp2.materiales.Material;
-
-
+import fiuba.algo3.tp2.juego.utils.ItemsContainer;
 
 public class Inventario {
-    private HerramientasContainer herramientas;
-    private MaterialesContainer materiales;
+    private ItemsContainer items;
 
     public Inventario() {
-        this.herramientas = new HerramientasContainer();
-        this.materiales = new MaterialesContainer();
+        this.items = new ItemsContainer();
     }
 
-    public boolean tiene(Herramienta herramienta) {
-        return this.herramientas.tieneHerramienta(herramienta);
+    public boolean tiene(Guardable item) {
+        return this.items.tieneItem(item);
     }
 
-    public void agregar(Material unMaterial) {
+    public void agregar(Guardable item) {
 
-        this.materiales.agregar(unMaterial);
+        this.items.agregar(item);
     }
 
-    public void agregar(Herramienta unaHerramienta) {
+    public int getCantidadDe(Guardable item) {
 
-        this.herramientas.agregar(unaHerramienta);
+        return this.items.getCantidadDe(item);
     }
 
-    public int getCantidadDe(Material unMaterial) {
-
-        return this.materiales.getCantidadDe(unMaterial);
+    public int getCantidadItems() {
+        return this.items.cantidad();
     }
 
-    public void removerItem(Material unMaterial) {
-        this.materiales.decrementarCantidadDe(unMaterial);
-    }
-
-    public int getCantidadDeHerramientas() {
-        return this.herramientas.cantidad();
+    public void removerItem(Guardable item) {
+        this.items.remover(item);
     }
 }

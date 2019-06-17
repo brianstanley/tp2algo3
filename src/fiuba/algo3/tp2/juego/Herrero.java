@@ -8,28 +8,28 @@ import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.*;
 public class Herrero {
 
 
-    public Herramienta construirHerramienta(FiguraDeHerramienta figura){
+    public Guardable construirHerramienta(FiguraDeHerramienta figura){
         return null;
     }
-    public Herramienta construirHerramienta(FiguraHachaMadera figura){
+    public Guardable construirHerramienta(FiguraHachaMadera figura){
         return new HachaMadera();
     }
-    public Herramienta construirHerramienta(FiguraHachaPiedra figura){
+    public Guardable construirHerramienta(FiguraHachaPiedra figura){
         return new HachaPiedra();
     }
-    public Herramienta construirHerramienta(FiguraHachaMetal figura){
+    public Guardable construirHerramienta(FiguraHachaMetal figura){
         return new HachaMetal();
     }
-    public Herramienta construirHerramienta(FiguraPicoFino figura){
+    public Guardable construirHerramienta(FiguraPicoFino figura){
         return new PicoFino();
     }
-    public Herramienta construirHerramienta(FiguraPicoMadera figura){
+    public Guardable construirHerramienta(FiguraPicoMadera figura){
         return new PicoMadera();
     }
-    public Herramienta construirHerramienta(FiguraPicoPiedra figura){
+    public Guardable construirHerramienta(FiguraPicoPiedra figura){
         return new PicoPiedra();
     }
-    public Herramienta construirHerramienta(FiguraPicoMetal figura){
+    public Guardable construirHerramienta(FiguraPicoMetal figura){
         return new PicoMetal();
     }
 

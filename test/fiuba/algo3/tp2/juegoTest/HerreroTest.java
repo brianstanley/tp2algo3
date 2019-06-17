@@ -1,8 +1,8 @@
 package fiuba.algo3.tp2.juegoTest;
 
-import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.herramientas.hachas.*;
 import fiuba.algo3.tp2.herramientas.picos.*;
+import fiuba.algo3.tp2.juego.Guardable;
 import fiuba.algo3.tp2.juego.Herrero;
 import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.*;
 import org.junit.Assert;
@@ -23,7 +23,7 @@ public class HerreroTest {
 
         Herrero herrero = new Herrero();
         FiguraHachaMadera figura = new FiguraHachaMadera();
-        Herramienta herramientaCreada = herrero.construirHerramienta(figura);
+        Guardable herramientaCreada = herrero.construirHerramienta(figura);
 
         Assert.assertTrue(herramientaCreada instanceof HachaMadera);
     }
@@ -32,7 +32,7 @@ public class HerreroTest {
 
         Herrero herrero = new Herrero();
         FiguraHachaPiedra figura = new FiguraHachaPiedra();
-        Herramienta herramientaCreada = herrero.construirHerramienta(figura);
+        Guardable herramientaCreada = herrero.construirHerramienta(figura);
 
         Assert.assertTrue(herramientaCreada instanceof HachaPiedra);
     }
@@ -41,7 +41,7 @@ public class HerreroTest {
 
         Herrero herrero = new Herrero();
         FiguraHachaMetal figura = new FiguraHachaMetal();
-        Herramienta herramientaCreada = herrero.construirHerramienta(figura);
+        Guardable herramientaCreada = herrero.construirHerramienta(figura);
 
         Assert.assertTrue(herramientaCreada instanceof HachaMetal);
     }
@@ -50,7 +50,7 @@ public class HerreroTest {
 
         Herrero herrero = new Herrero();
         FiguraPicoMadera figura = new FiguraPicoMadera();
-        Herramienta herramientaCreada = herrero.construirHerramienta(figura);
+        Guardable herramientaCreada = herrero.construirHerramienta(figura);
 
         Assert.assertTrue(herramientaCreada instanceof PicoMadera);
     }
@@ -59,7 +59,7 @@ public class HerreroTest {
 
         Herrero herrero = new Herrero();
         FiguraPicoPiedra figura = new FiguraPicoPiedra();
-        Herramienta herramientaCreada = herrero.construirHerramienta(figura);
+        Guardable herramientaCreada = herrero.construirHerramienta(figura);
 
         Assert.assertTrue(herramientaCreada instanceof PicoPiedra);
     }
@@ -68,7 +68,7 @@ public class HerreroTest {
 
         Herrero herrero = new Herrero();
         FiguraPicoMetal figura = new FiguraPicoMetal();
-        Herramienta herramientaCreada = herrero.construirHerramienta(figura);
+        Guardable herramientaCreada = herrero.construirHerramienta(figura);
 
         Assert.assertTrue(herramientaCreada instanceof PicoMetal);
     }
@@ -78,7 +78,7 @@ public class HerreroTest {
 
         Herrero herrero = new Herrero();
         FiguraPicoFino figura = new FiguraPicoFino();
-        Herramienta herramientaCreada = herrero.construirHerramienta(figura);
+        Guardable herramientaCreada = herrero.construirHerramienta(figura);
 
         Assert.assertTrue(herramientaCreada instanceof PicoFino);
     }
@@ -88,7 +88,7 @@ public class HerreroTest {
 
         Herrero herrero = new Herrero();
         FiguraDesconocida figura = new FiguraDesconocida();
-        Herramienta herramientaCreada = herrero.construirHerramienta(figura);
+        Guardable herramientaCreada = herrero.construirHerramienta(figura);
 
         Assert.assertNull(herramientaCreada);
     }

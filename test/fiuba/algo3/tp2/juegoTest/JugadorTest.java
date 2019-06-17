@@ -1,12 +1,9 @@
 package fiuba.algo3.tp2.juegoTest;
 
-import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 import fiuba.algo3.tp2.juego.*;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.List;
 
 import static org.junit.Assert.*;
 

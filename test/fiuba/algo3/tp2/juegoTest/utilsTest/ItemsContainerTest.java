@@ -5,7 +5,7 @@ import fiuba.algo3.tp2.materiales.MetalMaterial;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MaterialesContainerTest {
+public class ItemsContainerTest {
     @Test
     public void seAgrega3ItemsMetalAColleccion() {
         MetalMaterial metal = new MetalMaterial();
