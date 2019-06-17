@@ -102,7 +102,7 @@ public class MapaConstruccionHerramientaTest {
         mapa.insertarMaterialEnPosicion(metal, 0,1);
         mapa.insertarMaterialEnPosicion(madera,2,1);
 
-        Assert.assertTrue(mapa.obtenerFiguraMapeada() instanceof FiguraDeHerramienta);
+        Assert.assertTrue(mapa.obtenerFiguraMapeada() instanceof FiguraConstruible);
     }
 
 

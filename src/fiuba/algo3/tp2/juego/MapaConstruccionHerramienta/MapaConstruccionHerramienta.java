@@ -45,7 +45,7 @@ public class MapaConstruccionHerramienta {
     }
 
 
-    public FiguraDeHerramienta obtenerFiguraMapeada() {
+    public FiguraConstruible obtenerFiguraMapeada() {
 
         return this.lector.evaluarMapa(this);
     }

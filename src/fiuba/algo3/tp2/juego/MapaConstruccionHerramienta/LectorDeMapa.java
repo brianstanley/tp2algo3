@@ -6,7 +6,7 @@ public class LectorDeMapa{
 
     private MapaConstruccionHerramienta mapa;
 
-    public FiguraDeHerramienta evaluarMapa(MapaConstruccionHerramienta mapa){
+    public FiguraConstruible evaluarMapa(MapaConstruccionHerramienta mapa){
 
         this.mapa = mapa;
 

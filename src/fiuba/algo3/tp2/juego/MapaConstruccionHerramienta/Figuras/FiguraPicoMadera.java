@@ -1,5 +1,13 @@
 package fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras;
 
-import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.FiguraDeMadera;
+import fiuba.algo3.tp2.herramientas.Herramienta;
+import fiuba.algo3.tp2.herramientas.picos.PicoMadera;
 
-public class FiguraPicoMadera extends FiguraDeMadera {}
+public class FiguraPicoMadera implements FiguraConstruible {
+
+    @Override
+    public Herramienta construir(){
+
+        return new PicoMadera();
+    }
+}
