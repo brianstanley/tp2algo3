@@ -9,5 +9,4 @@ public interface ElementoDeCampo {
 
     void quitarDelMapa(Mapa mapa, Posicion posicion);
 
-    void retractarMovimiento();
 }

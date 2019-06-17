@@ -50,17 +50,9 @@ public class Mapa {
     }
 
     public void setContenidoCasillero(ElementoDeCampo elementoDeCampo, Posicion unaPosicion) {
-        if (! this.estaAfueraDelMapaLaPosicion(unaPosicion)){
-            int fila = unaPosicion.getY();
-            int columna = unaPosicion.getX();
-            try {
-                this.casilleros.get(fila).get(columna).setContenido(elementoDeCampo);
-            }
-            catch (CasilleroOcupadoExcepcion ex){
-                elementoDeCampo.retractarMovimiento();
-            }
-        }
-        elementoDeCampo.retractarMovimiento();
+        int fila = unaPosicion.getY();
+        int columna = unaPosicion.getX();
+        this.casilleros.get(fila).get(columna).setContenido(elementoDeCampo);
     }
 
     public ElementoDeCampo vaciarContenidoCasillero(Posicion unaPosicion) {

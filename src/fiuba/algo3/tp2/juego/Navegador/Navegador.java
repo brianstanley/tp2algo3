@@ -41,13 +41,6 @@ public class Navegador implements ElementoDeCampo {
         mapa.vaciarContenidoCasillero(this.posicionActual);
     }
 
-    @Override
-    public void retractarMovimiento(){
-        Direccion direccionOpuesta = this.direccionApuntada.getDireccionOpuesta();
-        this.direccionApuntada = direccionOpuesta;
-        direccionApuntada.mover(this.posicionActual);
-    }
-
     public Posicion getPosicionActual() {
         return this.posicionActual;
     }

@@ -22,8 +22,5 @@ public abstract class Material implements ElementoDeCampo {
     public void quitarDelMapa(Mapa mapa, Posicion posicion){
         mapa.setContenidoCasillero(this, posicion);
     }
-
-    public void retractarMovimiento(){
-
-    }
+    
 }
