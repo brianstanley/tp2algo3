@@ -1,10 +1,11 @@
 package fiuba.algo3.tp2.juegoTest;
 
+import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.herramientas.hachas.*;
 import fiuba.algo3.tp2.herramientas.picos.*;
-import fiuba.algo3.tp2.juego.Guardable;
 import fiuba.algo3.tp2.juego.Herrero;
-import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.*;
+import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.PlanoConstruccionHerramienta;
+import fiuba.algo3.tp2.materiales.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -19,77 +20,151 @@ public class HerreroTest {
     }
 
     @Test
-    public void herreroRecibeUnaFiguraDeHachaDeMaderaYConstruyelaHerramienta(){
+    public void herreroRecibeUnMapaDeHachaDeMaderaYConstruyelaHerramienta(){
 
         Herrero herrero = new Herrero();
-        FiguraHachaMadera figura = new FiguraHachaMadera();
-        Guardable herramientaCreada = herrero.construirHerramienta(figura);
+
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
+        MaderaMaterial madera = new MaderaMaterial();
+
+        mapa.insertarMaterialEnPosicion(madera,0,0);
+        mapa.insertarMaterialEnPosicion(madera,0,1);
+        mapa.insertarMaterialEnPosicion(madera,1,0);
+        mapa.insertarMaterialEnPosicion(madera,1,1);
+        mapa.insertarMaterialEnPosicion(madera,2,1);
+
+        Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof HachaMadera);
     }
     @Test
-    public void herreroRecibeUnaFiguraDeHachaDePiedraYConstruyelaHerramienta(){
+    public void herreroRecibeUnMapaDeHachaDePiedraYConstruyelaHerramienta(){
 
         Herrero herrero = new Herrero();
-        FiguraHachaPiedra figura = new FiguraHachaPiedra();
-        Guardable herramientaCreada = herrero.construirHerramienta(figura);
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
+        MaderaMaterial madera = new MaderaMaterial();
+        PiedraMaterial piedra = new PiedraMaterial();
+
+        mapa.insertarMaterialEnPosicion(piedra,0,0);
+        mapa.insertarMaterialEnPosicion(piedra,0,1);
+        mapa.insertarMaterialEnPosicion(piedra,1,0);
+        mapa.insertarMaterialEnPosicion(madera,1,1);
+        mapa.insertarMaterialEnPosicion(madera,2,1);
+
+        Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof HachaPiedra);
     }
     @Test
-    public void herreroRecibeUnaFiguraDeHachaDeMetalYConstruyelaHerramienta(){
+    public void herreroRecibeUnaMapaDeHachaDeMetalYConstruyelaHerramienta() {
 
         Herrero herrero = new Herrero();
-        FiguraHachaMetal figura = new FiguraHachaMetal();
-        Guardable herramientaCreada = herrero.construirHerramienta(figura);
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
+        MaderaMaterial madera = new MaderaMaterial();
+        MetalMaterial metal = new MetalMaterial();
+
+        mapa.insertarMaterialEnPosicion(metal, 0, 0);
+        mapa.insertarMaterialEnPosicion(metal, 0, 1);
+        mapa.insertarMaterialEnPosicion(metal, 1, 0);
+        mapa.insertarMaterialEnPosicion(madera, 1, 1);
+        mapa.insertarMaterialEnPosicion(madera, 2, 1);
+
+        Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof HachaMetal);
     }
+
     @Test
-    public void herreroRecibeUnaFiguraDePicoDeMaderaYConstruyelaHerramienta(){
+    public void herreroRecibeUnMapaDePicoDeMaderaYConstruyelaHerramienta(){
 
         Herrero herrero = new Herrero();
-        FiguraPicoMadera figura = new FiguraPicoMadera();
-        Guardable herramientaCreada = herrero.construirHerramienta(figura);
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
+        MaderaMaterial madera = new MaderaMaterial();
+
+        mapa.insertarMaterialEnPosicion(madera,0,0);
+        mapa.insertarMaterialEnPosicion(madera,0,1);
+        mapa.insertarMaterialEnPosicion(madera,0,2);
+        mapa.insertarMaterialEnPosicion(madera,1,1);
+        mapa.insertarMaterialEnPosicion(madera,2,1);
+
+        Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof PicoMadera);
     }
     @Test
-    public void herreroRecibeUnaFiguraDePicoDePiedraYConstruyelaHerramienta(){
+    public void herreroRecibeUnMapaDePicoDePiedraYConstruyelaHerramienta(){
 
         Herrero herrero = new Herrero();
-        FiguraPicoPiedra figura = new FiguraPicoPiedra();
-        Guardable herramientaCreada = herrero.construirHerramienta(figura);
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
+        MaderaMaterial madera = new MaderaMaterial();
+        PiedraMaterial piedra = new PiedraMaterial();
+
+        mapa.insertarMaterialEnPosicion(piedra,0,0);
+        mapa.insertarMaterialEnPosicion(piedra,0,1);
+        mapa.insertarMaterialEnPosicion(piedra,0,2);
+        mapa.insertarMaterialEnPosicion(madera,1,1);
+        mapa.insertarMaterialEnPosicion(madera,2,1);
+
+        Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof PicoPiedra);
     }
     @Test
-    public void herreroRecibeUnaFiguraDePicoDeMetalYConstruyelaHerramienta(){
+    public void herreroRecibeUnMapaDePicoDeMetalYConstruyelaHerramienta(){
 
         Herrero herrero = new Herrero();
-        FiguraPicoMetal figura = new FiguraPicoMetal();
-        Guardable herramientaCreada = herrero.construirHerramienta(figura);
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
+        MaderaMaterial madera = new MaderaMaterial();
+        MetalMaterial metal = new MetalMaterial();
+
+        mapa.insertarMaterialEnPosicion(metal,0,0);
+        mapa.insertarMaterialEnPosicion(metal,0,1);
+        mapa.insertarMaterialEnPosicion(metal,0,2);
+        mapa.insertarMaterialEnPosicion(madera,1,1);
+        mapa.insertarMaterialEnPosicion(madera,2,1);
+
+        Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof PicoMetal);
     }
 
     @Test
-    public void herreroRecibeUnaFiguraDePicoFinoYConstruyelaHerramienta(){
+    public void herreroRecibeUnMapaaDePicoFinoYConstruyelaHerramienta(){
 
         Herrero herrero = new Herrero();
-        FiguraPicoFino figura = new FiguraPicoFino();
-        Guardable herramientaCreada = herrero.construirHerramienta(figura);
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
+        MaderaMaterial madera = new MaderaMaterial();
+        MetalMaterial metal = new MetalMaterial();
+        PiedraMaterial piedra = new PiedraMaterial();
+
+        mapa.insertarMaterialEnPosicion(metal,0,0);
+        mapa.insertarMaterialEnPosicion(metal,0,1);
+        mapa.insertarMaterialEnPosicion(metal,0,2);
+        mapa.insertarMaterialEnPosicion(piedra,1,0);
+        mapa.insertarMaterialEnPosicion(madera,1,1);
+        mapa.insertarMaterialEnPosicion(madera,2,1);
+
+        Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof PicoFino);
     }
 
     @Test
-    public void herreroRecibeUnaFiguraDesconocidaYNoConstruyeHerramienta(){
+    public void herreroRecibeUnMapaDesconocidaYNoConstruyeHerramienta(){
 
         Herrero herrero = new Herrero();
-        FiguraDesconocida figura = new FiguraDesconocida();
-        Guardable herramientaCreada = herrero.construirHerramienta(figura);
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
+        MaderaMaterial madera = new MaderaMaterial();
+        MetalMaterial metal = new MetalMaterial();
+        PiedraMaterial piedra = new PiedraMaterial();
+
+        mapa.insertarMaterialEnPosicion(metal, 0,1);
+        mapa.insertarMaterialEnPosicion(madera,2,1);
+        mapa.insertarMaterialEnPosicion(piedra,0,2);
+
+        Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertNull(herramientaCreada);
     }
 }
+
