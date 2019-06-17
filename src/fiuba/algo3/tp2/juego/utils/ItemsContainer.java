@@ -15,9 +15,7 @@ public class ItemsContainer {
     }
 
     public void agregar(Guardable item) {
-//        if (!this.tieneItem(herramienta)) {
-            this.items.add(item);
-//        }
+        this.items.add(item);
     }
 
     public boolean tieneItem(Guardable item) {
