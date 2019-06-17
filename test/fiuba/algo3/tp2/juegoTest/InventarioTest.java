@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.juegoTest;
 
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
+import fiuba.algo3.tp2.herramientas.hachas.HachaMetal;
 import fiuba.algo3.tp2.herramientas.picos.PicoFino;
 import fiuba.algo3.tp2.juego.Inventario;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
@@ -48,11 +49,11 @@ public class InventarioTest {
         inventario.agregar(picoFino);
         inventario.agregar(hacha);
 
-        Assert.assertEquals(2, inventario.getCantidadDeHerramientas());
+        Assert.assertEquals(2, inventario.getCantidadItems());
     }
 
     @Test
-    public void seAgrega3VecesLaMismaHerramientaPeroSoloPersisteUna() {
+    public void seAgrega3VecesLaMismaHerramienta() {
         Inventario  inventario = new Inventario();
         PicoFino picoFino = new PicoFino();
 
@@ -60,6 +61,20 @@ public class InventarioTest {
         inventario.agregar(picoFino);
         inventario.agregar(picoFino);
 
-        Assert.assertEquals(1, inventario.getCantidadDeHerramientas());
+        Assert.assertEquals(3, inventario.getCantidadItems());
+    }
+
+    @Test
+    public void seAgregaUnHachaDeMaderaYunaPiedraYTieneAmbosItems() {
+        Inventario  inventario = new Inventario();
+        HachaMadera hacha = new HachaMadera();
+        PiedraMaterial piedra = new PiedraMaterial();
+
+        inventario.agregar(hacha);
+        inventario.agregar(piedra);
+
+        Assert.assertTrue(inventario.tiene(hacha));
+        Assert.assertTrue(inventario.tiene(piedra));
+        Assert.assertFalse(inventario.tiene(new HachaMetal()));
     }
 }
