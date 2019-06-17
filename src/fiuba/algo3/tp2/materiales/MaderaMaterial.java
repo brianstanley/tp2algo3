@@ -1,6 +1,5 @@
 package fiuba.algo3.tp2.materiales;
 
-import fiuba.algo3.tp2.herramientas.ExcepcionesHerramientas.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.herramientas.hachas.Hacha;
 import fiuba.algo3.tp2.materiales.ExcepcionesMateriales.MaterialRotoExcepcion;
 
@@ -11,9 +10,7 @@ public class MaderaMaterial extends Material {
     }
 
     public void desgastarCon(Hacha unHacha) throws MaterialRotoExcepcion {
+        this.checkDurabilidadValida();
         this.durabilidad -= unHacha.getFuerza();
-        if (this.durabilidad <= 0){
-            throw new MaterialRotoExcepcion("este material ya fue desgastado");
-        }
     }
 }

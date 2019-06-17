@@ -11,9 +11,7 @@ public class DiamanteMaterial extends Material {
     }
 
     public void desgastarCon(PicoFino unPicoFino) throws MaterialRotoExcepcion {
+        this.checkDurabilidadValida();
         this.durabilidad -= unPicoFino.getFuerza();
-        if (durabilidad <= 0){
-            throw new MaterialRotoExcepcion("este material ya fue desgastado");
-        }
     }
 }

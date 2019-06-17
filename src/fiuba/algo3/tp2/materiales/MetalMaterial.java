@@ -13,23 +13,17 @@ public class MetalMaterial extends Material {
     }
 
     public void desgastarCon(PicoPiedra unPicoDePiedra) throws MaterialRotoExcepcion {
+        this.checkDurabilidadValida();
         this.durabilidad -= unPicoDePiedra.getFuerza();
-        if (durabilidad <= 0){
-            throw new MaterialRotoExcepcion("este material ya fue desgastado");
-        }
     }
 
     public void desgastarCon(PicoMetal unPicoDeMetal) throws MaterialRotoExcepcion {
+        this.checkDurabilidadValida();
         this.durabilidad -= unPicoDeMetal.getFuerza();
-        if (durabilidad <= 0){
-            throw new MaterialRotoExcepcion("este material ya fue desgastado");
-        }
     }
 
     public void desgastarCon(PicoFino unPicoFino) throws MaterialRotoExcepcion{
+        this.checkDurabilidadValida();
         this.durabilidad -= unPicoFino.getFuerza();
-        if (durabilidad <= 0){
-            throw new MaterialRotoExcepcion("este material ya fue desgastado");
-        }
     }
 }

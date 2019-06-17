@@ -117,12 +117,14 @@ public class MaterialTest {
         MaderaMaterial madera = new MaderaMaterial();
         HachaMetal hacha = new HachaMetal();
         madera.desgastarCon(hacha);
+        madera.desgastarCon(hacha);
     }
 
     @Test (expected = MaterialRotoExcepcion.class)
     public void PiedraEsGolpeadaHastaAgotarSuDurabilidadYSeLanzaExcepcion(){
         PiedraMaterial piedra = new PiedraMaterial();
         PicoMetal pico = new PicoMetal();
+        piedra.desgastarCon(pico);
         piedra.desgastarCon(pico);
         piedra.desgastarCon(pico);
         piedra.desgastarCon(pico);
@@ -135,12 +137,14 @@ public class MaterialTest {
         metal.desgastarCon(pico);
         metal.desgastarCon(pico);
         metal.desgastarCon(pico);
+        metal.desgastarCon(pico);
     }
 
     @Test (expected = MaterialRotoExcepcion.class)
     public void DiamanteEsGolpeadaHastaAgotarSuDurabilidadYSeLanzaExcepcion(){
         DiamanteMaterial diamante = new DiamanteMaterial();
         PicoFino pico = new PicoFino();
+        diamante.desgastarCon(pico);
         diamante.desgastarCon(pico);
         diamante.desgastarCon(pico);
         diamante.desgastarCon(pico);

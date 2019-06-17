@@ -11,9 +11,7 @@ public class PiedraMaterial extends Material {
     }
 
     public void desgastarCon(Pico unPico) throws MaterialRotoExcepcion {
+        this.checkDurabilidadValida();
         this.durabilidad -= unPico.getFuerza();
-        if (durabilidad <= 0){
-            throw new MaterialRotoExcepcion("este material ya fue desgastado");
-        }
     }
 }
