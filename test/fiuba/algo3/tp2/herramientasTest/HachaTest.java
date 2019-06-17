@@ -2,7 +2,6 @@ package fiuba.algo3.tp2.herramientasTest;
 import static org.junit.Assert.*;
 
 import fiuba.algo3.tp2.herramientas.Herramienta;
-import fiuba.algo3.tp2.herramientas.ExcepcionesHerramientas.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMetal;
 import fiuba.algo3.tp2.herramientas.hachas.HachaPiedra;
@@ -68,24 +67,4 @@ public class HachaTest {
             assertEquals(390, hacha.getDurabilidad(), 0.01);
     }
 
-    @Test(expected = HerramientaRotaExcepcion.class)
-    public void hachaDeMaderaSeUsaHastaRomperseYSeLanzaExcepcion(){
-        HachaMadera hacha = new HachaMadera();
-        PiedraMaterial piedra = new PiedraMaterial();
-        usarHerramientaNVeces(50, hacha, piedra);
-    }
-
-    @Test(expected = HerramientaRotaExcepcion.class)
-    public void hachaDePiedraSeUsaHastaRomperseYSeLanzaExcepcion(){
-        HachaPiedra hacha = new HachaPiedra();
-        PiedraMaterial piedra = new PiedraMaterial();
-        usarHerramientaNVeces(100, hacha, piedra);
-    }
-
-    @Test(expected = HerramientaRotaExcepcion.class)
-    public void hachaDeMetalSeUsaHastaRomperseYSeLanzaExcepcion(){
-        HachaMetal hacha = new HachaMetal();
-        PiedraMaterial piedra = new PiedraMaterial();
-        usarHerramientaNVeces(200, hacha, piedra);
-    }
 }

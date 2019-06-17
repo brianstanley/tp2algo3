@@ -17,10 +17,7 @@ public abstract class Herramienta {
         return this.desgastador.durabilidad();
     }
 
-    public void romper(Material unMaterial) throws HerramientaRotaExcepcion{
+    public void romper(Material unMaterial){
         this.desgastador.desgastar();
-        if (this.getDurabilidad() <= 0){
-            throw new HerramientaRotaExcepcion("la herramienta que quiere utilizar esta rota");
-        }
     }
 }

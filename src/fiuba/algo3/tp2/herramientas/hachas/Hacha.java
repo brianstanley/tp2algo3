@@ -6,11 +6,8 @@ import fiuba.algo3.tp2.materiales.MaderaMaterial;
 
 public abstract class Hacha extends Herramienta {
 
-    public void romper(MaderaMaterial unaMadera) throws HerramientaRotaExcepcion {
+    public void romper(MaderaMaterial unaMadera) {
         this.desgastador.desgastar();
-        if (this.getDurabilidad() <= 0){
-            throw new HerramientaRotaExcepcion("esta herramienta esta rota");
-        }
         unaMadera.desgastarCon(this);
     }
 }

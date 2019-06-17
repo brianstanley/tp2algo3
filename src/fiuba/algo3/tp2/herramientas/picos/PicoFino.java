@@ -22,11 +22,8 @@ public class PicoFino extends Pico {
         // Aseguramos que pico fino solo actua ante un diamante
     }
 
-    public void romper(DiamanteMaterial unDiamante) throws HerramientaRotaExcepcion {
+    public void romper(DiamanteMaterial unDiamante){
         this.desgastador.desgastar();
-        if (this.getDurabilidad() <= 0){
-            throw new HerramientaRotaExcepcion("la herramienta que quiere utilizar esta rota");
-        }
         unDiamante.desgastarCon(this);
     }
 

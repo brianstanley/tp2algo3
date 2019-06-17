@@ -1,6 +1,5 @@
 package fiuba.algo3.tp2.herramientasTest;
 
-import fiuba.algo3.tp2.herramientas.ExcepcionesHerramientas.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.herramientas.picos.PicoMetal;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import org.junit.Assert;
@@ -32,19 +31,4 @@ public class PicoMetalTest {
         Assert.assertEquals(picoMetal.getDurabilidad(), durabilidad, 0.01);
     }
 
-    @Test (expected = HerramientaRotaExcepcion.class)
-    public void SeUsaPicoMetalEnUnMaterialCualquieraDiezVecesYSeLanzaExcepcioin(){
-        PicoMetal picoMetal = new PicoMetal();
-        MaderaMaterial unaMadera = new MaderaMaterial();
-        picoMetal.romper(unaMadera);
-        picoMetal.romper(unaMadera);
-        picoMetal.romper(unaMadera);
-        picoMetal.romper(unaMadera);
-        picoMetal.romper(unaMadera);
-        picoMetal.romper(unaMadera);
-        picoMetal.romper(unaMadera);
-        picoMetal.romper(unaMadera);
-        picoMetal.romper(unaMadera);
-        picoMetal.romper(unaMadera);
-    }
 }

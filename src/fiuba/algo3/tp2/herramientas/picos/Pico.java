@@ -6,11 +6,8 @@ import fiuba.algo3.tp2.materiales.PiedraMaterial;
 
 public abstract class Pico extends Herramienta {
 
-    public void romper(PiedraMaterial unaPiedra) throws HerramientaRotaExcepcion {
+    public void romper(PiedraMaterial unaPiedra) {
         this.desgastador.desgastar();
-        if (this.getDurabilidad() <= 0){
-            throw new HerramientaRotaExcepcion("la herramienta que quiere utilizar esta rota");
-        }
         unaPiedra.desgastarCon(this);
     }
 }

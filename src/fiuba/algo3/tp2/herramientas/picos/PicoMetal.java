@@ -12,11 +12,8 @@ public class PicoMetal extends Pico {
         this.desgastador = new EstrategiaDesgasteAbrupta(this.durabilidadInicial, 10);
     }
 
-    public void romper(MetalMaterial unMetal) throws HerramientaRotaExcepcion {
+    public void romper(MetalMaterial unMetal)  {
         this.desgastador.desgastar();
-        if (this.getDurabilidad() <= 0){
-            throw new HerramientaRotaExcepcion("la herramienta que quiere utilizar esta rota");
-        }
         unMetal.desgastarCon(this);
     }
 }
