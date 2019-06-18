@@ -19,6 +19,6 @@ public class NavegadorTest {
         MaderaMaterial madera = new MaderaMaterial();
         madera.ponerEnMapa(mapa, posicionAlNorte);
         ElementoDeCampo elem = navegador.obtenerMaterialPosicionEnfrente();
-        Assert.assertEquals(madera.getClass(), elem.getClass());
+        Assert.assertEquals(madera, elem);
     }
 }
