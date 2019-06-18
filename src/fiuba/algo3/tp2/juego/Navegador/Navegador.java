@@ -2,6 +2,7 @@ package fiuba.algo3.tp2.juego.Navegador;
 
 import fiuba.algo3.tp2.juego.ElementoDeCampo;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
+import fiuba.algo3.tp2.materiales.Material;
 
 public class Navegador implements ElementoDeCampo {
 
@@ -43,6 +44,11 @@ public class Navegador implements ElementoDeCampo {
 
     public Posicion getPosicionActual() {
         return this.posicionActual;
+    }
+
+    public ElementoDeCampo obtenerMaterialPosicionEnfrente(){
+        Posicion posicionEnfrente = this.direccionApuntada.calcularNuevaPosicionAPartirDe(this.posicionActual);
+        return this.mapaAsociado.getContenidoCasillero(posicionEnfrente);
     }
 
 }
