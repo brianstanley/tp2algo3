@@ -4,11 +4,11 @@ import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.*;
 
 public class LectorDePlanoConstruccion {
 
-    private PlanoConstruccionHerramienta mapa;
+    private PlanoConstruccionHerramienta plano;
 
-    public FiguraConstruible evaluarMapa(PlanoConstruccionHerramienta mapa){
+    public FiguraConstruible evaluarMapa(PlanoConstruccionHerramienta plano){
 
-        this.mapa = mapa;
+        this.plano = plano;
 
         if (this.esMapaDeHachaMadera()) return new FiguraHachaMadera();
         if (this.esMapaDeHachaPiedra()) return new FiguraHachaPiedra();
@@ -23,40 +23,40 @@ public class LectorDePlanoConstruccion {
 
     private boolean esMapaDeHachaMadera(){
 
-        return (this.esMapaDeHacha() && mapa.hayMaderaEnPosicion(0,0) && mapa.hayMaderaEnPosicion(0,1)
-                && mapa.hayMaderaEnPosicion(1,0));
+        return (this.esMapaDeHacha() && plano.hayMaderaEnPosicion(0,0) && plano.hayMaderaEnPosicion(0,1)
+                && plano.hayMaderaEnPosicion(1,0));
     }
     private boolean esMapaDeHachaPiedra(){
 
-        return (this.esMapaDeHacha() && mapa.hayPiedraEnPosicion(0,0) && mapa.hayPiedraEnPosicion(0,1)
-                && mapa.hayPiedraEnPosicion(1,0));
+        return (this.esMapaDeHacha() && plano.hayPiedraEnPosicion(0,0) && plano.hayPiedraEnPosicion(0,1)
+                && plano.hayPiedraEnPosicion(1,0));
     }
     private boolean esMapaDeHachaMetal(){
 
-        return (this.esMapaDeHacha() && mapa.hayMetalEnPosicion(0,0) && mapa.hayMetalEnPosicion(0,1)
-                && mapa.hayMetalEnPosicion(1,0));
+        return (this.esMapaDeHacha() && plano.hayMetalEnPosicion(0,0) && plano.hayMetalEnPosicion(0,1)
+                && plano.hayMetalEnPosicion(1,0));
     }
 
     private boolean esMapaDePicoMadera(){
 
-        return (this.esMapaDePico() && mapa.hayMaderaEnPosicion(0,0) && mapa.hayMaderaEnPosicion(0,1)
-                && mapa.hayMaderaEnPosicion(0,2));
+        return (this.esMapaDePico() && plano.hayMaderaEnPosicion(0,0) && plano.hayMaderaEnPosicion(0,1)
+                && plano.hayMaderaEnPosicion(0,2));
     }
     private boolean esMapaDePicoPiedra(){
 
-        return (this.esMapaDePico() && mapa.hayPiedraEnPosicion(0,0) && mapa.hayPiedraEnPosicion(0,1)
-                && mapa.hayPiedraEnPosicion(0,2));
+        return (this.esMapaDePico() && plano.hayPiedraEnPosicion(0,0) && plano.hayPiedraEnPosicion(0,1)
+                && plano.hayPiedraEnPosicion(0,2));
     }
     private boolean esMapaDePicoMetal(){
 
-        return (this.esMapaDePico() && mapa.hayMetalEnPosicion(0,0) && mapa.hayMetalEnPosicion(0,1)
-                && mapa.hayMetalEnPosicion(0,2));
+        return (this.esMapaDePico() && plano.hayMetalEnPosicion(0,0) && plano.hayMetalEnPosicion(0,1)
+                && plano.hayMetalEnPosicion(0,2));
     }
 
     private boolean esMapaDePicoFinoMetalYPiedra(){
 
-        return (this.esMapaDePicoFino() && mapa.hayMetalEnPosicion(0,0) && mapa.hayMetalEnPosicion(0,1)
-                && mapa.hayMetalEnPosicion(0,2) && mapa.hayPiedraEnPosicion(1,0));
+        return (this.esMapaDePicoFino() && plano.hayMetalEnPosicion(0,0) && plano.hayMetalEnPosicion(0,1)
+                && plano.hayMetalEnPosicion(0,2) && plano.hayPiedraEnPosicion(1,0));
     }
 
 
@@ -64,20 +64,20 @@ public class LectorDePlanoConstruccion {
 
     private boolean esMapaDeHacha(){
 
-        return (mapa.hayMaderaEnPosicion(1,1) && mapa.hayMaderaEnPosicion(2,1)
-                && mapa.noHayMaterialEnPosicion(0,2) && mapa.noHayMaterialEnPosicion(1,2)
-                && mapa.noHayMaterialEnPosicion(2,0) && mapa.noHayMaterialEnPosicion(2,2));
+        return (plano.hayMaderaEnPosicion(1,1) && plano.hayMaderaEnPosicion(2,1)
+                && plano.noHayMaterialEnPosicion(0,2) && plano.noHayMaterialEnPosicion(1,2)
+                && plano.noHayMaterialEnPosicion(2,0) && plano.noHayMaterialEnPosicion(2,2));
     }
     private boolean esMapaDePico(){
 
-        return (mapa.hayMaderaEnPosicion(1,1) && mapa.hayMaderaEnPosicion(2,1)
-                && mapa.noHayMaterialEnPosicion(1,0) && mapa.noHayMaterialEnPosicion(1,2)
-                && mapa.noHayMaterialEnPosicion(2,0) && mapa.noHayMaterialEnPosicion(2,2));
+        return (plano.hayMaderaEnPosicion(1,1) && plano.hayMaderaEnPosicion(2,1)
+                && plano.noHayMaterialEnPosicion(1,0) && plano.noHayMaterialEnPosicion(1,2)
+                && plano.noHayMaterialEnPosicion(2,0) && plano.noHayMaterialEnPosicion(2,2));
     }
     private boolean esMapaDePicoFino(){
 
-        return (mapa.hayMaderaEnPosicion(1,1) && mapa.hayMaderaEnPosicion(2,1)
-                && mapa.noHayMaterialEnPosicion(2,0) && mapa.noHayMaterialEnPosicion(1,2)
-                && mapa.noHayMaterialEnPosicion(2,2));
+        return (plano.hayMaderaEnPosicion(1,1) && plano.hayMaderaEnPosicion(2,1)
+                && plano.noHayMaterialEnPosicion(2,0) && plano.noHayMaterialEnPosicion(1,2)
+                && plano.noHayMaterialEnPosicion(2,2));
     }
 }

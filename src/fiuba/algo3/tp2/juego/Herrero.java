@@ -6,9 +6,9 @@ import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerra
 public class Herrero {
 
 
-    public Herramienta construirHerramienta(PlanoConstruccionHerramienta mapa){
+    public Herramienta construirHerramienta(PlanoConstruccionHerramienta plano){
 
-       return mapa.obtenerFiguraMapeada().construir();
+       return plano.obtenerFiguraMapeada().construir();
 
     }
 
