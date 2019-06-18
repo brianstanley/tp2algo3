@@ -1,8 +1,8 @@
-package fiuba.algo3.tp2.juego.MapaConstruccionHerramienta;
+package fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta;
 
 
 import fiuba.algo3.tp2.materiales.*;
-import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.*;
+import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.*;
 
 
 public class PlanoConstruccionHerramienta {

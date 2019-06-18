@@ -1,7 +1,7 @@
-package fiuba.algo3.tp2.juegoTest.MapaConstruccionHerramientaTest;
+package fiuba.algo3.tp2.juegoTest.PlanoConstruccionHerramientaTest;
 
-import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.Figuras.*;
-import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.PlanoConstruccionHerramienta;
+import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.*;
+import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.*;
 import org.junit.Assert;
 import org.junit.Test;

@@ -4,7 +4,7 @@ import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.herramientas.hachas.*;
 import fiuba.algo3.tp2.herramientas.picos.*;
 import fiuba.algo3.tp2.juego.Herrero;
-import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.PlanoConstruccionHerramienta;
+import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.*;
 import org.junit.Assert;
 import org.junit.Test;
