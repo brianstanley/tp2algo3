@@ -6,6 +6,8 @@ import fiuba.algo3.tp2.materiales.*;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.List;
+
 public class PlanoConstruccionHerramientaTest {
 
     @Test
@@ -217,4 +219,28 @@ public class PlanoConstruccionHerramientaTest {
         Assert.assertTrue(plano.obtenerFiguraMapeada() instanceof FiguraPicoFino);
     }
 
+    @Test
+    public void seObtienenLosMaterialesIngresadosEnElPlano(){
+
+        PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
+        MaderaMaterial madera = new MaderaMaterial();
+        PiedraMaterial piedra = new PiedraMaterial();
+
+        plano.insertarMaterialEnPosicion(madera,1,1);
+        plano.insertarMaterialEnPosicion(piedra,0,2);
+
+        List<Material> materiales = plano.obtenerMaterialesIngresados();
+
+        Assert.assertTrue(materiales.contains(madera));
+        Assert.assertTrue(materiales.contains(piedra));
+    }
+    @Test
+    public void noSeObtienenMaterialesDeUnPlanoVacio(){
+
+        PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
+
+        List<Material> materiales = plano.obtenerMaterialesIngresados();
+
+        Assert.assertTrue(materiales.isEmpty());
+    }
 }

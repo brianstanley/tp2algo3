@@ -4,6 +4,9 @@ package fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.*;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class PlanoConstruccionHerramienta {
 
@@ -48,6 +51,19 @@ public class PlanoConstruccionHerramienta {
     public FiguraConstruible obtenerFiguraMapeada() {
 
         return this.lector.evaluarMapa(this);
+    }
+
+    public List<Material> obtenerMaterialesIngresados() {
+
+        List<Material> materialesCargados = new ArrayList<>();
+
+        for (int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
+                if (!this.noHayMaterialEnPosicion(i,j))
+                    materialesCargados.add(this.plano[i][j]);
+
+        return materialesCargados;
+
     }
 }
 
