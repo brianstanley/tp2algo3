@@ -12,7 +12,7 @@ import org.junit.Test;
 public class HerreroTest {
 
     @Test
-    public void herreroSeIniciaYNoEsNulo(){
+    public void herreroSeIniciaYNoEsNulo() {
 
         Herrero herrero = new Herrero();
 
@@ -20,43 +20,45 @@ public class HerreroTest {
     }
 
     @Test
-    public void herreroRecibeUnMapaDeHachaDeMaderaYConstruyelaHerramienta(){
+    public void herreroRecibeUnPlanoDeHachaDeMaderaYConstruyelaHerramienta() {
 
         Herrero herrero = new Herrero();
 
         PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
-        mapa.insertarMaterialEnPosicion(madera,0,0);
-        mapa.insertarMaterialEnPosicion(madera,0,1);
-        mapa.insertarMaterialEnPosicion(madera,1,0);
-        mapa.insertarMaterialEnPosicion(madera,1,1);
-        mapa.insertarMaterialEnPosicion(madera,2,1);
+        mapa.insertarMaterialEnPosicion(madera, 0, 0);
+        mapa.insertarMaterialEnPosicion(madera, 0, 1);
+        mapa.insertarMaterialEnPosicion(madera, 1, 0);
+        mapa.insertarMaterialEnPosicion(madera, 1, 1);
+        mapa.insertarMaterialEnPosicion(madera, 2, 1);
 
         Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof HachaMadera);
     }
+
     @Test
-    public void herreroRecibeUnMapaDeHachaDePiedraYConstruyelaHerramienta(){
+    public void herreroRecibeUnPlanoDeHachaDePiedraYConstruyelaHerramienta() {
 
         Herrero herrero = new Herrero();
         PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        mapa.insertarMaterialEnPosicion(piedra,0,0);
-        mapa.insertarMaterialEnPosicion(piedra,0,1);
-        mapa.insertarMaterialEnPosicion(piedra,1,0);
-        mapa.insertarMaterialEnPosicion(madera,1,1);
-        mapa.insertarMaterialEnPosicion(madera,2,1);
+        mapa.insertarMaterialEnPosicion(piedra, 0, 0);
+        mapa.insertarMaterialEnPosicion(piedra, 0, 1);
+        mapa.insertarMaterialEnPosicion(piedra, 1, 0);
+        mapa.insertarMaterialEnPosicion(madera, 1, 1);
+        mapa.insertarMaterialEnPosicion(madera, 2, 1);
 
         Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof HachaPiedra);
     }
+
     @Test
-    public void herreroRecibeUnaMapaDeHachaDeMetalYConstruyelaHerramienta() {
+    public void herreroRecibeUnaPlanoDeHachaDeMetalYConstruyelaHerramienta() {
 
         Herrero herrero = new Herrero();
         PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
@@ -75,53 +77,55 @@ public class HerreroTest {
     }
 
     @Test
-    public void herreroRecibeUnMapaDePicoDeMaderaYConstruyelaHerramienta(){
+    public void herreroRecibeUnPlanoDePicoDeMaderaYConstruyelaHerramienta() {
 
         Herrero herrero = new Herrero();
         PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
-        mapa.insertarMaterialEnPosicion(madera,0,0);
-        mapa.insertarMaterialEnPosicion(madera,0,1);
-        mapa.insertarMaterialEnPosicion(madera,0,2);
-        mapa.insertarMaterialEnPosicion(madera,1,1);
-        mapa.insertarMaterialEnPosicion(madera,2,1);
+        mapa.insertarMaterialEnPosicion(madera, 0, 0);
+        mapa.insertarMaterialEnPosicion(madera, 0, 1);
+        mapa.insertarMaterialEnPosicion(madera, 0, 2);
+        mapa.insertarMaterialEnPosicion(madera, 1, 1);
+        mapa.insertarMaterialEnPosicion(madera, 2, 1);
 
         Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof PicoMadera);
     }
+
     @Test
-    public void herreroRecibeUnMapaDePicoDePiedraYConstruyelaHerramienta(){
+    public void herreroRecibeUnPlanoDePicoDePiedraYConstruyelaHerramienta() {
 
         Herrero herrero = new Herrero();
         PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        mapa.insertarMaterialEnPosicion(piedra,0,0);
-        mapa.insertarMaterialEnPosicion(piedra,0,1);
-        mapa.insertarMaterialEnPosicion(piedra,0,2);
-        mapa.insertarMaterialEnPosicion(madera,1,1);
-        mapa.insertarMaterialEnPosicion(madera,2,1);
+        mapa.insertarMaterialEnPosicion(piedra, 0, 0);
+        mapa.insertarMaterialEnPosicion(piedra, 0, 1);
+        mapa.insertarMaterialEnPosicion(piedra, 0, 2);
+        mapa.insertarMaterialEnPosicion(madera, 1, 1);
+        mapa.insertarMaterialEnPosicion(madera, 2, 1);
 
         Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof PicoPiedra);
     }
+
     @Test
-    public void herreroRecibeUnMapaDePicoDeMetalYConstruyelaHerramienta(){
+    public void herreroRecibeUnPlanoDePicoDeMetalYConstruyelaHerramienta() {
 
         Herrero herrero = new Herrero();
         PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
-        mapa.insertarMaterialEnPosicion(metal,0,0);
-        mapa.insertarMaterialEnPosicion(metal,0,1);
-        mapa.insertarMaterialEnPosicion(metal,0,2);
-        mapa.insertarMaterialEnPosicion(madera,1,1);
-        mapa.insertarMaterialEnPosicion(madera,2,1);
+        mapa.insertarMaterialEnPosicion(metal, 0, 0);
+        mapa.insertarMaterialEnPosicion(metal, 0, 1);
+        mapa.insertarMaterialEnPosicion(metal, 0, 2);
+        mapa.insertarMaterialEnPosicion(madera, 1, 1);
+        mapa.insertarMaterialEnPosicion(madera, 2, 1);
 
         Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
@@ -129,7 +133,7 @@ public class HerreroTest {
     }
 
     @Test
-    public void herreroRecibeUnMapaaDePicoFinoYConstruyelaHerramienta(){
+    public void herreroRecibeUnPlanoDePicoFinoYConstruyelaHerramienta() {
 
         Herrero herrero = new Herrero();
         PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
@@ -137,34 +141,16 @@ public class HerreroTest {
         MetalMaterial metal = new MetalMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        mapa.insertarMaterialEnPosicion(metal,0,0);
-        mapa.insertarMaterialEnPosicion(metal,0,1);
-        mapa.insertarMaterialEnPosicion(metal,0,2);
-        mapa.insertarMaterialEnPosicion(piedra,1,0);
-        mapa.insertarMaterialEnPosicion(madera,1,1);
-        mapa.insertarMaterialEnPosicion(madera,2,1);
+        mapa.insertarMaterialEnPosicion(metal, 0, 0);
+        mapa.insertarMaterialEnPosicion(metal, 0, 1);
+        mapa.insertarMaterialEnPosicion(metal, 0, 2);
+        mapa.insertarMaterialEnPosicion(piedra, 1, 0);
+        mapa.insertarMaterialEnPosicion(madera, 1, 1);
+        mapa.insertarMaterialEnPosicion(madera, 2, 1);
 
         Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
 
         Assert.assertTrue(herramientaCreada instanceof PicoFino);
-    }
-
-    @Test
-    public void herreroRecibeUnMapaDesconocidaYNoConstruyeHerramienta(){
-
-        Herrero herrero = new Herrero();
-        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
-        MaderaMaterial madera = new MaderaMaterial();
-        MetalMaterial metal = new MetalMaterial();
-        PiedraMaterial piedra = new PiedraMaterial();
-
-        mapa.insertarMaterialEnPosicion(metal, 0,1);
-        mapa.insertarMaterialEnPosicion(madera,2,1);
-        mapa.insertarMaterialEnPosicion(piedra,0,2);
-
-        Herramienta herramientaCreada = herrero.construirHerramienta(mapa);
-
-        Assert.assertNull(herramientaCreada);
     }
 }
 
