@@ -5,6 +5,8 @@ import fiuba.algo3.tp2.juego.*;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
 import fiuba.algo3.tp2.juego.Navegador.Navegador;
 import fiuba.algo3.tp2.juego.Navegador.Posicion;
+import fiuba.algo3.tp2.materiales.MaderaMaterial;
+import fiuba.algo3.tp2.materiales.Material;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -30,12 +32,37 @@ public class JugadorTest {
     }
 
     @Test
-    public void jugadorEmpiezaConHachaEnInventario() {
+    public void jugadorEmpiezaConInventarioVacio() {
         Mapa mapaDelJuego = new Mapa(20, 20);
         Navegador navegadorDelJugador = new Navegador(2,2, mapaDelJuego);
         Jugador jugador = new Jugador(navegadorDelJugador);
         Inventario inventario = jugador.getInventario();
-        HachaMadera hacha = new HachaMadera();
-        assertTrue(inventario.tiene(hacha));
+        assertEquals(0, inventario.getCantidadItems());
+    }
+
+    @Test
+    public void jugadorEmpiezaConHachaEnLaMano() {
+        Mapa mapaDelJuego = new Mapa(20, 20);
+        Navegador navegadorDelJugador = new Navegador(2,2, mapaDelJuego);
+        Jugador jugador = new Jugador(navegadorDelJugador);
+        assertTrue(jugador.getHerramientaActual() instanceof HachaMadera);
+    }
+
+    @Test
+    public void jugadorRompeMaterialDeCasilleroDeEnFrenteQueEstaAlSur() {
+        Mapa mapaDelJuego = new Mapa(20, 20);
+        Navegador navegadorDelJugador = new Navegador(2,2, mapaDelJuego);
+        Jugador jugador = new Jugador(navegadorDelJugador);
+        Posicion posicion = new Posicion(3, 2);
+        MaderaMaterial madera = new MaderaMaterial();
+        madera.ponerEnMapa(mapaDelJuego, posicion);
+        jugador.moverSur(); //cambia la direccion del jugador mirando al material
+
+        ElementoDeCampo material = navegadorDelJugador.obtenerElementoEnFrente();
+        Assert.assertEquals(madera, material);
+
+        jugador.romper();
+        assertEquals(8, madera.getDurabilidad());
+
     }
 }

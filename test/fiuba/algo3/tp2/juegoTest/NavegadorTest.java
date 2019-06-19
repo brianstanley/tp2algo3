@@ -1,6 +1,5 @@
 package fiuba.algo3.tp2.juegoTest;
 
-import fiuba.algo3.tp2.herramientas.picos.PicoPiedra;
 import fiuba.algo3.tp2.juego.ElementoDeCampo;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
 import fiuba.algo3.tp2.juego.Navegador.Navegador;
@@ -18,7 +17,7 @@ public class NavegadorTest {
         Posicion posicionAlNorte = new Posicion(3, 2);
         MaderaMaterial madera = new MaderaMaterial();
         madera.ponerEnMapa(mapa, posicionAlNorte);
-        ElementoDeCampo elem = navegador.obtenerMaterialPosicionEnfrente();
+        ElementoDeCampo elem = navegador.obtenerElementoEnFrente();
         Assert.assertEquals(madera, elem);
     }
 }

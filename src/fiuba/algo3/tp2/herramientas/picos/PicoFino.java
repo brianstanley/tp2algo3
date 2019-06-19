@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.herramientas.picos;
 
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLogaritmico;
+import fiuba.algo3.tp2.juego.ElementoDeCampo;
 import fiuba.algo3.tp2.materiales.DiamanteMaterial;
 import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.MetalMaterial;

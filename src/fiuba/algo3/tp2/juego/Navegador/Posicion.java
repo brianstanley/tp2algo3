@@ -17,17 +17,17 @@ public class Posicion {
     }
 
     public void moverEste(){
-        this.coordenadaX += 1;
+        this.coordenadaY += 1;
     }
 
     public void moverOeste(){
-        this.coordenadaX -= 1;
+        this.coordenadaY -= 1;
     }
 
-    public void moverNorte(){ this.coordenadaY -= 1; }
+    public void moverNorte(){ this.coordenadaX -= 1; }
 
     public void moverSur(){
-        this.coordenadaY += 1;
+        this.coordenadaX += 1;
     }
 
 

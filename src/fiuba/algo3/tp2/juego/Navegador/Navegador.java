@@ -46,7 +46,7 @@ public class Navegador implements ElementoDeCampo {
         return this.posicionActual;
     }
 
-    public ElementoDeCampo obtenerMaterialPosicionEnfrente(){
+    public ElementoDeCampo obtenerElementoEnFrente(){
         Posicion posicionEnfrente = this.direccionApuntada.calcularNuevaPosicionAPartirDe(this.posicionActual);
         return this.mapaAsociado.getContenidoCasillero(posicionEnfrente);
     }
