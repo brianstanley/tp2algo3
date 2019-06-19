@@ -3,6 +3,7 @@ package fiuba.algo3.tp2.juegoTest;
 import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.herramientas.hachas.*;
 import fiuba.algo3.tp2.herramientas.picos.*;
+import fiuba.algo3.tp2.juego.ExcepcionesHerrero.HerreroNoConoceFiguraACrearExcepcion;
 import fiuba.algo3.tp2.juego.Herrero;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.*;
@@ -152,5 +153,23 @@ public class HerreroTest {
 
         Assert.assertTrue(herramientaCreada instanceof PicoFino);
     }
+
+    @Test (expected = HerreroNoConoceFiguraACrearExcepcion.class)
+    public void herreroRecibeUnPlanoConUnaFiguraDesconocidaYLanzaExcepcion() {
+
+        Herrero herrero = new Herrero();
+        PlanoConstruccionHerramienta mapa = new PlanoConstruccionHerramienta();
+        MaderaMaterial madera = new MaderaMaterial();
+        MetalMaterial metal = new MetalMaterial();
+        PiedraMaterial piedra = new PiedraMaterial();
+
+        mapa.insertarMaterialEnPosicion(metal, 0,1);
+        mapa.insertarMaterialEnPosicion(madera,2,1);
+        mapa.insertarMaterialEnPosicion(piedra,0,2);
+
+        herrero.construirHerramienta(mapa);
+
+    }
 }
+
 
