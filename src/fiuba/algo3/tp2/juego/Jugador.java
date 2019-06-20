@@ -53,7 +53,7 @@ public class Jugador implements Movible {
 
     public void romper() {
         ElementoDeCampo elementoEnFrente = this.navegador.obtenerElementoEnFrente();
-        this.herramientaActual.romper((elementoEnFrente.getClass()) elementoEnFrente);
+        this.herramientaActual.romper(elementoEnFrente);
     }
 
     public Herramienta getHerramientaActual() {
