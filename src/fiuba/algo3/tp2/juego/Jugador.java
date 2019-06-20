@@ -47,4 +47,8 @@ public class Jugador implements Movible {
         DireccionOeste nuevaDireccion = new DireccionOeste();
         this.navegador.moverEnDireccion(nuevaDireccion);
     }
+
+    public Posicion getPosicion() {
+        return this.navegador.getPosicionActual();
+    }
 }
