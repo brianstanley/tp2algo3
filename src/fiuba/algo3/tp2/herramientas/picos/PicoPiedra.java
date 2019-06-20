@@ -11,8 +11,8 @@ public class PicoPiedra extends Pico {
         this.desgastador = new EstrategiaDesgasteLineal(this.durabilidadInicial, this.fuerza, 1.5);
     }
 
-    public void romper(MetalMaterial unMetal){
-        unMetal.desgastarCon(this);
+    public void romper(MetalMaterial unMetal) {
         this.desgastador.desgastar();
+        unMetal.desgastarCon(this);
     }
 }

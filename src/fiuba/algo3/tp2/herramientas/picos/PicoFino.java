@@ -22,8 +22,8 @@ public class PicoFino extends Pico {
     }
 
     public void romper(DiamanteMaterial unDiamante){
-        unDiamante.desgastarCon(this);
         this.desgastador.desgastar();
+        unDiamante.desgastarCon(this);
     }
 
     public void romper(MetalMaterial unMetal){

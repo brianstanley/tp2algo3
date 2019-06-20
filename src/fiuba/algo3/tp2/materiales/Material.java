@@ -5,6 +5,7 @@ import fiuba.algo3.tp2.juego.ElementoDeCampo;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
 import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.juego.Guardable;
+import fiuba.algo3.tp2.materiales.ExcepcionesMateriales.MaterialRotoExcepcion;
 
 public abstract class Material implements ElementoDeCampo, Guardable {
     protected int durabilidad;
@@ -24,4 +25,10 @@ public abstract class Material implements ElementoDeCampo, Guardable {
         mapa.setContenidoCasillero(this, posicion);
     }
 
+
+    public void checkDurabilidadValida(){
+        if (durabilidad <= 0){
+            throw new MaterialRotoExcepcion("este material ya fue desgastado");
+        }
+    }
 }
