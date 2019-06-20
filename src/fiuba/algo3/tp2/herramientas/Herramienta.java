@@ -17,8 +17,7 @@ public abstract class Herramienta implements Guardable {
         return this.desgastador.durabilidad();
     }
 
-    public void romper(Material unMaterial) {
-
+    public void romper(Material unMaterial){
         this.desgastador.desgastar();
     }
 }

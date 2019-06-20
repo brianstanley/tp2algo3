@@ -6,7 +6,7 @@ import fiuba.algo3.tp2.materiales.MaderaMaterial;
 public abstract class Hacha extends Herramienta {
 
     public void romper(MaderaMaterial unaMadera) {
-        unaMadera.desgastarCon(this);
         this.desgastador.desgastar();
+        unaMadera.desgastarCon(this);
     }
 }
