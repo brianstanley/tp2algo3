@@ -1,11 +1,18 @@
 package fiuba.algo3.tp2.juegoTest;
 
 import fiuba.algo3.tp2.herramientas.Herramienta;
-import fiuba.algo3.tp2.herramientas.hachas.*;
-import fiuba.algo3.tp2.herramientas.picos.*;
+import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
+import fiuba.algo3.tp2.herramientas.hachas.HachaMetal;
+import fiuba.algo3.tp2.herramientas.hachas.HachaPiedra;
+import fiuba.algo3.tp2.herramientas.picos.PicoFino;
+import fiuba.algo3.tp2.herramientas.picos.PicoMadera;
+import fiuba.algo3.tp2.herramientas.picos.PicoMetal;
+import fiuba.algo3.tp2.herramientas.picos.PicoPiedra;
 import fiuba.algo3.tp2.juego.Herrero;
 import fiuba.algo3.tp2.juego.MapaConstruccionHerramienta.PlanoConstruccionHerramienta;
-import fiuba.algo3.tp2.materiales.*;
+import fiuba.algo3.tp2.materiales.MaderaMaterial;
+import fiuba.algo3.tp2.materiales.MetalMaterial;
+import fiuba.algo3.tp2.materiales.PiedraMaterial;
 import org.junit.Assert;
 import org.junit.Test;
 

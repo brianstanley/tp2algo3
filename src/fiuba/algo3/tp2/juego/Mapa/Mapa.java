@@ -60,4 +60,6 @@ public class Mapa {
         int columna = unaPosicion.getX();
         return (this.casilleros.get(fila).get(columna)).eliminarContenido();
     }
+
+
 }
