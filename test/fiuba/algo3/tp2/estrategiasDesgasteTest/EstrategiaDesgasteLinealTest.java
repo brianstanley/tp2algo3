@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.estrategiasDesgasteTest;
 
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLineal;
+import fiuba.algo3.tp2.estrategiasDesgaste.excepciones.DurabilidadCeroExcepcion;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -67,5 +68,16 @@ public class EstrategiaDesgasteLinealTest {
         Assert.assertEquals(durabilidadEsperada, desgaste.durabilidad(), 0.01);
     }
 
+    @Test (expected = DurabilidadCeroExcepcion.class)
+    public void seDesgastaLaDurabilidadPorDebajoDeCeroYSeLanzaExcepcion(){
+        double durabilidadInicial = 10;
+        int fuerza = 3;
+        EstrategiaDesgasteLineal desgaste = new EstrategiaDesgasteLineal(durabilidadInicial, fuerza);
 
+        desgaste.desgastar();
+        desgaste.desgastar();
+        desgaste.desgastar();
+        desgaste.desgastar();
+        desgaste.desgastar();
+    }
 }
