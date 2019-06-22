@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.herramientas.picos;
 
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLineal;
+import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
 
 public class PicoPiedra extends Pico {
@@ -11,8 +12,10 @@ public class PicoPiedra extends Pico {
         this.desgastador = new EstrategiaDesgasteLineal(this.durabilidadInicial, this.fuerza, 1.5);
     }
 
-    public void romper(MetalMaterial unMetal){
-        unMetal.desgastarCon(this);
+    public void romper(Material unMaterial){
+        if (unMaterial.getClass() == MetalMaterial.class) {
+            unMaterial.desgastarCon(this);
+        }
         this.desgastador.desgastar();
     }
 }
