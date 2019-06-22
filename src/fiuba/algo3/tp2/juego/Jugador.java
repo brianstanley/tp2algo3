@@ -3,7 +3,7 @@ package fiuba.algo3.tp2.juego;
 import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 import fiuba.algo3.tp2.juego.Navegador.*;
-import fiuba.algo3.tp2.materiales.Material;
+import fiuba.algo3.tp2.materiales.*;
 
 public class Jugador implements Movible {
 
@@ -53,7 +53,23 @@ public class Jugador implements Movible {
 
     public void romper() {
         ElementoDeCampo elementoEnFrente = this.navegador.obtenerElementoEnFrente();
-        this.herramientaActual.romper((Material) elementoEnFrente);
+        this.herramientaActual.romper(this.castearElemento(elementoEnFrente));
+    }
+
+    private Material castearElemento(ElementoDeCampo elementoACastear){
+        if (elementoACastear.getClass() == MaderaMaterial.class){
+            return (MaderaMaterial)elementoACastear;
+        }
+        if (elementoACastear.getClass() == PiedraMaterial.class){
+            return (PiedraMaterial)elementoACastear;
+        }
+        if (elementoACastear.getClass() == MetalMaterial.class){
+            return (MetalMaterial)elementoACastear;
+        }
+        if (elementoACastear.getClass() == DiamanteMaterial.class){
+            return (DiamanteMaterial)elementoACastear;
+        }
+        return null;
     }
 
     public Herramienta getHerramientaActual() {
