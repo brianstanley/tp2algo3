@@ -53,23 +53,7 @@ public class Jugador implements Movible {
 
     public void romper() {
         ElementoDeCampo elementoEnFrente = this.navegador.obtenerElementoEnFrente();
-        this.herramientaActual.romper(this.castearElemento(elementoEnFrente));
-    }
-
-    private Material castearElemento(ElementoDeCampo elementoACastear){
-        if (elementoACastear.getClass() == MaderaMaterial.class){
-            return (MaderaMaterial)elementoACastear;
-        }
-        if (elementoACastear.getClass() == PiedraMaterial.class){
-            return (PiedraMaterial)elementoACastear;
-        }
-        if (elementoACastear.getClass() == MetalMaterial.class){
-            return (MetalMaterial)elementoACastear;
-        }
-        if (elementoACastear.getClass() == DiamanteMaterial.class){
-            return (DiamanteMaterial)elementoACastear;
-        }
-        return null;
+        this.herramientaActual.romper(Material(elementoEnFrente));
     }
 
     public Herramienta getHerramientaActual() {
