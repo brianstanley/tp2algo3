@@ -18,8 +18,12 @@ public class PicoFino extends Pico {
 
     @Override
     public void romper(Material unMaterial) {
-        if (unMaterial.getClass() == MetalMaterial.class || unMaterial.getClass() == DiamanteMaterial.class) {
+        if (unMaterial.getClass() == MetalMaterial.class || unMaterial.getClass() == DiamanteMaterial.class
+        || unMaterial.getClass() == PiedraMaterial.class) {
             unMaterial.desgastarCon(this);
+        }
+        if (unMaterial.getClass() == DiamanteMaterial.class ){
+            this.desgastador.desgastar();
         }
     }
 
