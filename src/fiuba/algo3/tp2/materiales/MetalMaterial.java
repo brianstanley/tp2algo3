@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.materiales;
 
+import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.herramientas.picos.PicoFino;
 import fiuba.algo3.tp2.herramientas.picos.PicoMetal;
 import fiuba.algo3.tp2.herramientas.picos.PicoPiedra;
@@ -10,7 +11,7 @@ public class MetalMaterial extends Material {
         this.durabilidad = 50;
     }
 
-    public void desgastarCon(PicoPiedra unPicoDePiedra) {
+    public void desgastarCon(Herramienta unPicoDePiedra) {
         this.durabilidad -= unPicoDePiedra.getFuerza();
     }
 
