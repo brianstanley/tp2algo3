@@ -122,4 +122,24 @@ public class JugadorTest {
         Assert.assertTrue(inventarioJugador.tiene(madera));
         Assert.assertTrue(inventarioJugador.tiene(picoFino));
     }
+
+    @Test
+    public void jugadorRompeMaterialYPasaASuInventarioYElCasilleroSeVacia(){
+        Mapa mapaDelJuego = new Mapa(20, 20);
+        Navegador navegadorDelJugador = new Navegador(2,2, mapaDelJuego);
+        Jugador jugador = new Jugador(navegadorDelJugador);
+        Posicion posicion = new Posicion(2, 1);
+        MaderaMaterial madera = new MaderaMaterial();
+        madera.ponerEnMapa(mapaDelJuego, posicion);
+
+        jugador.romper();
+        jugador.romper();
+        jugador.romper();
+        jugador.romper();
+        jugador.romper();
+
+        Assert.assertTrue(jugador.getInventario().tiene(madera));
+
+        Assert.assertNull(mapaDelJuego.getContenidoCasillero(posicion));
+    }
 }
