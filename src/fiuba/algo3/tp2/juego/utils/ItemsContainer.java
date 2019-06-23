@@ -52,7 +52,9 @@ public class ItemsContainer {
     public Guardable obtener(Guardable item) {
         for (int i = 0; i < this.items.size(); i++){
             if (this.items.get(i).getClass() == item.getClass()){
-                return this.items.get(i);
+                Guardable itemBuscado = this.items.get(i);
+                this.items.remove(i);
+                return itemBuscado;
             }
         }
         return null;

@@ -59,7 +59,7 @@ public class JugadorTest {
         Mapa mapaDelJuego = new Mapa(20, 20);
         Navegador navegadorDelJugador = new Navegador(2,2, mapaDelJuego);
         Jugador jugador = new Jugador(navegadorDelJugador);
-        Posicion posicion = new Posicion(3, 2);
+        Posicion posicion = new Posicion(2, 3);
         MaderaMaterial madera = new MaderaMaterial();
         madera.ponerEnMapa(mapaDelJuego, posicion);
         jugador.moverSur(); //cambia la direccion del jugador mirando al material
