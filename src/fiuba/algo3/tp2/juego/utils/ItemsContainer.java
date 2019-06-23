@@ -41,7 +41,10 @@ public class ItemsContainer {
         return total;
     }
 
-    public void remover(Guardable item) {
-        this.items.remove(item);
+    public Guardable remover(Guardable item) {
+        int posBuscado = this.items.indexOf(item);
+        Guardable buscado = this.items.get(posBuscado);
+        this.items.remove(posBuscado);
+        return buscado;
     }
 }

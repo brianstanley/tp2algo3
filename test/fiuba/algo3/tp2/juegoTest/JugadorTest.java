@@ -1,6 +1,11 @@
 package fiuba.algo3.tp2.juegoTest;
 
+import ch.qos.logback.classic.jul.JULHelper;
+import fiuba.algo3.tp2.herramientas.hachas.Hacha;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
+import fiuba.algo3.tp2.herramientas.hachas.HachaPiedra;
+import fiuba.algo3.tp2.herramientas.picos.Pico;
+import fiuba.algo3.tp2.herramientas.picos.PicoFino;
 import fiuba.algo3.tp2.juego.*;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
 import fiuba.algo3.tp2.juego.Navegador.Navegador;
@@ -64,5 +69,30 @@ public class JugadorTest {
         jugador.romper();
         assertEquals(8, madera.getDurabilidad());
 
+    }
+
+    @Test
+    public void elJugadorEquipaHerramientasDelInventario(){
+        Mapa mapaDelJuego = new Mapa(20, 20);
+        Navegador navegadorDelJugador = new Navegador(2,2, mapaDelJuego);
+        Jugador jugador = new Jugador(navegadorDelJugador);
+
+        HachaPiedra hachaP = new HachaPiedra();
+        PicoFino picoF = new PicoFino();
+        HachaMadera hachaM = new HachaMadera();
+
+        jugador.guardar(hachaP);
+        jugador.guardar(picoF);
+
+        Assert.assertEquals(HachaMadera.class, jugador.getHerramientaActual().getClass());
+
+        jugador.equiparHerramienta(picoF);
+        Assert.assertEquals(PicoFino.class, jugador.getHerramientaActual().getClass());
+
+        jugador.equiparHerramienta(hachaP);
+        Assert.assertEquals(HachaPiedra.class, jugador.getHerramientaActual().getClass());
+
+        jugador.equiparHerramienta(hachaM);
+        Assert.assertEquals(HachaMadera.class, jugador.getHerramientaActual().getClass());
     }
 }
