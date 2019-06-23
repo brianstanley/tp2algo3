@@ -14,9 +14,13 @@ public class PicoPiedra extends Pico {
     }
 
     public void romper(Material unMaterial){
-        if (unMaterial.getClass() == MetalMaterial.class || unMaterial.getClass() == PiedraMaterial.class) {
+        if (materialCorrecto(unMaterial)){
             unMaterial.desgastarCon(this);
         }
         this.desgastador.desgastar();
+    }
+
+    private boolean materialCorrecto(Material unMaterial){
+        return (unMaterial.getClass() == MetalMaterial.class || unMaterial.getClass() == PiedraMaterial.class);
     }
 }

@@ -8,9 +8,13 @@ public abstract class Hacha extends Herramienta {
 
 
     public void romper(Material unMaterial) {
-        if (unMaterial.getClass() == MaderaMaterial.class) {
+        if (materialCorrecto(unMaterial)){
             unMaterial.desgastarCon(this);
         }
         this.desgastador.desgastar();
+    }
+
+    private boolean materialCorrecto(Material unMaterial){
+        return (unMaterial.getClass() == MaderaMaterial.class);
     }
 }
