@@ -86,8 +86,8 @@ public class JugadorTest {
         HachaMadera hachaM = new HachaMadera();
         HachaMetal hachaMet = new HachaMetal();
 
-        jugador.guardar(hachaP);
-        jugador.guardar(picoF);
+        jugador.agregarAlInventario(hachaP);
+        jugador.agregarAlInventario(picoF);
 
         Assert.assertEquals(HachaMadera.class, jugador.getHerramientaActual().getClass());
 

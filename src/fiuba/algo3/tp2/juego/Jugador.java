@@ -78,6 +78,7 @@ public class Jugador implements Movible {
     public void romper() {
         ElementoDeCampo elementoEnFrente = this.navegador.obtenerElementoEnFrente();
         this.herramientaActual.romper((Material)elementoEnFrente);
+        this.checkDurablilidadHerramientaEquipada();
     }
 
     public Herramienta getHerramientaActual() {
@@ -93,7 +94,10 @@ public class Jugador implements Movible {
         }
     }
 
-    public void guardar(Guardable item){
-        this.inventario.agregar(item);
+    private void checkDurablilidadHerramientaEquipada(){
+        if (herramientaActual.getDurabilidad() <= 0){
+            herramientaActual = null;
+        }
     }
+
 }
