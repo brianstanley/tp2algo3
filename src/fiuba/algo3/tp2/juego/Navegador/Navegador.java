@@ -2,6 +2,8 @@ package fiuba.algo3.tp2.juego.Navegador;
 
 import fiuba.algo3.tp2.juego.ElementoDeCampo;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
+import fiuba.algo3.tp2.vista.Dibujable;
+import fiuba.algo3.tp2.vista.JugadorVista;
 import fiuba.algo3.tp2.materiales.*;
 
 public class Navegador implements ElementoDeCampo {
@@ -40,6 +42,12 @@ public class Navegador implements ElementoDeCampo {
     @Override
     public void quitarDelMapa(Mapa mapa, Posicion posicion){
         mapa.vaciarContenidoCasillero(this.posicionActual);
+    }
+
+    @Override
+    public Dibujable dibujo() {
+        return new JugadorVista();
+
     }
 
     public Posicion getPosicionActual() {
