@@ -59,4 +59,9 @@ public class Navegador implements ElementoDeCampo {
         return this.mapaAsociado.getContenidoCasillero(posicionEnfrente);
     }
 
+    public void vaciarCasilleroEnfrente(){
+        Posicion posicionEnfrente = this.direccionApuntada.calcularNuevaPosicionAPartirDe(this.posicionActual);
+        this.mapaAsociado.vaciarContenidoCasillero(posicionEnfrente);
+    }
+
 }

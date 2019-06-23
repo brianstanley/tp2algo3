@@ -97,6 +97,7 @@ public class Jugador implements Movible {
 
     private void checkDurablilidadMaterial(Material materialParaChequear){
         if (materialParaChequear.getDurabilidad() <= 0){
+            this.navegador.vaciarCasilleroEnfrente();
             this.agregarAlInventario(materialParaChequear);
         }
     }
