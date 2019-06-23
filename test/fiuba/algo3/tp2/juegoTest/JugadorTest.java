@@ -3,6 +3,7 @@ package fiuba.algo3.tp2.juegoTest;
 import ch.qos.logback.classic.jul.JULHelper;
 import fiuba.algo3.tp2.herramientas.hachas.Hacha;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
+import fiuba.algo3.tp2.herramientas.hachas.HachaMetal;
 import fiuba.algo3.tp2.herramientas.hachas.HachaPiedra;
 import fiuba.algo3.tp2.herramientas.picos.Pico;
 import fiuba.algo3.tp2.herramientas.picos.PicoFino;
@@ -80,6 +81,7 @@ public class JugadorTest {
         HachaPiedra hachaP = new HachaPiedra();
         PicoFino picoF = new PicoFino();
         HachaMadera hachaM = new HachaMadera();
+        HachaMetal hachaMet = new HachaMetal();
 
         jugador.guardar(hachaP);
         jugador.guardar(picoF);
@@ -93,6 +95,9 @@ public class JugadorTest {
         Assert.assertEquals(HachaPiedra.class, jugador.getHerramientaActual().getClass());
 
         jugador.equiparHerramienta(hachaM);
+        Assert.assertEquals(HachaMadera.class, jugador.getHerramientaActual().getClass());
+
+        jugador.equiparHerramienta(hachaMet);
         Assert.assertEquals(HachaMadera.class, jugador.getHerramientaActual().getClass());
     }
 }
