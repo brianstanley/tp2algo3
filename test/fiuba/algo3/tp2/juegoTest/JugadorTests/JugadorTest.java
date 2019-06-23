@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.juegoTest;
+package fiuba.algo3.tp2.juegoTest.JugadorTests;
 
 import ch.qos.logback.classic.jul.JULHelper;
 import fiuba.algo3.tp2.herramientas.hachas.Hacha;
@@ -7,12 +7,15 @@ import fiuba.algo3.tp2.herramientas.hachas.HachaMetal;
 import fiuba.algo3.tp2.herramientas.hachas.HachaPiedra;
 import fiuba.algo3.tp2.herramientas.picos.Pico;
 import fiuba.algo3.tp2.herramientas.picos.PicoFino;
+import fiuba.algo3.tp2.herramientas.picos.PicoFino;
 import fiuba.algo3.tp2.juego.*;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
 import fiuba.algo3.tp2.juego.Navegador.Navegador;
 import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import fiuba.algo3.tp2.materiales.Material;
+import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
+import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -99,5 +102,24 @@ public class JugadorTest {
 
         jugador.equiparHerramienta(hachaMet);
         Assert.assertEquals(HachaMadera.class, jugador.getHerramientaActual().getClass());
+    }
+
+    @Test
+    public void jugadorAgregaElementosASuInventario(){
+        Mapa mapaDelJuego = new Mapa(20, 20);
+        Navegador navegadorDelJugador = new Navegador(2,2, mapaDelJuego);
+
+        Jugador jugador = new Jugador(navegadorDelJugador);
+
+        MaderaMaterial madera = new MaderaMaterial();
+        PicoFino picoFino = new PicoFino();
+
+        jugador.agregarAlInventario(madera);
+        jugador.agregarAlInventario(picoFino);
+
+        Inventario inventarioJugador = jugador.getInventario();
+
+        Assert.assertTrue(inventarioJugador.tiene(madera));
+        Assert.assertTrue(inventarioJugador.tiene(picoFino));
     }
 }
