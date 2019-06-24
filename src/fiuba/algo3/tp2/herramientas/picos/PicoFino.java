@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.herramientas.picos;
 
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLogaritmico;
+import fiuba.algo3.tp2.juego.ElementoDeCampo;
 import fiuba.algo3.tp2.materiales.DiamanteMaterial;
 import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
@@ -8,29 +9,25 @@ import fiuba.algo3.tp2.materiales.PiedraMaterial;
 
 public class PicoFino extends Pico {
 
-    public PicoFino(){
+    public PicoFino() {
 
         this.durabilidadInicial = 1000;
         this.fuerza = 20;
-        this.desgastador = new EstrategiaDesgasteLogaritmico(this.durabilidadInicial,10);
+        this.desgastador = new EstrategiaDesgasteLogaritmico(this.durabilidadInicial, 10);
     }
 
     @Override
     public void romper(Material unMaterial) {
-
-        // Aseguramos que pico fino solo actua ante un diamante
+        if (materialCorrecto(unMaterial))  {
+            unMaterial.desgastarCon(this);
+        }
+        if (unMaterial.getClass() == DiamanteMaterial.class) {
+            this.desgastador.desgastar();
+        }
     }
 
-    public void romper(DiamanteMaterial unDiamante){
-        this.desgastador.desgastar();
-        unDiamante.desgastarCon(this);
-    }
-
-    public void romper(MetalMaterial unMetal){
-        unMetal.desgastarCon(this);
-    }
-
-    public void romper(PiedraMaterial unaPiedra){
-        unaPiedra.desgastarCon(this);
+    private boolean materialCorrecto(Material unMaterial){
+        return (unMaterial.getClass() == MetalMaterial.class || unMaterial.getClass() == DiamanteMaterial.class
+                || unMaterial.getClass() == PiedraMaterial.class);
     }
 }

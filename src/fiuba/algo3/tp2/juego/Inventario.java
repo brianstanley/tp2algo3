@@ -27,7 +27,9 @@ public class Inventario {
         return this.items.cantidad();
     }
 
-    public void removerItem(Guardable item) {
-        this.items.remover(item);
+    public Guardable removerItem(Guardable item) {
+        Guardable buscado = this.items.obtener(item);
+        return buscado;
     }
+
 }
