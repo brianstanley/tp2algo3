@@ -6,8 +6,11 @@ import fiuba.algo3.tp2.juego.Mapa.Mapa;
 import fiuba.algo3.tp2.juego.Navegador.Navegador;
 import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
+import fiuba.algo3.tp2.vista.JugadorVista;
 import org.junit.Assert;
 import org.junit.Test;
+
+import static org.mockito.Mockito.mock;
 
 public class MapaTest {
     @Test
@@ -42,6 +45,8 @@ public class MapaTest {
         Mapa mapa = new Mapa(20,20);
         Navegador navegador = new Navegador(5,5, mapa);
         Jugador jugador = new Jugador(navegador);
+        JugadorVista jugadorVista = mock(JugadorVista.class);
+        navegador.setVista(jugadorVista);
         Posicion unaPosicionAlNorte = new Posicion(5,4);
         jugador.moverNorte();
 
@@ -53,6 +58,8 @@ public class MapaTest {
     public void noSePuedeOcuparUnCasilleroOcupadoDelTerreno() {
         Mapa mapa = new Mapa(20,20);
         Navegador navegador = new Navegador(5,5, mapa);
+        JugadorVista jugadorVista = mock(JugadorVista.class);
+        navegador.setVista(jugadorVista);
         Posicion posInicialNav = navegador.getPosicionActual();
         Jugador jugador = new Jugador(navegador);
         Posicion unaPosicionAlNorte = new Posicion(5,4);
@@ -67,6 +74,8 @@ public class MapaTest {
     public void ElNavegadorNoPuedeSalirDelMapa(){
         Mapa mapa = new Mapa(2,2);
         Navegador navegador = new Navegador(0,0, mapa);
+        JugadorVista jugadorVista = mock(JugadorVista.class);
+        navegador.setVista(jugadorVista);
         Posicion posNavIn = navegador.getPosicionActual();
         Jugador jugador = new Jugador(navegador);
         jugador.moverNorte();

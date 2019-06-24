@@ -16,10 +16,12 @@ import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
+import fiuba.algo3.tp2.vista.JugadorVista;
 import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
 
 public class JugadorTest {
     @Test
@@ -61,6 +63,8 @@ public class JugadorTest {
     public void jugadorRompeMaterialDeCasilleroDeEnFrenteQueEstaAlSur() {
         Mapa mapaDelJuego = new Mapa(20, 20);
         Navegador navegadorDelJugador = new Navegador(2,2, mapaDelJuego);
+        JugadorVista jugadorVista = mock(JugadorVista.class);
+        navegadorDelJugador.setVista(jugadorVista);
         Jugador jugador = new Jugador(navegadorDelJugador);
         Posicion posicion = new Posicion(2, 3);
         MaderaMaterial madera = new MaderaMaterial();
