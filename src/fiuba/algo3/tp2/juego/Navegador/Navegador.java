@@ -2,7 +2,6 @@ package fiuba.algo3.tp2.juego.Navegador;
 
 import fiuba.algo3.tp2.juego.ElementoDeCampo;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
-import fiuba.algo3.tp2.vista.Dibujable;
 import fiuba.algo3.tp2.vista.JugadorVista;
 import fiuba.algo3.tp2.materiales.*;
 
@@ -11,6 +10,7 @@ public class Navegador implements ElementoDeCampo {
     private Posicion posicionActual;
     private Direccion direccionApuntada;
     private Mapa mapaAsociado;
+    private JugadorVista vista;
 
     public Navegador(int posicionX, int posicionY,  Mapa mapaDelJuego){
         this.mapaAsociado = mapaDelJuego;
@@ -27,6 +27,7 @@ public class Navegador implements ElementoDeCampo {
 
     public void moverEnDireccion(Direccion direccionAMoverse){
         this.direccionApuntada = direccionAMoverse;
+        this.vista.cambiarEspejo(direccionAMoverse.getFactorDeDireccion());
         if (this.puedeMoverseEnDireccionApuntada()) {
             this.quitarDelMapa(this.mapaAsociado, this.posicionActual);
             direccionApuntada.mover(this.posicionActual);
@@ -45,9 +46,12 @@ public class Navegador implements ElementoDeCampo {
     }
 
     @Override
-    public Dibujable dibujo() {
-        return new JugadorVista();
+    public JugadorVista dibujo() {
+        return this.vista;
+    }
 
+    public void setVista(JugadorVista jugadorVista) {
+        this.vista = jugadorVista;
     }
 
     public Posicion getPosicionActual() {

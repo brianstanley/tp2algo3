@@ -11,4 +11,6 @@ public abstract class Direccion {
         this.mover(nuevaPosicion);
         return nuevaPosicion;
     }
+
+    public abstract int getFactorDeDireccion();
 }

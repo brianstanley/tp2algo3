@@ -9,4 +9,9 @@ public class DireccionOeste extends Direccion {
     public Direccion getDireccionOpuesta(){
         return new DireccionEste();
     }
+
+    @Override
+    public int getFactorDeDireccion() {
+        return +1;
+    }
 }

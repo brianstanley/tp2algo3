@@ -9,4 +9,9 @@ public class DireccionNorte extends Direccion {
     public Direccion getDireccionOpuesta(){
         return new DireccionSur();
     }
+
+    @Override
+    public int getFactorDeDireccion() {
+        return 0;
+    }
 }

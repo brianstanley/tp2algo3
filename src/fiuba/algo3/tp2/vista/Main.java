@@ -1,11 +1,10 @@
 package fiuba.algo3.tp2.vista;
 
-import fiuba.algo3.tp2.controller.GenericButtonHandler;
+import fiuba.algo3.tp2.controller.MoverNavegadorHandler;
 import fiuba.algo3.tp2.juego.Juego;
 import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
-import fiuba.algo3.tp2.juego.Navegador.Navegador;
-import fiuba.algo3.tp2.juego.Navegador.Posicion;
+import fiuba.algo3.tp2.juego.Navegador.*;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -45,6 +44,8 @@ public class Main extends Application {
         this.navegador = new Navegador(NAVEGADOR_X_INICIAL, NAVEGADOR_Y_INICIAL, this.mapa);
         this.jugador = new Jugador(this.navegador);
         this.juego = new Juego(this.mapa, this.navegador, this.jugador);
+        JugadorVista jugadorVista = new JugadorVista();
+        this.navegador.setVista(jugadorVista);
         this.juego.inicializacionMateriales();
         this.width = Screen.getPrimary().getVisualBounds().getWidth();
         this.heigth = Screen.getPrimary().getVisualBounds().getHeight();
@@ -73,19 +74,23 @@ public class Main extends Application {
         flow.setPrefWrapLength(170);
         flow.setStyle("-fx-background-color: DAE6F3;");
 
-        GenericButtonHandler botonHandler = new GenericButtonHandler(primaryStage);
+        MoverNavegadorHandler botonHandlerNorte = new MoverNavegadorHandler(this.navegador, new DireccionNorte(), this);
+        MoverNavegadorHandler botonHandlerSur = new MoverNavegadorHandler(this.navegador, new DireccionSur(), this);
+        MoverNavegadorHandler botonHandlerEste = new MoverNavegadorHandler(this.navegador, new DireccionEste(), this);
+        MoverNavegadorHandler botonHandlerOeste = new MoverNavegadorHandler(this.navegador, new DireccionOeste(), this);
         Button m1 = new Button("Inventario");
-        m1.setOnAction(botonHandler);
+        m1.setOnAction(botonHandlerEste);
         Button m2 = new Button("Norte ↑");
-        m2.setOnAction(botonHandler);
+        Direccion direccion = new DireccionNorte();
+        m2.setOnAction(botonHandlerNorte);
         Button m3 = new Button("Sur ↓");
-        m3.setOnAction(botonHandler);
+        m3.setOnAction(botonHandlerSur);
         Button m4 = new Button("Este ->");
-        m4.setOnAction(botonHandler);
+        m4.setOnAction(botonHandlerEste);
         Button m5 = new Button("Oeste <-");
-        m5.setOnAction(botonHandler);
+        m5.setOnAction(botonHandlerOeste);
         Button m6 = new Button("Romper");
-        m6.setOnAction(botonHandler);
+        m6.setOnAction(botonHandlerOeste);
 
         m1.setPrefWidth(BOTONES_MENU_WIDTH);
         m2.setPrefWidth(BOTONES_MENU_WIDTH);
@@ -99,7 +104,8 @@ public class Main extends Application {
 
     }
 
-    private void dibujarEscenario() {
+    public void dibujarEscenario() {
+        this.campoDeJuego.getChildren().clear();
         for (int y = 0; y < FILAS_MAPA; y++) {
             this.campoDeJuego.addColumn(y);
             for (int x = 0; x < COLUMNAS_MAPA; x++) {
