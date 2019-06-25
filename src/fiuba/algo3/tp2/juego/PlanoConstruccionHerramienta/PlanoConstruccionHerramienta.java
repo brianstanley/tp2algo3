@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta;
 
 
+import fiuba.algo3.tp2.juego.Guardable;
 import fiuba.algo3.tp2.materiales.*;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.*;
 
@@ -10,17 +11,17 @@ import java.util.List;
 
 public class PlanoConstruccionHerramienta {
 
-    private Material[][] plano;
+    private Guardable[][] plano;
     private LectorDePlanoConstruccion lector;
 
     public PlanoConstruccionHerramienta() {
 
-        this.plano = new Material[3][3];
+        this.plano = new Guardable[3][3];
         this.lector = new LectorDePlanoConstruccion();
     }
 
 
-    public void insertarMaterialEnPosicion(Material unMaterial, int x, int y) {
+    public void insertarMaterialEnPosicion(Guardable unMaterial, int x, int y) {
 
         this.plano[x][y] = unMaterial;
     }
@@ -53,9 +54,9 @@ public class PlanoConstruccionHerramienta {
         return this.lector.evaluarMapa(this);
     }
 
-    public List<Material> obtenerMaterialesIngresados() {
+    public List<Guardable> obtenerMaterialesIngresados() {
 
-        List<Material> materialesCargados = new ArrayList<>();
+        List<Guardable> materialesCargados = new ArrayList<>();
 
         for (int i=0;i<3;i++)
             for(int j=0;j<3;j++)

@@ -34,27 +34,19 @@ public class ItemsContainer {
     public int getCantidadDe(Guardable guardable) {
         int total = 0;
         for (int i = 0; i < this.items.size(); i++) {
-            if (guardable.equals(this.items.get(i))) {
+            if (guardable.getClass() == this.items.get(i).getClass()) {
                 total++;
             }
         }
         return total;
     }
 
-    public void remover(Guardable item) {
-        for (int i = 0; i < this.items.size(); i++) {
-            if (this.items.get(i).getClass() == item.getClass()) {
-                this.items.remove(i);
-            }
-        }
-    }
 
     public Guardable obtener(Guardable item) {
         for (int i = 0; i < this.items.size(); i++){
             if (this.items.get(i).getClass() == item.getClass()){
-                Guardable itemBuscado = this.items.get(i);
-                this.items.remove(i);
-                return itemBuscado;
+
+                return this.items.remove(i);
             }
         }
         return null;
