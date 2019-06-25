@@ -83,11 +83,11 @@ public class JugadorCreacionTest {
         Assert.assertEquals(2, inventarioDeJugador.getCantidadDe(new MaderaMaterial()));
         Assert.assertEquals(3, inventarioDeJugador.getCantidadDe(new MetalMaterial()));
 
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(metal1),0,0);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(metal2),0,1);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(metal3),0,2);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(madera1),1,1);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(madera2),2,1);
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(metal1),0,0);
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(metal2),0,1);
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(metal3),0,2);
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(madera1),1,1);
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(madera2),2,1);
 
         jugador.crearHerramientaNueva(plano);
 
@@ -116,9 +116,9 @@ public class JugadorCreacionTest {
         Assert.assertEquals(2, inventarioDeJugador.getCantidadDe(new PiedraMaterial()));
         Assert.assertEquals(1, inventarioDeJugador.getCantidadDe(new MetalMaterial()));
 
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(piedra1),0,0);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(metal),1,1);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(piedra2),2,2);
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(piedra1),0,0);
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(metal),1,1);
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(piedra2),2,2);
 
 
         jugador.crearHerramientaNueva(plano);

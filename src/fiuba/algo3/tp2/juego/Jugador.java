@@ -89,7 +89,7 @@ public class Jugador implements Movible {
     public void equiparHerramienta(Herramienta herramientaBuscada){
         if (this.inventario.tiene(herramientaBuscada)){
             this.agregarAlInventario(this.herramientaActual);
-            Guardable deInventario = this.inventario.removerItem(herramientaBuscada);
+            Guardable deInventario = this.inventario.sacar(herramientaBuscada);
             this.herramientaActual = (Herramienta)deInventario;
         }
     }
