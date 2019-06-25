@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.vista;
 
+import fiuba.algo3.tp2.controller.ConstruirBotonHandler;
 import fiuba.algo3.tp2.controller.MoverNavegadorHandler;
 import fiuba.algo3.tp2.juego.Juego;
 import fiuba.algo3.tp2.juego.Jugador;
@@ -9,12 +10,15 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+
+import java.awt.*;
 
 public class Main extends Application {
 
@@ -33,6 +37,7 @@ public class Main extends Application {
     static final int BOTONES_MENU_WIDTH = 170;
     static final int ELEMENTOS_WIDTH = 100;
     static final int ELEMENTOS_HEIGTH = 100;
+    private static Stage mainStage;
 
     public static void main(String[] args) {
         launch(args);
@@ -47,14 +52,15 @@ public class Main extends Application {
         JugadorVista jugadorVista = new JugadorVista();
         this.navegador.setVista(jugadorVista);
         this.juego.inicializacionMateriales();
+        mainStage = primaryStage;
         this.width = Screen.getPrimary().getVisualBounds().getWidth();
         this.heigth = Screen.getPrimary().getVisualBounds().getHeight();
 
-        primaryStage.setTitle("Algocraft");
+        mainStage.setTitle("Algocraft");
 
         this.container = new BorderPane();
         this.campoDeJuego = new GridPane();
-        FlowPane menu = this.inicializarSideMenu(primaryStage);
+        FlowPane menu = this.inicializarSideMenu(mainStage);
 
         this.dibujarEscenario();
 
@@ -62,8 +68,8 @@ public class Main extends Application {
         this.container.setRight(menu);
 
         Scene scene = new Scene(this.container, this.width, this.heigth);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        mainStage.setScene(scene);
+        mainStage.show();
     }
 
     private FlowPane inicializarSideMenu(Stage primaryStage) {
@@ -78,8 +84,9 @@ public class Main extends Application {
         MoverNavegadorHandler botonHandlerSur = new MoverNavegadorHandler(this.navegador, new DireccionSur(), this);
         MoverNavegadorHandler botonHandlerEste = new MoverNavegadorHandler(this.navegador, new DireccionEste(), this);
         MoverNavegadorHandler botonHandlerOeste = new MoverNavegadorHandler(this.navegador, new DireccionOeste(), this);
-        Button m1 = new Button("Inventario");
-        m1.setOnAction(botonHandlerEste);
+        Button m1 = new Button("Construir");
+        ConstruirBotonHandler construirBtnHandler = new ConstruirBotonHandler();
+        m1.setOnAction(construirBtnHandler);
         Button m2 = new Button("Norte ↑");
         Direccion direccion = new DireccionNorte();
         m2.setOnAction(botonHandlerNorte);
@@ -128,5 +135,56 @@ public class Main extends Application {
             }
         }
 
+    }
+
+    public static void mostrarConstructorPopup() {
+        final Stage dialog = new Stage();
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        dialog.initOwner(mainStage);
+        VBox dialogVbox = new VBox(500);
+
+
+        int rows = 6;
+        int columns = 6;
+
+        GridPane grid = new GridPane();
+        grid.getStyleClass().add("game-grid");
+
+        for(int i = 0; i < columns; i++) {
+            ColumnConstraints column = new ColumnConstraints(40);
+            grid.getColumnConstraints().add(column );
+        }
+
+        for(int i = 0; i < rows; i++) {
+            RowConstraints row = new RowConstraints(40);
+            grid.getRowConstraints().add(row);
+        }
+
+
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                Pane pane = new Pane();
+                pane.setOnMouseReleased(e -> {
+                });
+                pane.getStyleClass().add("game-grid-cell");
+                if (i == 0) {
+                    pane.getStyleClass().add("first-column");
+                }
+                if (j == 0) {
+                    pane.getStyleClass().add("first-row");
+                }
+                ImageView madera = new ImageView(new Image("madera.png"));
+                madera.setFitHeight(20);
+                madera.setFitWidth(20);
+                pane.getChildren().add(madera);
+                grid.add(pane, i, j);
+            }
+        }
+
+        dialogVbox.getChildren().add(grid);
+        Scene dialogScene = new Scene(dialogVbox, 500, 500);
+        dialog.setScene(dialogScene);
+        dialogScene.getStylesheets().add("/game.css");
+        dialog.show();
     }
 }
