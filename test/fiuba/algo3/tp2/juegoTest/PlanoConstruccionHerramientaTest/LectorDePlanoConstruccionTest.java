@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.juegoTest.PlanoConstruccionHerramientaTest;
 
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.*;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.LectorDePlanoConstruccion;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
@@ -26,9 +27,9 @@ public class LectorDePlanoConstruccionTest {
         MetalMaterial metal = new MetalMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        plano.insertarMaterialEnPosicion(metal, 0,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
-        plano.insertarMaterialEnPosicion(piedra,0,2);
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,2));
 
         Assert.assertTrue(lector.evaluarMapa(plano) instanceof FiguraDesconocida);
     }
@@ -40,11 +41,11 @@ public class LectorDePlanoConstruccionTest {
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
-        plano.insertarMaterialEnPosicion(madera,0,0);
-        plano.insertarMaterialEnPosicion(madera,0,1);
-        plano.insertarMaterialEnPosicion(madera,1,0);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(madera,new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(lector.evaluarMapa(plano) instanceof FiguraHachaMadera);
     }
@@ -57,11 +58,11 @@ public class LectorDePlanoConstruccionTest {
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        plano.insertarMaterialEnPosicion(piedra,0,0);
-        plano.insertarMaterialEnPosicion(piedra,0,1);
-        plano.insertarMaterialEnPosicion(piedra,1,0);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(1,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(lector.evaluarMapa(plano) instanceof FiguraHachaPiedra);
     }
@@ -74,11 +75,11 @@ public class LectorDePlanoConstruccionTest {
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
-        plano.insertarMaterialEnPosicion(metal,0,0);
-        plano.insertarMaterialEnPosicion(metal,0,1);
-        plano.insertarMaterialEnPosicion(metal,1,0);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(1,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(lector.evaluarMapa(plano) instanceof FiguraHachaMetal);
     }
@@ -90,11 +91,11 @@ public class LectorDePlanoConstruccionTest {
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
-        plano.insertarMaterialEnPosicion(madera,0,0);
-        plano.insertarMaterialEnPosicion(madera,0,1);
-        plano.insertarMaterialEnPosicion(madera,0,2);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(madera,new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(0,2));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue( lector.evaluarMapa(plano) instanceof FiguraPicoMadera);
     }
@@ -107,11 +108,12 @@ public class LectorDePlanoConstruccionTest {
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        plano.insertarMaterialEnPosicion(piedra,0,0);
-        plano.insertarMaterialEnPosicion(piedra,0,1);
-        plano.insertarMaterialEnPosicion(piedra,0,2);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,2));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
+
 
         Assert.assertTrue(lector.evaluarMapa(plano) instanceof FiguraPicoPiedra);
     }
@@ -124,11 +126,11 @@ public class LectorDePlanoConstruccionTest {
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
-        plano.insertarMaterialEnPosicion(metal,0,0);
-        plano.insertarMaterialEnPosicion(metal,0,1);
-        plano.insertarMaterialEnPosicion(metal,0,2);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,2));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(lector.evaluarMapa(plano) instanceof FiguraPicoMetal);
     }
@@ -142,12 +144,12 @@ public class LectorDePlanoConstruccionTest {
         MetalMaterial metal = new MetalMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        plano.insertarMaterialEnPosicion(metal,0,0);
-        plano.insertarMaterialEnPosicion(metal,0,1);
-        plano.insertarMaterialEnPosicion(metal,0,2);
-        plano.insertarMaterialEnPosicion(piedra,1,0);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,2));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(1,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(lector.evaluarMapa(plano) instanceof FiguraPicoFino);
     }
