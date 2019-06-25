@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.juegoTest.PlanoConstruccionHerramientaTest;
 
+import fiuba.algo3.tp2.juego.Guardable;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.*;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.*;
@@ -229,7 +230,7 @@ public class PlanoConstruccionHerramientaTest {
         plano.insertarMaterialEnPosicion(madera,1,1);
         plano.insertarMaterialEnPosicion(piedra,0,2);
 
-        List<Material> materiales = plano.obtenerMaterialesIngresados();
+        List<Guardable> materiales = plano.obtenerMaterialesIngresados();
 
         Assert.assertTrue(materiales.contains(madera));
         Assert.assertTrue(materiales.contains(piedra));
@@ -239,7 +240,7 @@ public class PlanoConstruccionHerramientaTest {
 
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
 
-        List<Material> materiales = plano.obtenerMaterialesIngresados();
+        List<Guardable> materiales = plano.obtenerMaterialesIngresados();
 
         Assert.assertTrue(materiales.isEmpty());
     }
