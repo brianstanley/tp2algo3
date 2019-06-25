@@ -34,7 +34,7 @@ public class ItemsContainer {
     public int getCantidadDe(Guardable guardable) {
         int total = 0;
         for (int i = 0; i < this.items.size(); i++) {
-            if (guardable.equals(this.items.get(i))) {
+            if (guardable.getClass() == this.items.get(i).getClass()) {
                 total++;
             }
         }
