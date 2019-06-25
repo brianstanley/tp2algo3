@@ -66,5 +66,10 @@ public class PlanoConstruccionHerramienta {
         return materialesCargados;
 
     }
+
+    public void vaciar() {
+
+        this.plano = new Guardable[3][3];
+    }
 }
 

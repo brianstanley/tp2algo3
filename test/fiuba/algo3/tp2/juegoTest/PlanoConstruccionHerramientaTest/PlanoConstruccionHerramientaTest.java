@@ -244,4 +244,20 @@ public class PlanoConstruccionHerramientaTest {
 
         Assert.assertTrue(materiales.isEmpty());
     }
+
+    @Test
+    public void seVaciaUnPlanoConMateriales(){
+
+        PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
+
+        plano.insertarMaterialEnPosicion(new MetalMaterial(), 0,0);
+        plano.insertarMaterialEnPosicion(new MaderaMaterial(), 0,2);
+        plano.insertarMaterialEnPosicion(new MaderaMaterial(),1,1);
+
+        plano.vaciar();
+
+        Assert.assertTrue(plano.noHayMaterialEnPosicion(0,0));
+        Assert.assertTrue(plano.noHayMaterialEnPosicion(0,2));
+        Assert.assertTrue(plano.noHayMaterialEnPosicion(1,1));
+    }
 }
