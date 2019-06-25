@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.controller.GenericButtonHandler;
+import fiuba.algo3.tp2.controller.RomperButtonHandler;
 import fiuba.algo3.tp2.juego.Juego;
 import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
@@ -32,8 +33,8 @@ public class Main extends Application {
     static final int NAVEGADOR_X_INICIAL = 8;
     static final int NAVEGADOR_Y_INICIAL = 8;
     static final int BOTONES_MENU_WIDTH = 170;
-    static final int ELEMENTOS_WIDTH = 100;
-    static final int ELEMENTOS_HEIGTH = 100;
+    static final int ELEMENTOS_WIDTH = 50;
+    static final int ELEMENTOS_HEIGTH = 50;
 
     public static void main(String[] args) {
         launch(args);
@@ -74,6 +75,7 @@ public class Main extends Application {
         flow.setStyle("-fx-background-color: DAE6F3;");
 
         GenericButtonHandler botonHandler = new GenericButtonHandler(primaryStage);
+        RomperButtonHandler romperButtonHandler = new RomperButtonHandler(this.jugador, this);
         Button m1 = new Button("Inventario");
         m1.setOnAction(botonHandler);
         Button m2 = new Button("Norte ↑");
@@ -85,7 +87,7 @@ public class Main extends Application {
         Button m5 = new Button("Oeste <-");
         m5.setOnAction(botonHandler);
         Button m6 = new Button("Romper");
-        m6.setOnAction(botonHandler);
+        m6.setOnAction(romperButtonHandler);
 
         m1.setPrefWidth(BOTONES_MENU_WIDTH);
         m2.setPrefWidth(BOTONES_MENU_WIDTH);
@@ -99,7 +101,7 @@ public class Main extends Application {
 
     }
 
-    private void dibujarEscenario() {
+    public void dibujarEscenario() {
         for (int y = 0; y < FILAS_MAPA; y++) {
             this.campoDeJuego.addColumn(y);
             for (int x = 0; x < COLUMNAS_MAPA; x++) {
