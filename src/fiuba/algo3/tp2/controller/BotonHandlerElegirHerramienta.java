@@ -21,7 +21,8 @@ import javafx.scene.control.Label;
 public class BotonHandlerElegirHerramienta implements EventHandler<ActionEvent> {
 
     private final Jugador jugador;
-    private final FlowPane menu;
+    private FlowPane menu;
+    private Stage newWindow;
 
     public BotonHandlerElegirHerramienta(Jugador unJugador){
         this.jugador = unJugador;
@@ -31,13 +32,15 @@ public class BotonHandlerElegirHerramienta implements EventHandler<ActionEvent> 
     @Override
     public void handle(ActionEvent event){
 
+        this.menu = inicializarMenuEquipar(this.jugador);
+
         StackPane secondaryLayout = new StackPane();
         secondaryLayout.getChildren().add(this.menu);
 
         Scene secondScene = new Scene(secondaryLayout, 350, 180);
 
         // New window (Stage)
-        Stage newWindow = new Stage();
+        newWindow = new Stage();
         newWindow.setTitle("Seleccionar herramienta");
         newWindow.setScene(secondScene);
 
@@ -106,5 +109,9 @@ public class BotonHandlerElegirHerramienta implements EventHandler<ActionEvent> 
 
         flow.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7);
         return flow;
+    }
+
+    public void cerrarPopup() {
+        newWindow.close();
     }
 }

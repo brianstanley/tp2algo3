@@ -12,6 +12,6 @@ public class DireccionNorte extends Direccion {
 
     @Override
     public int getFactorDeDireccion() {
-        return 0;
+        return DIRECCION_NORTE;
     }
 }

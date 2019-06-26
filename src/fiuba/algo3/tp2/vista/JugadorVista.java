@@ -24,7 +24,13 @@ public class JugadorVista implements Dibujable {
         if (this.factorActual != factor && factor != 0) {
             if (factor == 1 && playerImage.getScaleX() < 0) {
                 playerImage.setScaleX(playerImage.getScaleX() * - factor);
-            } else {
+                playerImage.setScaleY(Math.abs(playerImage.getScaleY()));
+            } else if(factor == 2) {
+                playerImage.setScaleY(playerImage.getScaleY() * -1);
+            }else if(factor==3) {
+                playerImage.setScaleY(Math.abs(playerImage.getScaleY()));
+            }else {
+                playerImage.setScaleY(Math.abs(playerImage.getScaleY()));
                 playerImage.setScaleX(playerImage.getScaleX() * factor);
             }
             this.factorActual = factor;

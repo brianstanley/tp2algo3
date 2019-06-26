@@ -1,6 +1,8 @@
 package fiuba.algo3.tp2.juego;
 
+import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 import fiuba.algo3.tp2.juego.utils.ItemsContainer;
+import fiuba.algo3.tp2.materiales.MaderaMaterial;
 
 public class Inventario {
     private ItemsContainer items;
@@ -31,5 +33,15 @@ public class Inventario {
         Guardable buscado = this.items.obtener(item);
         return buscado;
     }
+
+    public Guardable obtenerItemEnPosicicion(int indice){
+        return this.items.obtenerItemEnPosicicion(indice);
+    }
+
+    public Guardable removerItem(Guardable item) {
+        Guardable buscado = this.items.obtener(item);
+        return buscado;
+    }
+
 
 }

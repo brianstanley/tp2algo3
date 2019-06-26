@@ -51,4 +51,8 @@ public class ItemsContainer {
 
         return null;
     }
+
+    public Guardable obtenerItemEnPosicicion(int indice) {
+        return this.items.get(indice);
+    }
 }

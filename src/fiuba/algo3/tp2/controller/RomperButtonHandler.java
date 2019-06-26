@@ -1,23 +1,32 @@
 package fiuba.algo3.tp2.controller;
 
+import fiuba.algo3.tp2.herramientas.herramientaExcepciones.HerramientaRotaExcepcion;
 import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.vista.Main;
+import fiuba.algo3.tp2.vista.MenuPrincipalVista;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+
+import static fiuba.algo3.tp2.vista.MenuPrincipalVista.dibujarDurabilidadActualInfo;
+
 
 public class RomperButtonHandler implements EventHandler<ActionEvent> {
 
     private final Jugador jugador;
-    private final Main main;
 
-    public RomperButtonHandler(Jugador jugador, Main main) {
+    public RomperButtonHandler(Jugador jugador) {
         this.jugador = jugador;
-        this.main = main;
     }
 
     @Override
     public void handle(ActionEvent event) {
-        this.jugador.romper();
-        this.main.dibujarEscenario();
+        try{
+            this.jugador.romper();
+            MenuPrincipalVista.dibujarHerramientaActual(jugador);
+        } catch (HerramientaRotaExcepcion error) {
+            Main.alertaHerramientaRota();
+        }
+        dibujarDurabilidadActualInfo(jugador);
+        Main.dibujarEscenario();
     }
 }
