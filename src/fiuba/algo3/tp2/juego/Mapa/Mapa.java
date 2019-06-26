@@ -38,9 +38,12 @@ public class Mapa {
     }
 
     public ElementoDeCampo getContenidoCasillero(Posicion unaPosicion) {
-        int fila = unaPosicion.getY();
-        int columna = unaPosicion.getX();
-        return (this.casilleros.get(fila).get(columna)).getContenido();
+        if (! estaAfueraDelMapaLaPosicion(unaPosicion)) {
+            int fila = unaPosicion.getY();
+            int columna = unaPosicion.getX();
+            return (this.casilleros.get(fila).get(columna)).getContenido();
+        }
+        return null;
     }
 
     public boolean existeElementoEnPosicion(Posicion unaPosicion) {

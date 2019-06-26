@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.controller.MoverNavegadorHandler;
+import fiuba.algo3.tp2.controller.RomperButtonHandler;
 import fiuba.algo3.tp2.juego.Juego;
 import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
@@ -31,8 +32,8 @@ public class Main extends Application {
     static final int NAVEGADOR_X_INICIAL = 8;
     static final int NAVEGADOR_Y_INICIAL = 8;
     static final int BOTONES_MENU_WIDTH = 170;
-    static final int ELEMENTOS_WIDTH = 100;
-    static final int ELEMENTOS_HEIGTH = 100;
+    static final int ELEMENTOS_WIDTH = 50;
+    static final int ELEMENTOS_HEIGTH = 50;
 
     public static void main(String[] args) {
         launch(args);
@@ -78,6 +79,7 @@ public class Main extends Application {
         MoverNavegadorHandler botonHandlerSur = new MoverNavegadorHandler(this.navegador, new DireccionSur(), this);
         MoverNavegadorHandler botonHandlerEste = new MoverNavegadorHandler(this.navegador, new DireccionEste(), this);
         MoverNavegadorHandler botonHandlerOeste = new MoverNavegadorHandler(this.navegador, new DireccionOeste(), this);
+        RomperButtonHandler romperButtonHandler = new RomperButtonHandler(this.jugador, this);
         Button m1 = new Button("Inventario");
         m1.setOnAction(botonHandlerEste);
         Button m2 = new Button("Norte ↑");
@@ -91,6 +93,7 @@ public class Main extends Application {
         m5.setOnAction(botonHandlerOeste);
         Button m6 = new Button("Romper");
         m6.setOnAction(botonHandlerOeste);
+        m6.setOnAction(romperButtonHandler);
 
         m1.setPrefWidth(BOTONES_MENU_WIDTH);
         m2.setPrefWidth(BOTONES_MENU_WIDTH);
