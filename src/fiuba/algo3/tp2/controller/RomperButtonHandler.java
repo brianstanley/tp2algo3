@@ -5,6 +5,8 @@ import fiuba.algo3.tp2.vista.Main;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
+import static fiuba.algo3.tp2.vista.MenuPrincipalVista.dibujarDurabilidadActualInfo;
+
 
 public class RomperButtonHandler implements EventHandler<ActionEvent> {
 
@@ -17,6 +19,7 @@ public class RomperButtonHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
         this.jugador.romper();
+        dibujarDurabilidadActualInfo(jugador);
         Main.dibujarEscenario();
     }
 }

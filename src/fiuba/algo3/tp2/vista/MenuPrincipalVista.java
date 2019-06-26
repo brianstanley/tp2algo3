@@ -4,6 +4,7 @@ import fiuba.algo3.tp2.controller.BotonHandlerElegirHerramienta;
 import fiuba.algo3.tp2.controller.ConstruirBotonHandler;
 import fiuba.algo3.tp2.controller.MoverNavegadorHandler;
 import fiuba.algo3.tp2.controller.RomperButtonHandler;
+import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.juego.Navegador.*;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.FiguraConstruible;
@@ -13,9 +14,12 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
+import javax.swing.event.TreeModelEvent;
+
 public class MenuPrincipalVista {
     static final int BOTONES_MENU_WIDTH = 170;
     private static Pane panelContenedorHerramienta;
+    private static Pane panelContenedorDurabilidad;
 
     public FlowPane dibujar(Navegador navegador, Jugador jugador) {
         FlowPane flow = new FlowPane();
@@ -61,8 +65,19 @@ public class MenuPrincipalVista {
         panelContenedorHerramienta = new Pane();
         dibujarHerramientaActual(jugador);
 
-        flow.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7, panelContenedorHerramienta);
+        panelContenedorDurabilidad = new Pane();
+        dibujarDurabilidadActualInfo(jugador);
+
+        flow.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7, panelContenedorHerramienta, panelContenedorDurabilidad);
         return  flow;
+    }
+    
+    public static void dibujarDurabilidadActualInfo(Jugador jugador) {
+        panelContenedorDurabilidad.getChildren().clear();
+        Herramienta herramienta = jugador.getHerramientaActual();
+        panelContenedorDurabilidad.setTranslateY(15);
+        Text m9 = new Text("Durabilidad: " + herramienta.getDurabilidad());
+        panelContenedorDurabilidad.getChildren().add(m9);
     }
 
     public static void dibujarHerramientaActual(Jugador jugador) {
