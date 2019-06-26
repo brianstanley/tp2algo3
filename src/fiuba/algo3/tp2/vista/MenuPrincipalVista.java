@@ -52,6 +52,7 @@ public class MenuPrincipalVista {
         m4.setPrefWidth(BOTONES_MENU_WIDTH);
         m5.setPrefWidth(BOTONES_MENU_WIDTH);
         m6.setPrefWidth(BOTONES_MENU_WIDTH);
+        m7.setPrefWidth(BOTONES_MENU_WIDTH);
 
         flow.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7);
         return  flow;
