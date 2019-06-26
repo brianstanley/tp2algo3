@@ -16,4 +16,9 @@ public class FiguraDesconocida implements FiguraConstruible {
     public Dibujable dibujo() {
         return new HerramientaVista("vacio.png");
     }
+
+    @Override
+    public Boolean esFiguraValida() {
+        return false;
+    }
 }

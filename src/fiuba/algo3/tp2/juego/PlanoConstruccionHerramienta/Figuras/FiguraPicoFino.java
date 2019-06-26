@@ -17,4 +17,9 @@ public class FiguraPicoFino implements FiguraConstruible {
     public Dibujable dibujo() {
         return new HerramientaVista("picoFino.png");
     }
+
+    @Override
+    public Boolean esFiguraValida() {
+        return true;
+    }
 }

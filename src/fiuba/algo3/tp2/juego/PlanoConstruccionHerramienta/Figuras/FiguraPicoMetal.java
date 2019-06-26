@@ -17,4 +17,9 @@ public class FiguraPicoMetal implements FiguraConstruible {
     public Dibujable dibujo() {
         return new HerramientaVista("picoMetal.png");
     }
+
+    @Override
+    public Boolean esFiguraValida() {
+        return true;
+    }
 }

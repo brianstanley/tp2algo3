@@ -91,13 +91,17 @@ public class Main extends Application {
         rootPane.setPadding(new Insets(15, 12, 15, 12));
         rootPane.setSpacing(10);
         Scene scene = new Scene(rootPane, 400, 400);
-        PopupConstruccionVista popupConstruccionVista = new PopupConstruccionVista();
+        PopupConstruccionVista popupConstruccionVista = new PopupConstruccionVista(jugador);
         popupConstruccionVista.dibujar(rootPane, planoConstruccion);
         constructorDialog.initModality(Modality.APPLICATION_MODAL);
         constructorDialog.initOwner(mainStage);
         constructorDialog.setScene(scene);
         scene.getStylesheets().add("/game.css");
         constructorDialog.show();
+    }
+
+    public static void cerrarConstructorPopup() {
+        constructorDialog.close();
     }
 
     public static void dibujarInventarioMateriales(Stage parentStage, Posicion posicionClickeada) {

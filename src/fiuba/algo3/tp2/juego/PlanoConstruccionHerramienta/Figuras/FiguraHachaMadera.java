@@ -19,4 +19,9 @@ public class FiguraHachaMadera implements FiguraConstruible {
         return new HerramientaVista("hachaMadera.png");
     }
 
+    @Override
+    public Boolean esFiguraValida() {
+        return true;
+    }
+
 }

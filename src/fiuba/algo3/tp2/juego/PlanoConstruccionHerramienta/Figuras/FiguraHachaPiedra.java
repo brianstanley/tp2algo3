@@ -17,4 +17,9 @@ public class FiguraHachaPiedra implements FiguraConstruible {
     public Dibujable dibujo() {
         return new HerramientaVista("hachaPiedra.png");
     }
+
+    @Override
+    public Boolean esFiguraValida() {
+        return true;
+    }
 }

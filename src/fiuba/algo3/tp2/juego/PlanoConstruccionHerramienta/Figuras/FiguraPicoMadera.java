@@ -16,4 +16,9 @@ public class FiguraPicoMadera implements FiguraConstruible {
     public Dibujable dibujo() {
         return new HerramientaVista("picoMadera.png");
     }
+
+    @Override
+    public Boolean esFiguraValida() {
+        return true;
+    }
 }

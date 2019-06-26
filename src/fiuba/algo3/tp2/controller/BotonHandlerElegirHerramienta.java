@@ -21,7 +21,7 @@ import javafx.scene.control.Label;
 public class BotonHandlerElegirHerramienta implements EventHandler<ActionEvent> {
 
     private final Jugador jugador;
-    private final FlowPane menu;
+    private FlowPane menu;
 
     public BotonHandlerElegirHerramienta(Jugador unJugador){
         this.jugador = unJugador;
@@ -30,6 +30,8 @@ public class BotonHandlerElegirHerramienta implements EventHandler<ActionEvent> 
 
     @Override
     public void handle(ActionEvent event){
+
+        this.menu = inicializarMenuEquipar(this.jugador);
 
         StackPane secondaryLayout = new StackPane();
         secondaryLayout.getChildren().add(this.menu);

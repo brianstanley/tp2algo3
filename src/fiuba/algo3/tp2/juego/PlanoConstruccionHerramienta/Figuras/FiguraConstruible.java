@@ -7,4 +7,5 @@ public interface FiguraConstruible {
 
     Herramienta construir();
     Dibujable dibujo();
+    Boolean esFiguraValida();
 }

@@ -1,5 +1,8 @@
 package fiuba.algo3.tp2.vista;
 
+import fiuba.algo3.tp2.controller.ConfirmarConstruccionBotonHandler;
+import fiuba.algo3.tp2.herramientas.Herramienta;
+import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.FiguraConstruible;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.LectorDePlanoConstruccion;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
@@ -9,8 +12,16 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.Button;
+
 
 public class PopupConstruccionVista {
+
+    private final Jugador jugador;
+
+    public PopupConstruccionVista(Jugador jugador) {
+        this.jugador = jugador;
+    }
 
     public void dibujar(HBox root, PlanoConstruccionHerramienta planoConstruccion) {
         Pane flechaPane = new Pane();
@@ -46,7 +57,22 @@ public class PopupConstruccionVista {
 
         result.getChildren().add(grid);
         pane2.getChildren().add(result);
-        root.getChildren().addAll(pane1,flechaPane, pane2);
+
+        Pane panelParaConfirmar = new Pane();
+        Button botonConfirmar = new Button();
+        botonConfirmar.setText("Confirmar Creacion");
+        ConfirmarConstruccionBotonHandler confirmarHandler = new ConfirmarConstruccionBotonHandler(jugador, planoConstruccion);
+        botonConfirmar.setOnAction(confirmarHandler);
+        botonConfirmar.setDisable(true);
+        if (figura.esFiguraValida()) {
+            Herramienta herramienta = figura.construir();
+            confirmarHandler.setHerramienta(herramienta);
+            botonConfirmar.setDisable(false);
+        }
+
+        panelParaConfirmar.getChildren().add(botonConfirmar);
+
+        root.getChildren().addAll(pane1,flechaPane, pane2, panelParaConfirmar);
 
 
     }
