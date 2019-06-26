@@ -2,8 +2,10 @@ package fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta;
 
 
 import fiuba.algo3.tp2.juego.Guardable;
-import fiuba.algo3.tp2.materiales.*;
-import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.*;
+import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.FiguraConstruible;
+import fiuba.algo3.tp2.materiales.MaderaMaterial;
+import fiuba.algo3.tp2.materiales.MetalMaterial;
+import fiuba.algo3.tp2.materiales.PiedraMaterial;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +15,12 @@ public class PlanoConstruccionHerramienta {
 
     private Guardable[][] plano;
     private LectorDePlanoConstruccion lector;
+    private int FILAS = 3;
+    private int COLUMNAS = 3;
 
     public PlanoConstruccionHerramienta() {
 
-        this.plano = new Guardable[3][3];
+        this.plano = new Guardable[FILAS][COLUMNAS];
         this.lector = new LectorDePlanoConstruccion();
     }
 
@@ -26,7 +30,13 @@ public class PlanoConstruccionHerramienta {
         this.plano[x][y] = unMaterial;
     }
 
+    public void removerFiguraDePlano(int x, int y) {
+        this.plano[x][y] = null;
+    }
 
+    public Guardable getContenidoCasillero(int x, int y) {
+        return this.plano[x][y];
+    }
 
     public boolean hayMaderaEnPosicion(int x, int y) {
 
@@ -65,6 +75,18 @@ public class PlanoConstruccionHerramienta {
 
         return materialesCargados;
 
+    }
+
+    public Guardable[][] getPlano() {
+        return this.plano;
+    }
+
+    public int getFilas() {
+        return this.FILAS;
+    }
+
+    public int getColumnas(){
+        return this.COLUMNAS;
     }
 }
 
