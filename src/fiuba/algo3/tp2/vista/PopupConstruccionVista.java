@@ -3,8 +3,6 @@ package fiuba.algo3.tp2.vista;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.FiguraConstruible;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.LectorDePlanoConstruccion;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
-import fiuba.algo3.tp2.materiales.MaderaMaterial;
-import fiuba.algo3.tp2.materiales.Material;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -36,13 +34,10 @@ public class PopupConstruccionVista {
 
         FiguraConstruible figura = lector.evaluarMapa(planoConstruccion);
 
-
         Pane pane = new Pane();
         pane.getStyleClass().add("game-grid-cell");
         pane.getStyleClass().add("first-row");
         pane.getStyleClass().add("first-column");
-
-        Material contenido = new MaderaMaterial();
 
         Dibujable herramientaFigura = figura.dibujo();
         herramientaFigura.dibujar(pane);
