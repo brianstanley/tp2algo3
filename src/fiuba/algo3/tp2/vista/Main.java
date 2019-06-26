@@ -19,15 +19,12 @@ public class Main extends Application {
     private static Stage constructorDialog;
     private static Mapa mapa;
     private Navegador navegador;
-    private Juego juego;
-    private double width;
-    private double heigth;
-    private BorderPane container;
+    protected double width;
     private static GridPane campoDeJuego;
-    static final int FILAS_MAPA = 12;
-    static final int COLUMNAS_MAPA = 12;
-    static final int NAVEGADOR_X_INICIAL = 8;
-    static final int NAVEGADOR_Y_INICIAL = 8;
+    private static final int FILAS_MAPA = 12;
+    private static final int COLUMNAS_MAPA = 12;
+    private static final int NAVEGADOR_X_INICIAL = 8;
+    private static final int NAVEGADOR_Y_INICIAL = 8;
     private static Stage mainStage;
     private static PlanoConstruccionHerramienta planoConstruccion;
 
@@ -40,34 +37,34 @@ public class Main extends Application {
         mapa = new Mapa(FILAS_MAPA, COLUMNAS_MAPA);
         this.navegador = new Navegador(NAVEGADOR_X_INICIAL, NAVEGADOR_Y_INICIAL, this.mapa);
         jugador = new Jugador(this.navegador);
-        this.juego = new Juego(this.mapa, this.navegador, jugador);
+        Juego juego = new Juego(this.mapa, this.navegador, jugador);
         JugadorVista jugadorVista = new JugadorVista();
         this.navegador.setVista(jugadorVista);
-        this.juego.inicializacionMateriales();
+        juego.inicializacionMateriales();
         planoConstruccion = new PlanoConstruccionHerramienta();
         mainStage = primaryStage;
         this.width = Screen.getPrimary().getVisualBounds().getWidth();
-        this.heigth = Screen.getPrimary().getVisualBounds().getHeight();
+        double heigth = Screen.getPrimary().getVisualBounds().getHeight();
 
         mainStage.setTitle("Algocraft");
 
-        this.container = new BorderPane();
+        BorderPane container = new BorderPane();
         campoDeJuego = new GridPane();
         FlowPane menu = this.inicializarSideMenu(mainStage);
 
         dibujarEscenario();
 
-        this.container.setCenter(campoDeJuego);
-        this.container.setRight(menu);
+        container.setCenter(campoDeJuego);
+        container.setRight(menu);
 
-        Scene scene = new Scene(this.container, this.width, this.heigth);
+        Scene scene = new Scene(container, this.width, heigth);
         mainStage.setScene(scene);
         mainStage.show();
     }
 
     private FlowPane inicializarSideMenu(Stage primaryStage) {
         MenuPrincipalVista menuPrincipalVista = new MenuPrincipalVista();
-        return menuPrincipalVista.dibujar(navegador);
+        return menuPrincipalVista.dibujar(navegador, jugador);
     }
 
     public static void dibujarEscenario() {

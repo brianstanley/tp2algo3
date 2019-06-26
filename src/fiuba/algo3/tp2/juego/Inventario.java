@@ -9,7 +9,6 @@ public class Inventario {
 
     public Inventario() {
         this.items = new ItemsContainer();
-        this.agregar(new MaderaMaterial());
     }
 
     public boolean tiene(Guardable item) {
