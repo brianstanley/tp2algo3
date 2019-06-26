@@ -21,6 +21,7 @@ public class Main extends Application {
     private static Mapa mapa;
     private Navegador navegador;
     protected double width;
+    protected double heigth;
     private static GridPane campoDeJuego;
     private static final int FILAS_MAPA = 12;
     private static final int COLUMNAS_MAPA = 12;
@@ -45,13 +46,14 @@ public class Main extends Application {
         planoConstruccion = new PlanoConstruccionHerramienta();
         mainStage = primaryStage;
         this.width = Screen.getPrimary().getVisualBounds().getWidth();
-        double heigth = Screen.getPrimary().getVisualBounds().getHeight();
+        this.heigth = Screen.getPrimary().getVisualBounds().getHeight();
 
         mainStage.setTitle("Algocraft");
 
         BorderPane container = new BorderPane();
+        container.setMaxHeight(300);
         campoDeJuego = new GridPane();
-        FlowPane menu = this.inicializarSideMenu(mainStage);
+        FlowPane menu = this.inicializarSideMenu();
 
         dibujarEscenario();
 
@@ -63,7 +65,7 @@ public class Main extends Application {
         mainStage.show();
     }
 
-    private FlowPane inicializarSideMenu(Stage primaryStage) {
+    private FlowPane inicializarSideMenu() {
         MenuPrincipalVista menuPrincipalVista = new MenuPrincipalVista();
         return menuPrincipalVista.dibujar(navegador, jugador);
     }

@@ -50,7 +50,7 @@ public class PopupConstruccionVista {
         pane.getStyleClass().add("first-row");
         pane.getStyleClass().add("first-column");
 
-        Dibujable herramientaFigura = figura.dibujo();
+        Dibujable herramientaFigura = figura.vista();
         herramientaFigura.dibujar(pane);
 
         grid.add(pane, 0, 0);

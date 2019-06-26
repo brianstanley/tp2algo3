@@ -6,6 +6,6 @@ import fiuba.algo3.tp2.vista.Dibujable;
 public interface FiguraConstruible {
 
     Herramienta construir();
-    Dibujable dibujo();
+    Dibujable vista();
     Boolean esFiguraValida();
 }

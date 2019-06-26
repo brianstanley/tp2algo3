@@ -1,6 +1,8 @@
 package fiuba.algo3.tp2.herramientas.picos;
 
 import fiuba.algo3.tp2.herramientas.Herramienta;
+import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.FiguraConstruible;
+import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.FiguraPicoMadera;
 import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.PiedraMaterial;
 

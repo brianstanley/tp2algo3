@@ -13,7 +13,7 @@ public class FiguraPicoMadera implements FiguraConstruible {
         return new PicoMadera();
     }
     @Override
-    public Dibujable dibujo() {
+    public Dibujable vista() {
         return new HerramientaVista("picoMadera.png");
     }
 

@@ -2,6 +2,7 @@ package fiuba.algo3.tp2.controller;
 
 import fiuba.algo3.tp2.herramientas.hachas.HachaPiedra;
 import fiuba.algo3.tp2.juego.Jugador;
+import fiuba.algo3.tp2.vista.MenuPrincipalVista;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -19,5 +20,7 @@ public class EquiparHachaPiedraHandler implements EventHandler<ActionEvent>{
     @Override
     public void handle(ActionEvent event){
         this.jugador.equiparHerramienta(hachaPiedra);
+        MenuPrincipalVista.dibujarHerramientaActual(jugador);
+
     }
 }

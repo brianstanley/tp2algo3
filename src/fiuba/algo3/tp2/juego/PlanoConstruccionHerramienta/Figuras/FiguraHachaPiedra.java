@@ -14,7 +14,7 @@ public class FiguraHachaPiedra implements FiguraConstruible {
     }
 
     @Override
-    public Dibujable dibujo() {
+    public Dibujable vista() {
         return new HerramientaVista("hachaPiedra.png");
     }
 

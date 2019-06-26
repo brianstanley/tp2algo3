@@ -13,7 +13,7 @@ public class FiguraDesconocida implements FiguraConstruible {
     }
 
     @Override
-    public Dibujable dibujo() {
+    public Dibujable vista() {
         return new HerramientaVista("vacio.png");
     }
 

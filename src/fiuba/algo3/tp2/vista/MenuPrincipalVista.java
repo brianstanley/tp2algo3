@@ -6,12 +6,16 @@ import fiuba.algo3.tp2.controller.MoverNavegadorHandler;
 import fiuba.algo3.tp2.controller.RomperButtonHandler;
 import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.juego.Navegador.*;
+import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.FiguraConstruible;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 
 public class MenuPrincipalVista {
     static final int BOTONES_MENU_WIDTH = 170;
+    private static Pane panelContenedorHerramienta;
 
     public FlowPane dibujar(Navegador navegador, Jugador jugador) {
         FlowPane flow = new FlowPane();
@@ -54,7 +58,20 @@ public class MenuPrincipalVista {
         m6.setPrefWidth(BOTONES_MENU_WIDTH);
         m7.setPrefWidth(BOTONES_MENU_WIDTH);
 
-        flow.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7);
+        panelContenedorHerramienta = new Pane();
+        dibujarHerramientaActual(jugador);
+
+        flow.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7, panelContenedorHerramienta);
         return  flow;
+    }
+
+    public static void dibujarHerramientaActual(Jugador jugador) {
+        panelContenedorHerramienta.getChildren().clear();
+        panelContenedorHerramienta.setTranslateY(15);
+        Text m8 = new Text("Herramienta Actual ");
+        panelContenedorHerramienta.getChildren().add(m8);
+        FiguraConstruible herramienta = jugador.getHerramientaActual().getFigura();
+        Dibujable vista = herramienta.vista();
+        vista.dibujar(panelContenedorHerramienta);
     }
 }

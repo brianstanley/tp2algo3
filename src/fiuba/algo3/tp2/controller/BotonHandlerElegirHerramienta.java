@@ -22,6 +22,7 @@ public class BotonHandlerElegirHerramienta implements EventHandler<ActionEvent> 
 
     private final Jugador jugador;
     private FlowPane menu;
+    private Stage newWindow;
 
     public BotonHandlerElegirHerramienta(Jugador unJugador){
         this.jugador = unJugador;
@@ -39,7 +40,7 @@ public class BotonHandlerElegirHerramienta implements EventHandler<ActionEvent> 
         Scene secondScene = new Scene(secondaryLayout, 350, 180);
 
         // New window (Stage)
-        Stage newWindow = new Stage();
+        newWindow = new Stage();
         newWindow.setTitle("Seleccionar herramienta");
         newWindow.setScene(secondScene);
 
@@ -108,5 +109,9 @@ public class BotonHandlerElegirHerramienta implements EventHandler<ActionEvent> 
 
         flow.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7);
         return flow;
+    }
+
+    public cerrarPopup() {
+        newWindow.close();
     }
 }

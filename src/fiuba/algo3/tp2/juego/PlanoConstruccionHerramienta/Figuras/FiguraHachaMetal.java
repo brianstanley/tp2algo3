@@ -14,7 +14,7 @@ public class FiguraHachaMetal implements FiguraConstruible {
     }
 
     @Override
-    public Dibujable dibujo() {
+    public Dibujable vista() {
         return new HerramientaVista("hachaMetal.png");
     }
 

@@ -14,7 +14,7 @@ public class FiguraPicoPiedra implements FiguraConstruible {
     }
 
     @Override
-    public Dibujable dibujo() {
+    public Dibujable vista() {
         return new HerramientaVista("picoPiedra.png");
     }
 

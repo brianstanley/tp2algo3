@@ -1,6 +1,8 @@
 package fiuba.algo3.tp2.herramientas.picos;
 
 import fiuba.algo3.tp2.estrategiasDesgaste.EstrategiaDesgasteLineal;
+import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.FiguraConstruible;
+import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.FiguraPicoPiedra;
 import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
 import fiuba.algo3.tp2.materiales.PiedraMaterial;
@@ -22,5 +24,10 @@ public class PicoPiedra extends Pico {
 
     private boolean materialCorrecto(Material unMaterial){
         return (unMaterial.getClass() == MetalMaterial.class || unMaterial.getClass() == PiedraMaterial.class);
+    }
+
+    @Override
+    public FiguraConstruible getFigura(){
+        return new FiguraPicoPiedra();
     }
 }
