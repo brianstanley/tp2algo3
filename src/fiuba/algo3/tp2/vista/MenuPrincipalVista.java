@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.vista;
 
+import fiuba.algo3.tp2.controller.BotonHandlerElegirHerramienta;
 import fiuba.algo3.tp2.controller.ConstruirBotonHandler;
 import fiuba.algo3.tp2.controller.MoverNavegadorHandler;
 import fiuba.algo3.tp2.controller.RomperButtonHandler;
@@ -24,6 +25,8 @@ public class MenuPrincipalVista {
         MoverNavegadorHandler botonHandlerSur = new MoverNavegadorHandler(navegador, new DireccionSur());
         MoverNavegadorHandler botonHandlerEste = new MoverNavegadorHandler(navegador, new DireccionEste());
         MoverNavegadorHandler botonHandlerOeste = new MoverNavegadorHandler(navegador, new DireccionOeste());
+        BotonHandlerElegirHerramienta botonHandlerElegirHerramienta = new BotonHandlerElegirHerramienta(jugador);
+
         RomperButtonHandler romperButtonHandler = new RomperButtonHandler(jugador);
         Button m1 = new Button("Construir");
         ConstruirBotonHandler construirBtnHandler = new ConstruirBotonHandler();
@@ -40,6 +43,8 @@ public class MenuPrincipalVista {
         Button m6 = new Button("Romper");
         m6.setOnAction(botonHandlerOeste);
         m6.setOnAction(romperButtonHandler);
+        Button m7 = new Button("Elegir herramienta");
+        m7.setOnAction(botonHandlerElegirHerramienta);
 
         m1.setPrefWidth(BOTONES_MENU_WIDTH);
         m2.setPrefWidth(BOTONES_MENU_WIDTH);
@@ -48,7 +53,7 @@ public class MenuPrincipalVista {
         m5.setPrefWidth(BOTONES_MENU_WIDTH);
         m6.setPrefWidth(BOTONES_MENU_WIDTH);
 
-        flow.getChildren().addAll(m1, m2, m3, m4, m5, m6);
+        flow.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7);
         return  flow;
     }
 }
