@@ -35,8 +35,8 @@ public class PlanoConstruccionHerramienta {
         this.plano[posicion.getX()][posicion.getY()] = null;
     }
 
-    public Guardable getContenidoCasillero(int x, int y) {
-        return this.plano[x][y];
+    public Guardable getContenidoCasillero(Posicion posicion) {
+        return this.plano[posicion.getX()][posicion.getY()];
     }
 
     public boolean hayMaderaEnPosicion(Posicion posicion) {

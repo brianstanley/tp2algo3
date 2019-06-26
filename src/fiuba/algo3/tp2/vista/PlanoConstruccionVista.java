@@ -1,11 +1,10 @@
 package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.controller.PanelPlanoClickHandler;
+import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.Material;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -17,11 +16,13 @@ public class PlanoConstruccionVista implements Dibujable {
 
 
     private final Stage constructorDialog;
+    private final Jugador jugador;
     private PlanoConstruccionHerramienta planoConstruccion;
 
-    public PlanoConstruccionVista(PlanoConstruccionHerramienta planoConstruccion, Stage constructorDialog) {
+    public PlanoConstruccionVista(PlanoConstruccionHerramienta planoConstruccion, Stage constructorDialog, Jugador jugador) {
         this.planoConstruccion = planoConstruccion;
         this.constructorDialog = constructorDialog;
+        this.jugador = jugador;
     }
 
     @Override
@@ -44,7 +45,7 @@ public class PlanoConstruccionVista implements Dibujable {
             for (int j = 0; j < planoConstruccion.getFilas(); j++) {
                 Pane pane = new Pane();
                 Posicion casilleroDelPlano = new Posicion(j, i);
-                PanelPlanoClickHandler paneHandler = new PanelPlanoClickHandler(constructorDialog, casilleroDelPlano, planoConstruccion);
+                PanelPlanoClickHandler paneHandler = new PanelPlanoClickHandler(constructorDialog, casilleroDelPlano, planoConstruccion, jugador);
                 pane.addEventFilter(MouseEvent.MOUSE_CLICKED, paneHandler);
                 pane.getStyleClass().add("game-grid-cell");
                 if (i == 0) {
@@ -54,7 +55,7 @@ public class PlanoConstruccionVista implements Dibujable {
                     pane.getStyleClass().add("first-row");
                 }
                 if (!planoConstruccion.noHayMaterialEnPosicion(casilleroDelPlano)) {
-                    Material contenido = (Material) planoConstruccion.getContenidoCasillero(j, i);
+                    Material contenido = (Material) planoConstruccion.getContenidoCasillero(casilleroDelPlano);
                     MaterialVista materialVista = (MaterialVista) contenido.dibujo();
                     materialVista.dibujoEstatico(pane);
                 }

@@ -75,7 +75,7 @@ public class Main extends Application {
 
     public static VBox getBoxscene() {
         VBox dialogVbox = new VBox(500);
-        PlanoConstruccionVista planoVista = new PlanoConstruccionVista(planoConstruccion, constructorDialog);
+        PlanoConstruccionVista planoVista = new PlanoConstruccionVista(planoConstruccion, constructorDialog, jugador);
         planoVista.dibujar(dialogVbox);
         return dialogVbox;
     }
