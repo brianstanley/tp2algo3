@@ -111,7 +111,7 @@ public class BotonHandlerElegirHerramienta implements EventHandler<ActionEvent> 
         return flow;
     }
 
-    public cerrarPopup() {
+    public void cerrarPopup() {
         newWindow.close();
     }
 }
