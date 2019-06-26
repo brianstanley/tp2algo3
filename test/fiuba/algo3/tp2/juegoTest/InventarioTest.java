@@ -1,10 +1,12 @@
 package fiuba.algo3.tp2.juegoTest;
 
+import fiuba.algo3.tp2.herramientas.Herramienta;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 import fiuba.algo3.tp2.herramientas.hachas.HachaMetal;
 import fiuba.algo3.tp2.herramientas.picos.PicoFino;
 import fiuba.algo3.tp2.juego.Inventario;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
+import fiuba.algo3.tp2.materiales.Material;
 import fiuba.algo3.tp2.materiales.PiedraMaterial;
 import org.junit.Assert;
 import org.junit.Test;
@@ -34,8 +36,8 @@ public class InventarioTest {
 
         Assert.assertEquals(4, inventario.getCantidadDe(piedra));
 
-        inventario.removerItem(piedra);
-        inventario.removerItem(piedra);
+        inventario.sacar(piedra);
+        inventario.sacar(piedra);
 
         Assert.assertEquals(2, inventario.getCantidadDe(piedra));
     }
@@ -76,5 +78,36 @@ public class InventarioTest {
         Assert.assertTrue(inventario.tiene(hacha));
         Assert.assertTrue(inventario.tiene(piedra));
         Assert.assertFalse(inventario.tiene(new HachaMetal()));
+    }
+
+    @Test
+    public void SeSacaUnMaterialDelInventario(){
+
+        Inventario inventario = new Inventario();
+        Material materialMadera = new MaderaMaterial();
+
+        inventario.agregar(materialMadera);
+
+        Assert.assertTrue(inventario.tiene( materialMadera));
+
+        inventario.sacar(materialMadera);
+
+        Assert.assertFalse(inventario.tiene(materialMadera));
+
+    }
+    @Test
+    public void SeSacaUnaHerramientaDelInventario(){
+
+        Inventario inventario = new Inventario();
+        Herramienta hacha = new HachaMadera();
+
+        inventario.agregar(hacha);
+
+        Assert.assertTrue(inventario.tiene( hacha));
+
+        inventario.sacar(hacha);
+
+        Assert.assertFalse(inventario.tiene(hacha));
+
     }
 }
