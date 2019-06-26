@@ -77,7 +77,7 @@ public class Jugador implements Movible {
 
     public void romper() {
         ElementoDeCampo elementoEnFrente = this.navegador.obtenerElementoEnFrente();
-        if (elementoEnFrente != null){
+        if (elementoEnFrente != null && this.herramientaActual != null){
             this.herramientaActual.romper((Material)elementoEnFrente);
             this.checkDurablilidadMaterial((Material)elementoEnFrente);
             this.checkDurablilidadHerramientaEquipada();

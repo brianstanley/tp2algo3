@@ -20,6 +20,9 @@ public class MenuPrincipalVista {
     static final int BOTONES_MENU_WIDTH = 170;
     private static Pane panelContenedorHerramienta;
     private static Pane panelContenedorDurabilidad;
+    public MenuPrincipalVista() {
+        panelContenedorDurabilidad = new Pane();
+    }
 
     public FlowPane dibujar(Navegador navegador, Jugador jugador) {
         FlowPane flow = new FlowPane();
@@ -65,7 +68,6 @@ public class MenuPrincipalVista {
         panelContenedorHerramienta = new Pane();
         dibujarHerramientaActual(jugador);
 
-        panelContenedorDurabilidad = new Pane();
         dibujarDurabilidadActualInfo(jugador);
 
         flow.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7, panelContenedorHerramienta, panelContenedorDurabilidad);
@@ -75,9 +77,11 @@ public class MenuPrincipalVista {
     public static void dibujarDurabilidadActualInfo(Jugador jugador) {
         panelContenedorDurabilidad.getChildren().clear();
         Herramienta herramienta = jugador.getHerramientaActual();
-        panelContenedorDurabilidad.setTranslateY(15);
-        Text m9 = new Text("Durabilidad: " + herramienta.getDurabilidad());
-        panelContenedorDurabilidad.getChildren().add(m9);
+        if (herramienta != null) {
+            panelContenedorDurabilidad.setTranslateY(15);
+            Text m9 = new Text("Durabilidad: " + herramienta.getDurabilidad());
+            panelContenedorDurabilidad.getChildren().add(m9);
+        }
     }
 
     public static void dibujarHerramientaActual(Jugador jugador) {
@@ -85,8 +89,14 @@ public class MenuPrincipalVista {
         panelContenedorHerramienta.setTranslateY(15);
         Text m8 = new Text("Herramienta Actual ");
         panelContenedorHerramienta.getChildren().add(m8);
-        FiguraConstruible herramienta = jugador.getHerramientaActual().getFigura();
-        Dibujable vista = herramienta.vista();
-        vista.dibujar(panelContenedorHerramienta);
+        Herramienta herramientaActual = jugador.getHerramientaActual();
+        if (herramientaActual != null) {
+            FiguraConstruible herramienta = herramientaActual.getFigura();
+            Dibujable vista = herramienta.vista();
+            vista.dibujar(panelContenedorHerramienta);
+        } else {
+            m8.setText("Herramienta desgastada!");
+        }
+        dibujarDurabilidadActualInfo(jugador);
     }
 }

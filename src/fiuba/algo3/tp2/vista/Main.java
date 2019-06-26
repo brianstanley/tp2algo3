@@ -10,9 +10,11 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+
 
 public class Main extends Application {
 
@@ -118,6 +120,17 @@ public class Main extends Application {
         dialog.setScene(dialogScene);
         dialogScene.getStylesheets().add("/game.css");
         dialog.show();
+    }
 
+    public static void alertaHerramientaRota() {
+        final Stage dialog = new Stage();
+        dialog.setTitle("Error");
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        VBox dialogVbox = new VBox(100);
+        Text errorMensaje = new Text("Herramienta Rota, por favor cambiela!");
+        dialogVbox.getChildren().add(errorMensaje);
+        Scene dialogScene = new Scene(dialogVbox, 350, 200);
+        dialog.setScene(dialogScene);
+        dialog.show();
     }
 }
