@@ -52,8 +52,8 @@ public class InventarioMaterialesVista implements Dibujable {
             currentColumn = (int) Math.ceil(i);
             Pane pane = new Pane();
             Material material = (Material) inventario.obtenerItemEnPosicicion(i);
-            Dibujable materialVista = material.dibujo();
-            materialVista.dibujar(pane);
+            MaterialVista materialVista = (MaterialVista) material.dibujo();
+            materialVista.dibujoEstatico(pane);
             pane.setOnMouseClicked(e -> {
                 planoConstruccion.insertarMaterialEnPosicion(material, planoX, planoJ);
                 inventario.removerItem(material);

@@ -33,4 +33,12 @@ public class MaterialVista implements Dibujable {
         materialImagen.setFitHeight(40 - sizeReduccion);
         root.getChildren().add(materialImagen);
     }
+
+    public void dibujoEstatico(Pane root) {
+        ImageView materialImagen = new ImageView();
+        materialImagen.setImage(new Image(dibujo));
+        materialImagen.setFitWidth(40);
+        materialImagen.setFitHeight(40);
+        root.getChildren().add(materialImagen);
+    }
 }

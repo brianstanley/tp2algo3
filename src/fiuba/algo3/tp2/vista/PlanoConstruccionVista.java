@@ -53,8 +53,8 @@ public class PlanoConstruccionVista implements Dibujable {
                 }
                 if (!planoConstruccion.noHayMaterialEnPosicion(j, i)) {
                     Material contenido = (Material) planoConstruccion.getContenidoCasillero(j, i);
-                    Dibujable materialVista = contenido.dibujo();
-                    materialVista.dibujar(pane);
+                    MaterialVista materialVista = (MaterialVista) contenido.dibujo();
+                    materialVista.dibujoEstatico(pane);
                 }
                 grid.add(pane, i, j);
             }
