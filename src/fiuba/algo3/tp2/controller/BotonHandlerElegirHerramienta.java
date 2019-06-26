@@ -1,5 +1,12 @@
 package fiuba.algo3.tp2.controller;
 
+import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
+import fiuba.algo3.tp2.herramientas.hachas.HachaMetal;
+import fiuba.algo3.tp2.herramientas.hachas.HachaPiedra;
+import fiuba.algo3.tp2.herramientas.picos.PicoFino;
+import fiuba.algo3.tp2.herramientas.picos.PicoMadera;
+import fiuba.algo3.tp2.herramientas.picos.PicoMetal;
+import fiuba.algo3.tp2.herramientas.picos.PicoPiedra;
 import fiuba.algo3.tp2.juego.Jugador;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -54,18 +61,40 @@ public class BotonHandlerElegirHerramienta implements EventHandler<ActionEvent> 
         EquiparPicoFinoHandler handlerPicoFino = new EquiparPicoFinoHandler(unJugador);
         Button m1 = new Button("Hacha Madera");
         m1.setOnAction(handlerHachaMadera);
+        if (!unJugador.getInventario().tiene(new HachaMadera())){
+            m1.setDisable(true);
+        }
         Button m2 = new Button("Hacha Piedra");
         m2.setOnAction(handlerHachaPiedra);
+        if (!unJugador.getInventario().tiene(new HachaPiedra())){
+            m2.setDisable(true);
+        }
         Button m3 = new Button("Hacha Metal");
         m3.setOnAction(handlerHachaMetal);
+        if (!unJugador.getInventario().tiene(new HachaMetal())){
+            m3.setDisable(true);
+        }
         Button m4 = new Button("Pico Madera");
         m4.setOnAction(handlerPicoMadera);
+        if (!unJugador.getInventario().tiene(new PicoMadera())){
+            m4.setDisable(true);
+        }
         Button m5 = new Button("Pico Piedra");
         m5.setOnAction(handlerPicoPiedra);
+        if (!unJugador.getInventario().tiene(new PicoPiedra())){
+            m5.setDisable(true);
+        }
         Button m6 = new Button("Pico Metal");
         m6.setOnAction(handlerPicoMetal);
+        if (!unJugador.getInventario().tiene(new PicoMetal())){
+            m6.setDisable(true);
+        }
         Button m7 = new Button("Pico Fino");
         m7.setOnAction(handlerPicoFino);
+        if (!unJugador.getInventario().tiene(new PicoFino())){
+            m7.setDisable(true);
+        }
+
 
         m1.setPrefWidth(170);
         m2.setPrefWidth(170);
