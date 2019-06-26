@@ -21,6 +21,7 @@ public class ConfirmarConstruccionBotonHandler implements EventHandler<ActionEve
     @Override
     public void handle(ActionEvent event) {
         jugador.crearHerramientaNueva(planoHerramientas);
+        planoHerramientas.vaciar();
         Main.cerrarConstructorPopup();
     }
 
