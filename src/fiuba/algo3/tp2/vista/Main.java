@@ -2,6 +2,7 @@ package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.controller.BotonHandlerElegirHerramienta;
 import fiuba.algo3.tp2.controller.MoverNavegadorHandler;
+import fiuba.algo3.tp2.controller.RomperButtonHandler;
 import fiuba.algo3.tp2.juego.Juego;
 import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
@@ -79,6 +80,7 @@ public class Main extends Application {
         MoverNavegadorHandler botonHandlerSur = new MoverNavegadorHandler(this.navegador, new DireccionSur(), this);
         MoverNavegadorHandler botonHandlerEste = new MoverNavegadorHandler(this.navegador, new DireccionEste(), this);
         MoverNavegadorHandler botonHandlerOeste = new MoverNavegadorHandler(this.navegador, new DireccionOeste(), this);
+        RomperButtonHandler romperButtonHandler = new RomperButtonHandler(this.jugador, this);
         BotonHandlerElegirHerramienta botonHandlerElegirHerramienta = new BotonHandlerElegirHerramienta(this.jugador);
         Button m1 = new Button("Inventario");
         m1.setOnAction(botonHandlerEste);
@@ -95,6 +97,7 @@ public class Main extends Application {
         m6.setOnAction(botonHandlerOeste);
         Button m7 = new Button("Elegir herramienta");
         m7.setOnAction(botonHandlerElegirHerramienta);
+        m6.setOnAction(romperButtonHandler);
 
         m1.setPrefWidth(BOTONES_MENU_WIDTH);
         m2.setPrefWidth(BOTONES_MENU_WIDTH);

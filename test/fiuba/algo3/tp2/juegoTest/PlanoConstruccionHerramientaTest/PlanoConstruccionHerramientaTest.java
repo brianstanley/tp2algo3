@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.juegoTest.PlanoConstruccionHerramientaTest;
 
 import fiuba.algo3.tp2.juego.Guardable;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.*;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.*;
@@ -23,10 +24,11 @@ public class PlanoConstruccionHerramientaTest {
 
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
+        Posicion posicion = new Posicion(1,1);
 
-        plano.insertarMaterialEnPosicion(madera,1,1);
+        plano.insertarMaterialEnPosicion(madera,posicion);
 
-        Assert.assertTrue(plano.hayMaderaEnPosicion(1,1));
+        Assert.assertTrue(plano.hayMaderaEnPosicion(posicion));
     }
 
     @Test
@@ -34,11 +36,12 @@ public class PlanoConstruccionHerramientaTest {
 
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
+        Posicion posicion = new Posicion(0,1);
 
-        plano.insertarMaterialEnPosicion(madera,0,1);
+        plano.insertarMaterialEnPosicion(madera,posicion);
 
-        Assert.assertFalse(plano.hayPiedraEnPosicion(0,1));
-        Assert.assertFalse(plano.hayMetalEnPosicion(0,1));
+        Assert.assertFalse(plano.hayPiedraEnPosicion(posicion));
+        Assert.assertFalse(plano.hayMetalEnPosicion(posicion));
     }
 
     @Test
@@ -46,21 +49,23 @@ public class PlanoConstruccionHerramientaTest {
 
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
         PiedraMaterial piedra = new PiedraMaterial();
+        Posicion posicion = new Posicion(2,1);
 
-        plano.insertarMaterialEnPosicion(piedra,2,1);
+        plano.insertarMaterialEnPosicion(piedra,posicion);
 
-        Assert.assertTrue(plano.hayPiedraEnPosicion(2,1));
+        Assert.assertTrue(plano.hayPiedraEnPosicion(posicion));
     }
     @Test
     public void seInsertaPiedraEnPosicionYNoHayOtroMaterial(){
 
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
         PiedraMaterial piedra = new PiedraMaterial();
+        Posicion posicion = new Posicion(2,0);
 
-        plano.insertarMaterialEnPosicion(piedra,2,0);
+        plano.insertarMaterialEnPosicion(piedra,posicion);
 
-        Assert.assertFalse(plano.hayMaderaEnPosicion(2,0));
-        Assert.assertFalse(plano.hayMetalEnPosicion(2,0));
+        Assert.assertFalse(plano.hayMaderaEnPosicion(posicion));
+        Assert.assertFalse(plano.hayMetalEnPosicion(posicion));
     }
 
 
@@ -69,21 +74,23 @@ public class PlanoConstruccionHerramientaTest {
 
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
         MetalMaterial metal = new MetalMaterial();
+        Posicion posicion = new Posicion(0,2);
 
-        plano.insertarMaterialEnPosicion(metal,0,2);
+        plano.insertarMaterialEnPosicion(metal,posicion);
 
-        Assert.assertTrue(plano.hayMetalEnPosicion(0,2));
+        Assert.assertTrue(plano.hayMetalEnPosicion(posicion));
     }
     @Test
     public void seInsertaMetalEnPosicionYNoHayOtroMaterial(){
 
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
         MetalMaterial metal = new MetalMaterial();
+        Posicion posicion = new Posicion(1,2);
 
-        plano.insertarMaterialEnPosicion(metal,1,2);
+        plano.insertarMaterialEnPosicion(metal,posicion);
 
-        Assert.assertFalse(plano.hayMaderaEnPosicion(1,2));
-        Assert.assertFalse(plano.hayPiedraEnPosicion(1,2));
+        Assert.assertFalse(plano.hayMaderaEnPosicion(posicion));
+        Assert.assertFalse(plano.hayPiedraEnPosicion(posicion));
     }
 
     @Test
@@ -93,7 +100,7 @@ public class PlanoConstruccionHerramientaTest {
 
         for(int i=0;i<3;i++)
             for(int j=0;j<3;j++)
-                Assert.assertTrue(plano.noHayMaterialEnPosicion(i,j));
+                Assert.assertTrue(plano.noHayMaterialEnPosicion(new Posicion(i,j)));
     }
 
     @Test
@@ -103,8 +110,8 @@ public class PlanoConstruccionHerramientaTest {
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
-        plano.insertarMaterialEnPosicion(metal, 0,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(plano.obtenerFiguraMapeada() instanceof FiguraConstruible);
     }
@@ -116,11 +123,11 @@ public class PlanoConstruccionHerramientaTest {
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
-        plano.insertarMaterialEnPosicion(madera,0,0);
-        plano.insertarMaterialEnPosicion(madera,0,1);
-        plano.insertarMaterialEnPosicion(madera,1,0);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(madera,new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(plano.obtenerFiguraMapeada() instanceof FiguraHachaMadera);
     }
@@ -131,11 +138,11 @@ public class PlanoConstruccionHerramientaTest {
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        plano.insertarMaterialEnPosicion(piedra,0,0);
-        plano.insertarMaterialEnPosicion(piedra,0,1);
-        plano.insertarMaterialEnPosicion(piedra,1,0);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(1,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(plano.obtenerFiguraMapeada() instanceof FiguraHachaPiedra);
     }
@@ -146,11 +153,11 @@ public class PlanoConstruccionHerramientaTest {
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
-        plano.insertarMaterialEnPosicion(metal,0,0);
-        plano.insertarMaterialEnPosicion(metal,0,1);
-        plano.insertarMaterialEnPosicion(metal,1,0);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(1,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(plano.obtenerFiguraMapeada() instanceof FiguraHachaMetal);
     }
@@ -162,11 +169,11 @@ public class PlanoConstruccionHerramientaTest {
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
         MaderaMaterial madera = new MaderaMaterial();
 
-        plano.insertarMaterialEnPosicion(madera,0,0);
-        plano.insertarMaterialEnPosicion(madera,0,1);
-        plano.insertarMaterialEnPosicion(madera,0,2);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(madera,new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(0,2));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(plano.obtenerFiguraMapeada() instanceof FiguraPicoMadera);
     }
@@ -177,11 +184,11 @@ public class PlanoConstruccionHerramientaTest {
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        plano.insertarMaterialEnPosicion(piedra,0,0);
-        plano.insertarMaterialEnPosicion(piedra,0,1);
-        plano.insertarMaterialEnPosicion(piedra,0,2);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,2));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(plano.obtenerFiguraMapeada() instanceof FiguraPicoPiedra);
     }
@@ -192,11 +199,11 @@ public class PlanoConstruccionHerramientaTest {
         MaderaMaterial madera = new MaderaMaterial();
         MetalMaterial metal = new MetalMaterial();
 
-        plano.insertarMaterialEnPosicion(metal,0,0);
-        plano.insertarMaterialEnPosicion(metal,0,1);
-        plano.insertarMaterialEnPosicion(metal,0,2);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,2));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(plano.obtenerFiguraMapeada() instanceof FiguraPicoMetal);
     }
@@ -210,12 +217,12 @@ public class PlanoConstruccionHerramientaTest {
         MetalMaterial metal = new MetalMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        plano.insertarMaterialEnPosicion(metal,0,0);
-        plano.insertarMaterialEnPosicion(metal,0,1);
-        plano.insertarMaterialEnPosicion(metal,0,2);
-        plano.insertarMaterialEnPosicion(piedra,1,0);
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(madera,2,1);
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(metal, new Posicion(0,2));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(1,0));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(madera,new Posicion(2,1));
 
         Assert.assertTrue(plano.obtenerFiguraMapeada() instanceof FiguraPicoFino);
     }
@@ -227,8 +234,8 @@ public class PlanoConstruccionHerramientaTest {
         MaderaMaterial madera = new MaderaMaterial();
         PiedraMaterial piedra = new PiedraMaterial();
 
-        plano.insertarMaterialEnPosicion(madera,1,1);
-        plano.insertarMaterialEnPosicion(piedra,0,2);
+        plano.insertarMaterialEnPosicion(madera,new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(piedra,new Posicion(0,2));
 
         List<Guardable> materiales = plano.obtenerMaterialesIngresados();
 
@@ -243,5 +250,21 @@ public class PlanoConstruccionHerramientaTest {
         List<Guardable> materiales = plano.obtenerMaterialesIngresados();
 
         Assert.assertTrue(materiales.isEmpty());
+    }
+
+    @Test
+    public void seVaciaUnPlanoConMateriales(){
+
+        PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
+
+        plano.insertarMaterialEnPosicion(new MetalMaterial(), new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(new MaderaMaterial(),new Posicion(0,2));
+        plano.insertarMaterialEnPosicion(new MaderaMaterial(),new Posicion(1,1));
+
+        plano.vaciar();
+
+        Assert.assertTrue(plano.noHayMaterialEnPosicion(new Posicion(0,0)));
+        Assert.assertTrue(plano.noHayMaterialEnPosicion(new Posicion(0,2)));
+        Assert.assertTrue(plano.noHayMaterialEnPosicion(new Posicion(1,1)));
     }
 }

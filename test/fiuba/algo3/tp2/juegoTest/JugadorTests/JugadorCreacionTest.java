@@ -6,6 +6,7 @@ import fiuba.algo3.tp2.juego.Inventario;
 import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
 import fiuba.algo3.tp2.juego.Navegador.Navegador;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.*;
 import org.junit.Assert;
@@ -28,11 +29,11 @@ public class JugadorCreacionTest {
         Jugador jugador = crearJugadorParaTest();
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
 
-        plano.insertarMaterialEnPosicion(new MaderaMaterial(),0,0);
-        plano.insertarMaterialEnPosicion(new MaderaMaterial(),0,1);
-        plano.insertarMaterialEnPosicion(new MaderaMaterial(),1,0);
-        plano.insertarMaterialEnPosicion(new MaderaMaterial(),1,1);
-        plano.insertarMaterialEnPosicion(new MaderaMaterial(),2,1);
+        plano.insertarMaterialEnPosicion(new MaderaMaterial(), new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(new MaderaMaterial(), new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(new MaderaMaterial(), new Posicion(1,0));
+        plano.insertarMaterialEnPosicion(new MaderaMaterial(), new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(new MaderaMaterial(), new Posicion(2,1));
 
         jugador.crearHerramientaNueva(plano);
 
@@ -45,9 +46,9 @@ public class JugadorCreacionTest {
         Jugador jugador = crearJugadorParaTest();
         PlanoConstruccionHerramienta plano = new PlanoConstruccionHerramienta();
 
-        plano.insertarMaterialEnPosicion(new MaderaMaterial(),0,0);
-        plano.insertarMaterialEnPosicion(new PiedraMaterial(),1,1);
-        plano.insertarMaterialEnPosicion(new MetalMaterial(),2,0);
+        plano.insertarMaterialEnPosicion(new MaderaMaterial(), new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(new PiedraMaterial(), new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(new MetalMaterial(), new Posicion(2,0));
 
         jugador.crearHerramientaNueva(plano);
 
@@ -83,11 +84,11 @@ public class JugadorCreacionTest {
         Assert.assertEquals(2, inventarioDeJugador.getCantidadDe(new MaderaMaterial()));
         Assert.assertEquals(3, inventarioDeJugador.getCantidadDe(new MetalMaterial()));
 
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(metal1),0,0);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(metal2),0,1);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(metal3),0,2);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(madera1),1,1);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(madera2),2,1);
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(metal1), new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(metal2), new Posicion(0,1));
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(metal3), new Posicion(0,2));
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(madera1), new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(madera2), new Posicion(2,1));
 
         jugador.crearHerramientaNueva(plano);
 
@@ -116,9 +117,9 @@ public class JugadorCreacionTest {
         Assert.assertEquals(2, inventarioDeJugador.getCantidadDe(new PiedraMaterial()));
         Assert.assertEquals(1, inventarioDeJugador.getCantidadDe(new MetalMaterial()));
 
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(piedra1),0,0);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(metal),1,1);
-        plano.insertarMaterialEnPosicion(inventarioDeJugador.removerItem(piedra2),2,2);
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(piedra1), new Posicion(0,0));
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(metal), new Posicion(1,1));
+        plano.insertarMaterialEnPosicion(inventarioDeJugador.sacar(piedra2), new Posicion(2,2));
 
 
         jugador.crearHerramientaNueva(plano);
