@@ -4,6 +4,7 @@ import fiuba.algo3.tp2.juego.Juego;
 import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
 import fiuba.algo3.tp2.juego.Navegador.Navegador;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -99,13 +100,13 @@ public class Main extends Application {
         constructorDialog.show();
     }
 
-    public static void dibujarInventarioMateriales(Stage parentStage, int planoX, int planoJ) {
+    public static void dibujarInventarioMateriales(Stage parentStage, Posicion posicionClickeada) {
         final Stage dialog = new Stage();
         dialog.setTitle("Seleccione un material de su inventario");
         dialog.initModality(Modality.APPLICATION_MODAL);
         dialog.initOwner(parentStage);
         VBox dialogVbox = new VBox(100);
-        InventarioMaterialesVista inventarioVista = new InventarioMaterialesVista(planoConstruccion, jugador.getInventario(), constructorDialog, planoX, planoJ, dialog);
+        InventarioMaterialesVista inventarioVista = new InventarioMaterialesVista(planoConstruccion, jugador.getInventario(), constructorDialog, posicionClickeada, dialog);
         inventarioVista.dibujar(dialogVbox);
         Scene dialogScene = new Scene(dialogVbox, 350, 200);
         dialog.setScene(dialogScene);

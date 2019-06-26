@@ -31,8 +31,8 @@ public class PlanoConstruccionHerramienta {
         this.plano[posicion.getX()][posicion.getY()] = unMaterial;
     }
 
-    public void removerFiguraDePlano(int x, int y) {
-        this.plano[x][y] = null;
+    public void removerFiguraDePlano(Posicion posicion) {
+        this.plano[posicion.getX()][posicion.getY()] = null;
     }
 
     public Guardable getContenidoCasillero(int x, int y) {

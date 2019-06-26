@@ -38,4 +38,10 @@ public class Inventario {
         return this.items.obtenerItemEnPosicicion(indice);
     }
 
+    public Guardable removerItem(Guardable item) {
+        Guardable buscado = this.items.obtener(item);
+        return buscado;
+    }
+
+
 }

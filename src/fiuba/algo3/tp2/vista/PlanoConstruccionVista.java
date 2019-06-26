@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.controller.PanelPlanoClickHandler;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.Material;
 import javafx.scene.image.Image;
@@ -42,7 +43,8 @@ public class PlanoConstruccionVista implements Dibujable {
         for (int i = 0; i < planoConstruccion.getColumnas(); i++) {
             for (int j = 0; j < planoConstruccion.getFilas(); j++) {
                 Pane pane = new Pane();
-                PanelPlanoClickHandler paneHandler = new PanelPlanoClickHandler(constructorDialog, j, i, planoConstruccion);
+                Posicion casilleroDelPlano = new Posicion(j, i);
+                PanelPlanoClickHandler paneHandler = new PanelPlanoClickHandler(constructorDialog, casilleroDelPlano, planoConstruccion);
                 pane.addEventFilter(MouseEvent.MOUSE_CLICKED, paneHandler);
                 pane.getStyleClass().add("game-grid-cell");
                 if (i == 0) {
@@ -51,7 +53,7 @@ public class PlanoConstruccionVista implements Dibujable {
                 if (j == 0) {
                     pane.getStyleClass().add("first-row");
                 }
-                if (!planoConstruccion.noHayMaterialEnPosicion(j, i)) {
+                if (!planoConstruccion.noHayMaterialEnPosicion(casilleroDelPlano)) {
                     Material contenido = (Material) planoConstruccion.getContenidoCasillero(j, i);
                     MaterialVista materialVista = (MaterialVista) contenido.dibujo();
                     materialVista.dibujoEstatico(pane);

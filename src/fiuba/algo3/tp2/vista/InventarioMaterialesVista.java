@@ -1,10 +1,9 @@
 package fiuba.algo3.tp2.vista;
 
-import fiuba.algo3.tp2.controller.PanelPlanoClickHandler;
 import fiuba.algo3.tp2.juego.Inventario;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import fiuba.algo3.tp2.materiales.Material;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -17,16 +16,14 @@ public class InventarioMaterialesVista implements Dibujable {
     private final Stage constructorDialog;
     private final Inventario inventario;
     private final Stage dialog;
+    private final Posicion posicionClickeada;
     private PlanoConstruccionHerramienta planoConstruccion;
-    private int planoX;
-    private int planoJ;
 
-    public InventarioMaterialesVista(PlanoConstruccionHerramienta planoConstruccion, Inventario inventario, Stage constructorDialog, int planoX, int planoJ, Stage dialog) {
+    public InventarioMaterialesVista(PlanoConstruccionHerramienta planoConstruccion, Inventario inventario, Stage constructorDialog, Posicion posicionClickeada, Stage dialog) {
         this.planoConstruccion = planoConstruccion;
         this.inventario = inventario;
         this.constructorDialog = constructorDialog;
-        this.planoJ = planoJ;
-        this.planoX = planoX;
+        this.posicionClickeada = posicionClickeada;
         this.dialog = dialog;
     }
 
@@ -55,7 +52,7 @@ public class InventarioMaterialesVista implements Dibujable {
             MaterialVista materialVista = (MaterialVista) material.dibujo();
             materialVista.dibujoEstatico(pane);
             pane.setOnMouseClicked(e -> {
-                planoConstruccion.insertarMaterialEnPosicion(material, planoX, planoJ);
+                planoConstruccion.insertarMaterialEnPosicion(material, posicionClickeada);
                 inventario.removerItem(material);
                 constructorDialog.close();
                 Main.mostrarConstructorPopup();
