@@ -2,6 +2,7 @@ package fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta;
 
 
 import fiuba.algo3.tp2.juego.Guardable;
+import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.Figuras.FiguraConstruible;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
@@ -25,9 +26,9 @@ public class PlanoConstruccionHerramienta {
     }
 
 
-    public void insertarMaterialEnPosicion(Guardable unMaterial, int x, int y) {
+    public void insertarMaterialEnPosicion(Guardable unMaterial, Posicion posicion) {
 
-        this.plano[x][y] = unMaterial;
+        this.plano[posicion.getX()][posicion.getY()] = unMaterial;
     }
 
     public void removerFiguraDePlano(int x, int y) {
@@ -38,24 +39,24 @@ public class PlanoConstruccionHerramienta {
         return this.plano[x][y];
     }
 
-    public boolean hayMaderaEnPosicion(int x, int y) {
+    public boolean hayMaderaEnPosicion(Posicion posicion) {
 
-        return this.plano[x][y]  instanceof MaderaMaterial;
+        return this.plano[posicion.getX()][posicion.getY()]  instanceof MaderaMaterial;
     }
 
-    public boolean hayPiedraEnPosicion(int x, int y) {
+    public boolean hayPiedraEnPosicion(Posicion posicion) {
 
-        return this.plano[x][y] instanceof PiedraMaterial;
+        return this.plano[posicion.getX()][posicion.getY()] instanceof PiedraMaterial;
     }
 
-    public boolean hayMetalEnPosicion(int x, int y) {
+    public boolean hayMetalEnPosicion(Posicion posicion) {
 
-        return this.plano[x][y] instanceof MetalMaterial;
+        return this.plano[posicion.getX()][posicion.getY()] instanceof MetalMaterial;
     }
 
-    public boolean noHayMaterialEnPosicion(int x, int y) {
+    public boolean noHayMaterialEnPosicion(Posicion posicion) {
 
-        return this.plano[x][y] == null;
+        return this.plano[posicion.getX()][posicion.getY()] == null;
     }
 
 
@@ -70,7 +71,7 @@ public class PlanoConstruccionHerramienta {
 
         for (int i=0;i<3;i++)
             for(int j=0;j<3;j++)
-                if (!this.noHayMaterialEnPosicion(i,j))
+                if (!this.noHayMaterialEnPosicion(new Posicion(i,j)))
                     materialesCargados.add(this.plano[i][j]);
 
         return materialesCargados;
@@ -87,6 +88,11 @@ public class PlanoConstruccionHerramienta {
 
     public int getColumnas(){
         return this.COLUMNAS;
+    }
+
+    public void vaciar() {
+
+        this.plano = new Guardable[3][3];
     }
 }
 

@@ -18,12 +18,12 @@ public class ItemsContainer {
         this.items.add(item);
     }
 
-    public boolean tieneItem(Guardable item) {
-        for (Guardable x: items) {
-            if (item.getClass() == x.getClass()) {
+    public boolean tieneItem(Guardable itemBuscado) {
+
+        for (Guardable itemActual: items)
+            if (itemBuscado.getClass() == itemActual.getClass())
                 return true;
-            }
-        }
+
         return false;
     }
 
@@ -32,23 +32,23 @@ public class ItemsContainer {
     }
 
     public int getCantidadDe(Guardable guardable) {
+
         int total = 0;
-        for (int i = 0; i < this.items.size(); i++) {
-            if (guardable.getClass() == this.items.get(i).getClass()) {
+
+        for (Guardable itemActual: items)
+            if (guardable.getClass() == itemActual.getClass())
                 total++;
-            }
-        }
+
         return total;
     }
 
 
     public Guardable obtener(Guardable item) {
-        for (int i = 0; i < this.items.size(); i++){
-            if (this.items.get(i).getClass() == item.getClass()){
 
+        for (int i = 0; i < this.items.size(); i++)
+            if (this.items.get(i).getClass() == item.getClass())
                 return this.items.remove(i);
-            }
-        }
+
         return null;
     }
 
