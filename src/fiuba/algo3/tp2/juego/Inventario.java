@@ -1,8 +1,9 @@
 package fiuba.algo3.tp2.juego;
 
-import fiuba.algo3.tp2.herramientas.hachas.HachaMadera;
 import fiuba.algo3.tp2.juego.utils.ItemsContainer;
-import fiuba.algo3.tp2.materiales.MaderaMaterial;
+import fiuba.algo3.tp2.materiales.Material;
+
+import java.util.ArrayList;
 
 public class Inventario {
     private ItemsContainer items;
@@ -27,6 +28,14 @@ public class Inventario {
 
     public int getCantidadItems() {
         return this.items.cantidad();
+    }
+
+    public int getCantidadMateriales() {
+        return this.items.getCantidadDeMateriales();
+    }
+
+    public ArrayList<Material> obtenerMateriales() {
+        return this.items.obtenerMateriales();
     }
 
     public Guardable sacar(Guardable item) {

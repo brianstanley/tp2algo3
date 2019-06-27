@@ -6,6 +6,7 @@ import fiuba.algo3.tp2.juego.Navegador.Posicion;
 import fiuba.algo3.tp2.materiales.DiamanteMaterial;
 import fiuba.algo3.tp2.materiales.MaderaMaterial;
 import fiuba.algo3.tp2.materiales.MetalMaterial;
+import fiuba.algo3.tp2.materiales.PiedraMaterial;
 
 public class Juego {
 
@@ -41,6 +42,14 @@ public class Juego {
                 MaderaMaterial madera = new MaderaMaterial();
                 Posicion unaPosicion = new Posicion(j, i);
                 madera.ponerEnMapa(this.mapa, unaPosicion);
+            }
+        }
+
+        for (int i = 4; i < 8; i++) {
+            for (int j = 6; j < 8; j++) {
+                PiedraMaterial piedra = new PiedraMaterial();
+                Posicion unaPosicion = new Posicion(j, i);
+                piedra.ponerEnMapa(mapa, unaPosicion);
             }
         }
 

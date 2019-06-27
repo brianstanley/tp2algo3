@@ -19,6 +19,10 @@ public class MoverNavegadorHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent event) {
+        this.mover();
+    }
+
+    public void mover() {
         this.navegador.moverEnDireccion(direccion);
         Main.dibujarEscenario();
     }
