@@ -8,7 +8,7 @@ import fiuba.algo3.tp2.materiales.ExcepcionesMateriales.MaterialRotoExcepcion;
 public class PiedraMaterial extends Material {
     public PiedraMaterial() {
         this.durabilidad = 30;
-        this.materialVista = new MaterialVista("piedra.png", this.durabilidad);
+        this.materialVista = new MaterialVista("stone.png", this.durabilidad);
     }
     public void desgastarCon(Herramienta unPico)throws MaterialRotoExcepcion  {
         this.checkDurabilidadValida();
