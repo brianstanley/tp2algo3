@@ -1,14 +1,15 @@
 package fiuba.algo3.tp2.vista;
 
+import fiuba.algo3.tp2.controller.MoverNavegadorHandler;
 import fiuba.algo3.tp2.juego.Juego;
 import fiuba.algo3.tp2.juego.Jugador;
 import fiuba.algo3.tp2.juego.Mapa.Mapa;
-import fiuba.algo3.tp2.juego.Navegador.Navegador;
-import fiuba.algo3.tp2.juego.Navegador.Posicion;
+import fiuba.algo3.tp2.juego.Navegador.*;
 import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerramienta;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -52,6 +53,7 @@ public class Main extends Application {
 
         mainStage.setTitle("Algocraft");
 
+
         BorderPane container = new BorderPane();
         container.setMaxHeight(300);
         campoDeJuego = new GridPane();
@@ -61,6 +63,26 @@ public class Main extends Application {
 
         container.setCenter(campoDeJuego);
         container.setRight(menu);
+
+        MoverNavegadorHandler botonHandlerNorte = new MoverNavegadorHandler(navegador, new DireccionNorte());
+        MoverNavegadorHandler botonHandlerSur = new MoverNavegadorHandler(navegador, new DireccionSur());
+        MoverNavegadorHandler botonHandlerEste = new MoverNavegadorHandler(navegador, new DireccionEste());
+        MoverNavegadorHandler botonHandlerOeste = new MoverNavegadorHandler(navegador, new DireccionOeste());
+
+        container.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.W) {
+                botonHandlerNorte.mover();
+            }
+            if (e.getCode() == KeyCode.S) {
+                botonHandlerSur.mover();
+            }
+            if (e.getCode() == KeyCode.D) {
+                botonHandlerEste.mover();
+            }
+            if (e.getCode() == KeyCode.A) {
+                botonHandlerOeste.mover();
+            }
+        });
 
         Scene scene = new Scene(container, this.width, heigth);
         mainStage.setScene(scene);
