@@ -79,7 +79,7 @@ public class MenuPrincipalVista {
         Herramienta herramienta = jugador.getHerramientaActual();
         if (herramienta != null) {
             panelContenedorDurabilidad.setTranslateY(15);
-            Text m9 = new Text("Durabilidad: " + herramienta.getDurabilidad());
+            Text m9 = new Text("Durabilidad: " + (int)herramienta.getDurabilidad());
             panelContenedorDurabilidad.getChildren().add(m9);
         }
     }
