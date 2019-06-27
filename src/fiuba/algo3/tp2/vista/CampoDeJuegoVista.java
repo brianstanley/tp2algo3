@@ -10,8 +10,8 @@ import javafx.scene.layout.Pane;
 public class CampoDeJuegoVista {
 
 
-    static final int ELEMENTOS_WIDTH = 100;
-    static final int ELEMENTOS_HEIGTH = 100;
+    static final int ELEMENTOS_WIDTH = 80;
+    static final int ELEMENTOS_HEIGTH = 80;
     static final int FILAS_MAPA = 12;
     static final int COLUMNAS_MAPA = 12;
 
