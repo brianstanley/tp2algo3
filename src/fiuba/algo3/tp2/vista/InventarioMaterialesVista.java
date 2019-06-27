@@ -10,6 +10,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class InventarioMaterialesVista implements Dibujable {
 
 
@@ -36,7 +38,7 @@ public class InventarioMaterialesVista implements Dibujable {
             grid.getColumnConstraints().add(column );
         }
 
-        double cantidadItems = (double )inventario.getCantidadItems() / 5;
+        double cantidadItems = (double) inventario.getCantidadMateriales() / 5;
 
         int cantidadFilas = (int) Math.ceil( cantidadItems);
         for(int i = 0; i < cantidadFilas; i++) {
@@ -44,11 +46,14 @@ public class InventarioMaterialesVista implements Dibujable {
             grid.getRowConstraints().add(row);
         }
 
+        ArrayList<Material> materialesDisponibles = inventario.obtenerMateriales();
+
+
         int currentColumn = 0;
-        for (int i = 0; i < cantidadItems; i++) {
+        for (int i = 0; i < inventario.getCantidadMateriales(); i++) {
             currentColumn = (int) Math.ceil(i);
             Pane pane = new Pane();
-            Material material = (Material) inventario.obtenerItemEnPosicicion(i);
+            Material material = materialesDisponibles.get(i);
             MaterialVista materialVista = (MaterialVista) material.dibujo();
             materialVista.dibujoEstatico(pane);
             pane.setOnMouseClicked(e -> {

@@ -2,6 +2,7 @@ package fiuba.algo3.tp2.juego.utils;
 
 
 import fiuba.algo3.tp2.juego.Guardable;
+import fiuba.algo3.tp2.materiales.Material;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,10 @@ public class ItemsContainer {
         return total;
     }
 
+    public int getCantidadDeMateriales() {
+        ArrayList<Material> materiales = this.obtenerMateriales();
+        return materiales.size();
+    }
 
     public Guardable obtener(Guardable item) {
 
@@ -54,5 +59,15 @@ public class ItemsContainer {
 
     public Guardable obtenerItemEnPosicicion(int indice) {
         return this.items.get(indice);
+    }
+
+    public ArrayList<Material> obtenerMateriales() {
+        ArrayList<Material> materiales = new ArrayList<>();
+        for(Guardable g : this.items) {
+            if(g instanceof Material)
+                materiales.add((Material) g);
+        }
+
+        return materiales;
     }
 }
