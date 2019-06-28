@@ -22,7 +22,8 @@ public class ItemsContainer {
     public boolean tieneItem(Guardable itemBuscado) {
 
         for (Guardable itemActual: items)
-            if (itemBuscado.getClass() == itemActual.getClass())
+            if (itemBuscado != null && itemActual != null && itemBuscado.getClass() == itemActual.getClass())
+
                 return true;
 
         return false;
