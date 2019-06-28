@@ -9,6 +9,8 @@ import fiuba.algo3.tp2.juego.PlanoConstruccionHerramienta.PlanoConstruccionHerra
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
@@ -55,6 +57,16 @@ public class Main extends Application {
 
 
         BorderPane container = new BorderPane();
+        Image fondo = new Image("fondo.png");
+        BackgroundSize bSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false);
+
+        container.setBackground(new Background(new BackgroundImage(fondo,
+                BackgroundRepeat.REPEAT,
+                BackgroundRepeat.REPEAT,
+                BackgroundPosition.DEFAULT,
+                bSize)));
+
+
         container.setMaxHeight(300);
         campoDeJuego = new GridPane();
         FlowPane menu = this.inicializarSideMenu();
